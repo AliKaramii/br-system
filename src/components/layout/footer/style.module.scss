@@ -1,0 +1,12 @@
+.footerSection {
+  img {
+    max-width: 100%;
+  }
+}
+.footerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 16px;
+}
