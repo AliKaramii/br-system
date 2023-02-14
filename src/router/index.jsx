@@ -24,7 +24,7 @@ class RouterProvider extends React.Component {
           isAuthenticated: false,
         });
       }
-    }, 600);
+    }, 700);
   }
   hendlePouterEnter = (route) => {
     const { isAuthenticated } = this.state;
@@ -41,6 +41,7 @@ class RouterProvider extends React.Component {
     if (isAuthenticated === null) {
       return <Loading />;
     }
+
     return (
       <BrowserRouter>
         <Routes>

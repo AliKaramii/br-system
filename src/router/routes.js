@@ -1,6 +1,7 @@
 import Login from "../pages/login";
 import HomePage from "../pages/home-page";
 import pathes from "./pathes";
+import HallIntroSelection from "../pages/hall-intro-selection";
 
 const routes = [
   {
@@ -14,6 +15,13 @@ const routes = [
     name: "HOMEPAGE",
     path: pathes.HOMEPAGE,
     component: HomePage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "HALLINTROSELECTION",
+    path: "hall",
+    component: HallIntroSelection,
     exact: true,
     needAuth: false,
   },

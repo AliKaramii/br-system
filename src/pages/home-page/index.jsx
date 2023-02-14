@@ -2,16 +2,23 @@ import React from "react";
 import Header from "../../components/layout/header";
 import Footer from "../../components/layout/footer";
 import { Container } from "@mui/system";
+import IconTiles from "./home-tile";
+import HomeHero from "./home-hero";
+import { Typography } from "@mui/material";
 
 const HomePage = () => {
   return (
     <>
       <Header />
+      <HomeHero />
       <Container>
         <main
-          style={{ height: "75vh", textAlign: "center", paddingTop: "20vh" }}
+          style={{ minHeight: "75vh", textAlign: "center", paddingTop: "75px" }}
         >
-          <h1>Home Page</h1>
+          <Typography className="primaryIconTitle" component="h2">
+            بخش های قابل رزرو
+          </Typography>
+          <IconTiles />
         </main>
       </Container>
       <Footer />

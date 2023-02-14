@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import RouterProvider from "./router";
+import "./assets/general-style.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

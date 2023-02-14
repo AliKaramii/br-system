@@ -1,0 +1,14 @@
+.imageBackContainer {
+  height: 450px;
+  display: flex;
+  align-items: center;
+}
+.introBox {
+  background-color: rgba(255, 255, 255, 0.795);
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 36px;
+}

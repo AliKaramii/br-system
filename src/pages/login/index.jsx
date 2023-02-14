@@ -1,11 +1,17 @@
 import Grid from "@mui/material/Grid";
-import React from "react";
+import React, { useState } from "react";
 import style from "./style.module.scss";
 import loginIll from "../../assets/svg/loginIll.svg";
-import { Box, Button, Paper, TextField } from "@mui/material";
+import { Box, Button, Paper } from "@mui/material";
+import PhoneNumber from "./phone-number";
 import { Link } from "react-router-dom";
+import OtpEntry from "./otp";
 
 const Login = () => {
+  const [step, setStep] = useState(1);
+  const setStepTo = () => {
+    setStep(step + 1);
+  };
   return (
     <>
       <main className={style.loginIllArea}>
@@ -13,22 +19,11 @@ const Login = () => {
           <Grid container>
             <Grid item xs={12} sm={6} className={style.loginFormArea}>
               <Paper padding={3}>
-                <div>
-                  <h3>ثبت نام </h3>
-                  <form>
-                    <div>
-                      <p>نام و نام خانوادگی</p>
-                      <TextField variant="outlined" />
-                    </div>
-                    <div>
-                      <p>شماره تماس</p>
-                      <TextField variant="outlined" />
-                    </div>
-                    <Link to="/">
-                      <Button variant="contained">بعدی</Button>
-                    </Link>
-                  </form>
-                </div>
+                {step === 1 ? <PhoneNumber /> : <OtpEntry />}
+                <Button variant="contained" onClick={setStepTo}>
+                  بعدی
+                </Button>
+                <Link to="/">Home</Link>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} padding={2}>

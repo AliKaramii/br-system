@@ -23,6 +23,16 @@ const Header = ({ children }) => {
             </Typography>
           </Grid>
           <Grid item xs={3} className={style.profile}>
+            <Link
+              to="/login"
+              style={{
+                color: "rgb(209 209 209 / 61%)",
+                marginLeft: "16px",
+                textDecoration: "none",
+              }}
+            >
+              LOGIN
+            </Link>
             PROFILE
           </Grid>
         </Grid>
