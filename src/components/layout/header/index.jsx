@@ -6,10 +6,9 @@ import AppLogo from "../../../assets/svg/app-logo.svg";
 import style from "./style.module.scss";
 import { Link } from "react-router-dom";
 
-const Header = ({ children }) => {
+const Header = () => {
   return (
     <header className={style.appHeader}>
-      {/* {children} */}
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={3} className={style.logo}>

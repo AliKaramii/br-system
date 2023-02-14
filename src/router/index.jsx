@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import checkAuth from "../auth-mock/check-auth";
+import checkAuth from "../mock-data/auth-mock/check-auth";
 import Loading from "../components/common/loading";
 import routes from "./routes";
 
@@ -10,7 +10,7 @@ class RouterProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isAuthenticated: null,
+      isAuthenticated: true,
     };
   }
   componentDidMount() {

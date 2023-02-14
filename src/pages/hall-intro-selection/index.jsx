@@ -1,56 +1,15 @@
+import { Grid, Typography } from "@mui/material";
+import { Box, Container } from "@mui/system";
 import React from "react";
 import ImageBackSection from "../../components/common/image-back-section";
 import Footer from "../../components/layout/footer";
 import Header from "../../components/layout/header";
-import sectionBackground from "../../assets/images/hall-banner.jpg";
-import { Grid, Typography } from "@mui/material";
-import { Box, Container } from "@mui/system";
 import ItemSelectionCard from "../../components/common/card";
-import sampleImage from "../../assets/images/hall-sample.png";
+
+// ! come from API
+import { SampleItems, placeData } from "../../mock-data/hall.js";
+
 const HallIntroSelection = () => {
-  //ToDo: move
-  const SampleItems = [
-    {
-      name: "اتاق فکر شیشه ای",
-      description: "جهت برگزاری جلسات مدیریت ",
-      image: sampleImage,
-      capacity: 10,
-      ratting: 4,
-      person: 130,
-    },
-    {
-      name: "اتاق جلسات VIP",
-      description: "جهت برگزاری جلسات مدیریت",
-      image: sampleImage,
-      capacity: 10,
-      ratting: 4,
-      person: 130,
-    },
-    {
-      name: "سالن کنفرانس",
-      description: "جهت برگزاری جلسات مدیریت",
-      image: sampleImage,
-      capacity: 10,
-      ratting: 4,
-      person: "130",
-    },
-    {
-      name: "سالن همایش",
-      description: "جهت برگزاری جلسات مدیریت",
-      image: sampleImage,
-      capacity: 10,
-      ratting: 4,
-      person: "130",
-    },
-  ];
-
-  //* come from API
-  const placeData = {
-    introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
-    title: "اتاق سالن تشریفات",
-    background: sectionBackground,
-  };
-
   return (
     <>
       <Header />

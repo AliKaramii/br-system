@@ -5,6 +5,7 @@ import homeHeroIcon from "../../assets/svg/home-hero-ill.svg";
 import BottomSeperator from "../../components/base/primary-seperator-ill/bottom-seperator";
 import TopSeperator from "../../components/base/primary-seperator-ill/top-seperator";
 import style from "./style.module.scss";
+
 const HomeHero = () => {
   return (
     <>
