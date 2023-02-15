@@ -1,12 +1,12 @@
 import { Container } from "@mui/system";
 import { Typography } from "@mui/material";
-import * as React from "react";
+import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
+import * as React from "react";
 import AppLogo from "../../../assets/svg/app-logo.svg";
 import style from "./style.module.scss";
-import { Link } from "react-router-dom";
 
-const Header = () => {
+const HeaderLayout = () => {
   return (
     <header className={style.appHeader}>
       <Container>
@@ -40,4 +40,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderLayout;

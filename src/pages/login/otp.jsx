@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 const OtpEntry = () => {
   return (
     <div>
-      <h3>ثبت نام </h3>
+      <h3>ثبت نام/ورود </h3>
       <form>
         <div>
           <p>ورود رمز</p>

@@ -1,10 +1,12 @@
-import sampleImage from "../assets/images/hall-sample.png";
-import sampleImage2 from "../assets/images/hall-sample2.png";
-import sectionBackground from "../assets/images/hall-banner.jpg";
+import sectionBackground from "../assets/images/cofe-banner.jpg";
+import sampleImage from "../assets/images/cofe-sample.png";
+import sampleImage2 from "../assets/images/cofe-sample2.png";
+import sampleImage3 from "../assets/images/cofe-sample3.png";
+import sampleImage4 from "../assets/images/cofe-sample4.png";
 
-export const SampleHallItems = [
+export const SampleCofeItems = [
   {
-    name: "اتاق فکر شیشه ای",
+    name: "کافی شاپ تک ستاره",
     description: "جهت برگزاری جلسات مدیریت ",
     image: sampleImage,
     capacity: 15,
@@ -12,7 +14,7 @@ export const SampleHallItems = [
     person: 130,
   },
   {
-    name: "اتاق جلسات VIP",
+    name: "کافی شاپ پینار",
     description: "جهت برگزاری جلسات مدیریت",
     image: sampleImage2,
     capacity: 22,
@@ -20,26 +22,26 @@ export const SampleHallItems = [
     person: 59,
   },
   {
-    name: "سالن کنفرانس",
+    name: "کافی شاپ شاملو",
     description: "جهت برگزاری جلسات مدیریت",
-    image: sampleImage,
+    image: sampleImage3,
     capacity: 10,
     ratting: 4,
     person: 452,
   },
   {
-    name: "سالن همایش",
+    name: "روف گاردن بار",
     description: "جهت برگزاری جلسات مدیریت",
-    image: sampleImage2,
+    image: sampleImage4,
     capacity: 50,
     ratting: 5,
     person: 20,
   },
 ];
 
-export const hallData = {
+export const cafeData = {
   introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
-  title: " سالن تشریفات",
+  title: "کافی شاپ",
   background: sectionBackground,
   rules: [
     "حضور شما حتی بدون سفارش بلامانع است",

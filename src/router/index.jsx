@@ -10,7 +10,7 @@ class RouterProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isAuthenticated: true,
+      isAuthenticated: null,
     };
   }
   componentDidMount() {
@@ -24,7 +24,7 @@ class RouterProvider extends React.Component {
           isAuthenticated: false,
         });
       }
-    }, 700);
+    }, 300);
   }
   hendlePouterEnter = (route) => {
     const { isAuthenticated } = this.state;

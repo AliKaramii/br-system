@@ -4,7 +4,7 @@ import style from "./style.module.scss";
 import TopSeperator from "../../base/primary-seperator-ill/top-seperator";
 import BottomSeperator from "../../base/primary-seperator-ill/bottom-seperator";
 
-const Footer = ({ children }) => {
+const FooterLayout = ({ children }) => {
   return (
     <footer className={style.footerSection}>
       <TopSeperator />
@@ -17,4 +17,4 @@ const Footer = ({ children }) => {
   );
 };
 
-export default Footer;
+export default FooterLayout;

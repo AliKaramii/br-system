@@ -1,0 +1,12 @@
+.list {
+  list-style-type: none;
+  margin-top: 16px;
+
+  & li {
+    display: flex;
+    margin-bottom: 8px;
+  }
+  & p {
+    margin-right: 8px;
+  }
+}
