@@ -2,7 +2,6 @@ import { Box, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import CheckedIcon from "../../base/checked-icon";
-import style from "./style.module.scss";
 
 const TitleList = ({ title, rules }) => {
   return (
@@ -11,7 +10,7 @@ const TitleList = ({ title, rules }) => {
         <Typography component="h2" className="primaryIconTitle" title={title}>
           امکانات کلی {title}
         </Typography>
-        <ul className={style.list}>
+        <ul className="iconList">
           {rules.map((ruleItem, index) => {
             return (
               <li key={index}>

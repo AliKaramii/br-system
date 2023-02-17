@@ -17,7 +17,7 @@ const ImageBackSection = ({ backImage, title, text }) => {
               className="primaryTitle"
             >{`رزرو ${title}`}</Typography>
             <Typography component="p">{text}</Typography>
-            <Button variant="outlined" className="primaryButton">
+            <Button href="#items" variant="outlined" className="primaryButton">
               رزرو
             </Button>
           </Box>

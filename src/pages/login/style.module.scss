@@ -7,6 +7,7 @@
 
 .loginFormArea {
   display: flex;
+  flex-direction: column !important;
   justify-content: center;
   align-items: center;
   background-color: $color8;

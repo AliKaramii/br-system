@@ -34,7 +34,11 @@ const ItemSelectionCard = ({
           </div>
         </Box>
         <div className={style.btnBox}>
-          <Button variant="outlined" className="primaryButton">
+          <Button
+            href="cafe/reservation"
+            variant="outlined"
+            className="primaryButton"
+          >
             رزرو
           </Button>
         </div>
