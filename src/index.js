@@ -3,12 +3,16 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import RouterProvider from "./router";
 import "./assets/general-style.scss";
-
+import { ThemeProvider } from "@emotion/react";
+import { theme } from "./assets/themes/theme.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // *comented because of double rendering
+  // <React.StrictMode>
+  <ThemeProvider theme={theme}>
     <RouterProvider />
-  </React.StrictMode>
+  </ThemeProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

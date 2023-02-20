@@ -4,13 +4,18 @@ import ReservationLayout from "../../components/layout/reservation";
 import Footer from "../../components/layout/footer";
 
 // ! come from API
-// import { SampleCofeItems, cafeData } from "../../mock-data/cofe.js";
+import { cafeItemData } from "../../mock-data/cofe.js";
+import { sampleComments } from "../../mock-data/comments.js";
+// import { test } from "../../mock-data/testData.js";
 
 const CafeReservationPage = () => {
   return (
     <>
       <Header />
-      <ReservationLayout />
+      <ReservationLayout
+        resevationData={cafeItemData}
+        commentsData={sampleComments}
+      />
       <Footer />
     </>
   );

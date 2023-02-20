@@ -1,0 +1,27 @@
+@import "../../assets/defines.scss";
+
+.loginIllArea {
+  background: $primColor;
+  min-height: 90vh;
+}
+
+.loginFormArea {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+  align-items: center;
+  background-color: $color8;
+  min-height: 90vh;
+  border-radius: 40px 0 0 40px;
+
+  & h3 {
+    text-align: center;
+  }
+  & form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: column;
+    height: 350px;
+    padding: 32px;
+  }
+}

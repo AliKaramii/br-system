@@ -1,0 +1,28 @@
+@import "../../../assets/defines.scss";
+
+.appHeader {
+  background-color: $primColor;
+  color: $color9;
+  height: 100px;
+  margin-bottom: 75px;
+}
+
+.title {
+  @extend .h6;
+  height: 85px !important;
+  justify-content: center;
+}
+.title,
+.profile,
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.logo {
+  justify-content: flex-start;
+}
+.profile {
+  justify-content: flex-end;
+}

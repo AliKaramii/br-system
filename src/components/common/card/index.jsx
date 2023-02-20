@@ -16,7 +16,7 @@ const ItemSelectionCard = ({
       <Paper sx={{ paddingBottom: "16px" }}>
         <img src={image} alt={`سالن ${name}`} />
         <Box sx={{ paddingX: "8px" }}>
-          <Typography className="primaryTitle" component="h3">
+          <Typography variant="mainTitle" component="h3">
             {name}
           </Typography>
           <Typography className="underlined" component="p">

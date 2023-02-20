@@ -3,7 +3,22 @@ import sampleImage from "../assets/images/cofe-sample.png";
 import sampleImage2 from "../assets/images/cofe-sample2.png";
 import sampleImage3 from "../assets/images/cofe-sample3.png";
 import sampleImage4 from "../assets/images/cofe-sample4.png";
-
+import cakeIcon from "../assets/svg/cofe-icon-cake.svg";
+import drinkIcon from "../assets/svg/cofe-icon-drink.svg";
+import friesIcon from "../assets/svg/cofe-icon-fries.svg";
+import foodMenuItem from "../assets/images/food-menu-item.png";
+// * Cafe Selection
+export const cafeData = {
+  introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
+  title: "کافی شاپ",
+  background: sectionBackground,
+  rules: [
+    "حضور شما حتی بدون سفارش بلامانع است",
+    "لطفا برای تغییر میز هماهنگ فرمایید",
+    "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
+    "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+  ],
+};
 export const SampleCofeItems = [
   {
     name: "کافی شاپ تک ستاره",
@@ -20,7 +35,6 @@ export const SampleCofeItems = [
       "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
       "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
     ],
-    gallery: [sampleImage2, sampleImage3, sampleImage4],
   },
   {
     name: "کافی شاپ پینار",
@@ -37,7 +51,6 @@ export const SampleCofeItems = [
       "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
       "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
     ],
-    gallery: [sampleImage2, sampleImage3, sampleImage4],
   },
   {
     name: "کافی شاپ شاملو",
@@ -54,7 +67,6 @@ export const SampleCofeItems = [
       "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
       "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
     ],
-    gallery: [sampleImage2, sampleImage3, sampleImage4],
   },
   {
     name: "روف گاردن بار",
@@ -71,18 +83,165 @@ export const SampleCofeItems = [
       "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
       "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
     ],
-    gallery: [sampleImage2, sampleImage3, sampleImage4],
   },
 ];
 
-export const cafeData = {
-  introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
-  title: "کافی شاپ",
-  background: sectionBackground,
-  rules: [
-    "حضور شما حتی بدون سفارش بلامانع است",
-    "لطفا برای تغییر میز هماهنگ فرمایید",
-    "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
-    "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+// * Cafe  reservation
+export const cafeItemData = {
+  name: "کافی شاپ تک ستاره",
+  rules:
+    "صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید ",
+  images: [
+    {
+      original: sampleImage2,
+      thumbnail: sampleImage2,
+    },
+    {
+      original: sampleImage,
+      thumbnail: sampleImage,
+    },
+    {
+      original: sampleImage3,
+      thumbnail: sampleImage3,
+    },
+    {
+      original: sampleImage4,
+      thumbnail: sampleImage4,
+    },
+  ],
+  menu: [
+    {
+      groupTitle: "نوشیدنی های سرد",
+      groupIcon: drinkIcon,
+      category: [
+        {
+          categoryTitle: "انواع اسموتی",
+          subCategory: [
+            {
+              itemName: "نوشیدنی سرد  1",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "10000",
+              max: 30,
+              img: foodMenuItem,
+            },
+            {
+              itemName: "نوشیدنی سرد 2",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "10000",
+              max: 30,
+              img: foodMenuItem,
+            },
+          ],
+        },
+        {
+          categoryTitle: "قهوه و شیک",
+          subCategory: [
+            {
+              itemName: "آیس کافی  1",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "2000",
+              max: 20,
+              img: foodMenuItem,
+            },
+            {
+              itemName: "آیس کافی 2",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "2500",
+              max: 11,
+              img: foodMenuItem,
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      groupTitle: "نوشیدنی های گرم",
+      groupIcon: cakeIcon,
+      category: [
+        {
+          categoryTitle: "انواع قهوه",
+          subCategory: [
+            {
+              itemName: "نوشیدنی سرد  1",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "10000",
+              max: 30,
+              img: foodMenuItem,
+            },
+            {
+              itemName: "نوشیدنی سرد 2",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "10000",
+              max: 30,
+              img: foodMenuItem,
+            },
+          ],
+        },
+        {
+          categoryTitle: "انواع دمنوش",
+          subCategory: [
+            {
+              itemName: "نوشیدنی گرم 1",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "2000",
+              max: 20,
+              img: foodMenuItem,
+            },
+            {
+              itemName: "نوشیدنی گرم 2",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "2500",
+              max: 11,
+              img: foodMenuItem,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      groupTitle: "میان وعده ها",
+      groupIcon: friesIcon,
+      category: [
+        {
+          categoryTitle: "کیک ها",
+          subCategory: [
+            {
+              itemName: "کیک  1",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "10000",
+              max: 30,
+              img: foodMenuItem,
+            },
+            {
+              itemName: "کیک 2",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "10000",
+              max: 30,
+              img: foodMenuItem,
+            },
+          ],
+        },
+        {
+          categoryTitle: "دسر ها",
+          subCategory: [
+            {
+              itemName: "دسر 1",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "2000",
+              max: 20,
+              img: foodMenuItem,
+            },
+            {
+              itemName: "دسر 2",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "2500",
+              max: 11,
+              img: foodMenuItem,
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

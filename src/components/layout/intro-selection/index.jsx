@@ -17,7 +17,7 @@ const IntroSelectionLayout = ({ placeData, itemsData }) => {
       <TitleList title={placeData.title} rules={placeData.rules} />
       <Container>
         <Box id="items" marginY={4}>
-          <Typography component="h2" className="primaryIconTitle">
+          <Typography component="h2" variant="mainTitle">
             {placeData.title}
           </Typography>
           <div>

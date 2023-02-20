@@ -14,7 +14,7 @@ const ImageBackSection = ({ backImage, title, text }) => {
           <Box className={style.introBox}>
             <Typography
               component="h1"
-              className="primaryTitle"
+              variant="mainTitle"
             >{`رزرو ${title}`}</Typography>
             <Typography component="p">{text}</Typography>
             <Button href="#items" variant="outlined" className="primaryButton">

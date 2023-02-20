@@ -13,7 +13,7 @@ const HomeHero = () => {
       <Container>
         <Grid container>
           <Grid item xs={12} md={6} className={style.heroIntro}>
-            <Typography className="primaryTitle" component="h2">
+            <Typography variant="mainTitle" component="h2">
               سامانه رزرو ساختمان نیرا
             </Typography>
 
