@@ -7,9 +7,9 @@ const MenuItemFood = ({ menuItem }) => {
   console.log(menuItem);
   return (
     <>
-      {menuItem.map((item) => {
+      {menuItem.map((item, index) => {
         return (
-          <Card className={style.menuItem}>
+          <Card className={style.menuItem} key={index}>
             <Box className={style.menuItemImage}>
               <img src={item.img} alt={item.name} />
             </Box>

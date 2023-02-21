@@ -1,47 +1,78 @@
-import { Grid } from "@mui/material";
+import { Box, Button, Grid, Pagination, Typography } from "@mui/material";
 import * as React from "react";
+import userIcon from "../../../assets/svg/user-icon.svg";
+import dateIcon from "../../../assets/svg/calendar-icon.svg";
+import likeIcon from "../../../assets/svg/like-icon.svg";
+import dislikeIcon from "../../../assets/svg/dislike-icon.svg";
+import style from "./style.module.scss";
 
 const UserComment = ({ data }) => {
   return (
-    <p>
+    <div>
       {data.map((item, j) => {
         return (
           <Grid
+            key={j}
             container
             sx={{ borderBottom: "1px solid #6a14d1", marginBottom: "30px" }}
           >
-            <Grid item md={6}>
-              <div key={j}>
-                <p>{item.userName}</p>
-                <p>{item.date}</p>
+            <Grid item xs={12} md={6}>
+              <div className={style.userDataBox}>
+                <div>
+                  <img src={userIcon} alt="user icon" />
+                  <p>{item.userName}</p>
+                </div>
+                <div>
+                  <img src={dateIcon} alt="user icon" />
+                  <p>{item.date}</p>
+                </div>
               </div>
             </Grid>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <p>آیا این نظر برای شما مفید بود؟</p>
-                <p>{item.likes}</p>
-                <p>{item.disLikes}</p>
+                <div className={style.reactionsDataBox}>
+                  <p>آیا این نظر برای شما مفید بود؟</p>
+                  <div className={style.likeBox}>
+                    <p>{item.likes}</p>
+                    <Button>
+                      <img src={likeIcon} alt="user icon" />
+                    </Button>
+                  </div>
+                  <div className={style.dislikeBox}>
+                    <p>{item.disLikes}</p>
+                    <Button>
+                      <img src={dislikeIcon} alt="user icon" />
+                    </Button>
+                  </div>
+                </div>
               </div>
             </Grid>
-            <Grid>
+
+            <Grid
+              className="topLined"
+              sx={{ borderTop: "1px solid lightgray" }}
+            >
               <p>{item.commentBody}</p>
             </Grid>
-            <Grid item md={6}>
-              <p>نقاط ضعف</p>
-              {item.negativePoints.map((point) => {
-                return <p>{point}</p>;
+            <Grid item xs={12} md={6} marginY={2}>
+              <Typography variant="successText">+ نقاط قوت</Typography>
+              {item.posetivePoints.map((point, index) => {
+                return <p key={index}>{point}</p>;
               })}
             </Grid>
-            <Grid item md={6}>
-              <p>نقاط قوت</p>
-              {item.posetivePoints.map((point) => {
-                return <p>{point}</p>;
+            <Grid item xs={12} md={6} marginY={2}>
+              <Typography variant="dangerText">- نقاط ضعف</Typography>
+              {item.negativePoints.map((point, index) => {
+                return <p key={index}>{point}</p>;
               })}
             </Grid>
           </Grid>
         );
       })}
-    </p>
+      <Box display="flex" justifyContent="center">
+        <Pagination variant="outlined" count={4} shape="rounded" dir="ltr" />
+      </Box>
+    </div>
   );
 };
 export default UserComment;

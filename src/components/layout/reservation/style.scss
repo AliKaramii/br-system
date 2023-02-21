@@ -1,0 +1,20 @@
+.image-gallery-slide {
+  img {
+    border-radius: 8px;
+  }
+}
+
+.image-gallery-thumbnails-container {
+  justify-content: space-between;
+  display: flex;
+}
+.image-gallery-thumbnails-container {
+  button {
+    width: 150px;
+    border-radius: 8px;
+  }
+}
+
+.image-gallery-thumbnail-image {
+  border-radius: 8px;
+}

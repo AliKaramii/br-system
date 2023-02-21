@@ -62,9 +62,9 @@ export default function MenuInTab({ menuData }) {
   return (
     <>
       <Box className={style.menuType}>
-        {menuData.map((item) => {
+        {menuData.map((item, index) => {
           return (
-            <Button>
+            <Button key={index}>
               <img src={item.groupIcon} alt="منو" />
               {item.groupTitle}
             </Button>

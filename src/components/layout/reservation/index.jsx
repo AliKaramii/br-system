@@ -5,6 +5,7 @@ import CheckedIcon from "../../base/checked-icon";
 import MenuInTab from "../../common/menu-in-tab";
 import CommentInfoLayout from "../../layout/comment-info";
 import ImageGallery from "react-image-gallery";
+import "./style.scss";
 
 const ReservationLayout = ({ resevationData, commentsData }) => {
   // !come from API
@@ -13,7 +14,7 @@ const ReservationLayout = ({ resevationData, commentsData }) => {
   return (
     <Container>
       <Grid container columnSpacing={3}>
-        <Grid item md={6}>
+        <Grid item xs={12} md={6}>
           <ImageGallery
             items={images}
             showFullscreenButton={false}
@@ -22,17 +23,15 @@ const ReservationLayout = ({ resevationData, commentsData }) => {
             isRTL={true}
           />
         </Grid>
-        <Grid item md={6}>
-          <Paper elevation={1} sx={{ height: "450px" }}>
+        <Grid item xs={12} md={6}>
+          <Paper elevation={1} sx={{ height: "440px" }}>
             <Box padding={3}>
-              <Typography variant="p" className="primaryTitle">
-                {name}
-              </Typography>
-              <div>
+              <Typography variant="mainIconTitle">{name}</Typography>
+              <Box marginY={4}>
                 <strong>قوانین</strong>
                 <p>{rules}</p>
-              </div>
-              <Box marginY={4}>
+              </Box>
+              <Box>
                 <ul className="iconList">
                   <li>
                     <CheckedIcon />

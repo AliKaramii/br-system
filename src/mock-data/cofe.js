@@ -111,7 +111,7 @@ export const cafeItemData = {
   ],
   menu: [
     {
-      groupTitle: "نوشیدنی های سرد",
+      groupTitle: "نوشیدنی ها",
       groupIcon: drinkIcon,
       category: [
         {
@@ -152,25 +152,44 @@ export const cafeItemData = {
             },
           ],
         },
+        {
+          categoryTitle: "دمنوش ها",
+          subCategory: [
+            {
+              itemName: "دمنوش  1",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "2000",
+              max: 20,
+              img: foodMenuItem,
+            },
+            {
+              itemName: "دمنوش 2",
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+              price: "2500",
+              max: 11,
+              img: foodMenuItem,
+            },
+          ],
+        },
       ],
     },
 
     {
-      groupTitle: "نوشیدنی های گرم",
+      groupTitle: "کیک ها",
       groupIcon: cakeIcon,
       category: [
         {
-          categoryTitle: "انواع قهوه",
+          categoryTitle: "انواع کیک ",
           subCategory: [
             {
-              itemName: "نوشیدنی سرد  1",
+              itemName: "کیک شکلاتی  1",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "10000",
               max: 30,
               img: foodMenuItem,
             },
             {
-              itemName: "نوشیدنی سرد 2",
+              itemName: "کیک وانیلی 2",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "10000",
               max: 30,
@@ -179,7 +198,7 @@ export const cafeItemData = {
           ],
         },
         {
-          categoryTitle: "انواع دمنوش",
+          categoryTitle: "انواع دسر",
           subCategory: [
             {
               itemName: "نوشیدنی گرم 1",

@@ -12,38 +12,38 @@ const ItemSelectionCard = ({
   ratting,
 }) => {
   return (
-    <>
-      <Paper sx={{ paddingBottom: "16px" }}>
-        <img src={image} alt={`سالن ${name}`} />
-        <Box sx={{ paddingX: "8px" }}>
-          <Typography variant="mainTitle" component="h3">
-            {name}
+    <Paper className={style.cardContainer}>
+      <img src={image} alt={`سالن ${name}`} className={style.cardImage} />
+      <Box>
+        <Typography variant="mainTitle" component="h3" marginY={3}>
+          {name}
+        </Typography>
+        <Typography className="underlined" component="p" marginY={2}>
+          {description}
+        </Typography>
+        <div className="underlined">
+          <Typography component="span" marginY={2}>
+            ظرفیت: {capacity} نفر
           </Typography>
-          <Typography className="underlined" component="p">
-            {description}
-          </Typography>
-          <div className="underlined">
-            <Typography component="span">ظرفیت: {capacity} نفر</Typography>
-          </div>
-          <div className={style.cardRating}>
-            <p>امتیاز</p>
-            <div>
-              <Rating size="small" defaultValue={ratting} dir="ltr" />
-              <p>{`(${person}) نفر`}</p>
-            </div>
-          </div>
-        </Box>
-        <div className={style.btnBox}>
-          <Button
-            href="cafe/reservation"
-            variant="outlined"
-            className="primaryButton"
-          >
-            رزرو
-          </Button>
         </div>
-      </Paper>
-    </>
+        <div className={style.cardRating}>
+          <p>امتیاز</p>
+          <Box display="flex">
+            <Rating size="small" defaultValue={ratting} dir="ltr" />
+            <p>{`(${person}) نفر`}</p>
+          </Box>
+        </div>
+      </Box>
+      <div className={style.btnBox}>
+        <Button
+          href="cafe/reservation"
+          variant="outlined"
+          className="primaryButton"
+        >
+          رزرو
+        </Button>
+      </div>
+    </Paper>
   );
 };
 

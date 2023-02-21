@@ -2,7 +2,7 @@ import React from "react";
 import bottomPrimaryDivider from "../../../assets/svg/bottom-primary-divider.svg";
 
 const BottomSeperator = () => {
-  return <img src={bottomPrimaryDivider} alt="" />;
+  return <img src={bottomPrimaryDivider} alt="" style={{ maxWidth: "100%" }} />;
 };
 
 export default BottomSeperator;

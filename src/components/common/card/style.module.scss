@@ -1,8 +1,15 @@
+@import "../../../assets/defines.scss";
+
+.cardContainer {
+  width: 368px;
+  padding: 16px;
+}
 .cardRating {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-size: 14px;
 }
 .btnBox {
   display: flex;
@@ -10,4 +17,9 @@
   align-items: center;
   margin-top: 16px;
   margin-bottom: 16px;
+}
+.cardImage {
+  border-radius: 8px;
+  max-width: 100%;
+  filter: drop-shadow(2px 2px 8px $color5);
 }

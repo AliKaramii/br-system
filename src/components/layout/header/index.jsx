@@ -9,7 +9,7 @@ import style from "./style.module.scss";
 const HeaderLayout = () => {
   return (
     <header className={style.appHeader}>
-      <Container>
+      <Container xs={12}>
         <Grid container spacing={2}>
           <Grid item xs={3} className={style.logo}>
             <Link to="/">

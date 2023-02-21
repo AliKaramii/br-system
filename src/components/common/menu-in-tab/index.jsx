@@ -72,9 +72,16 @@ export default function MenuInTab({ menuData }) {
         })}
       </Box>
       <Box sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
-        <AppBar position="static" sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
+        <AppBar
+          position="static"
+          sx={{ bgcolor: "#f0f0f0", width: "100%", boxShadow: "none" }}
+        >
           <Tabs
-            sx={{ color: "#444444" }}
+            sx={{
+              color: "#444444",
+              borderBottom: "1px solid lightgray",
+              height: "55px",
+            }}
             value={value}
             onChange={handleChange}
             indicatorColor="secondary"
@@ -91,9 +98,9 @@ export default function MenuInTab({ menuData }) {
               );
             })} */}
 
-            <Tab label="نوشیدنی های گرم" {...a11yProps(0)} />
-            <Tab label="نوشیدنی های سرد" {...a11yProps(1)} />
-            <Tab label="نوشیدنی دم نوش ها" {...a11yProps(2)} />
+            <Tab label="انواع اسموتی" {...a11yProps(0)} />
+            <Tab label="قهوه و شیک" {...a11yProps(1)} />
+            <Tab label="دمنوش ها" {...a11yProps(2)} />
           </Tabs>
         </AppBar>
         {/* <SwipeableViews
@@ -130,21 +137,6 @@ export default function MenuInTab({ menuData }) {
                 </TabPanel>
               );
             })}
-
-            {/* <TabPanel value={value} index={1} dir={theme.direction}>
-              <Box sx={{ direction: "rtl", background: "blue" }}>
-                <MenuItemFood />
-                <MenuItemFood />
-                <MenuItemFood />
-              </Box>
-            </TabPanel>
-            <TabPanel value={value} index={2} dir={theme.direction}>
-              <Box sx={{ direction: "rtl", background: "green" }}>
-                <MenuItemFood />
-                <MenuItemFood />
-                <MenuItemFood />
-              </Box>
-            </TabPanel> */}
           </Grid>
           <Grid item md={4}>
             <Box>
