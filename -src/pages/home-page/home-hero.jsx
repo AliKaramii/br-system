@@ -13,17 +13,18 @@ const HomeHero = () => {
       <Container>
         <Grid container>
           <Grid item xs={12} md={6} className={style.heroIntro}>
-            <Typography className="primaryTitle" component="h2">
+            <Typography variant="mainTitle" component="h2">
               سامانه رزرو ساختمان نیرا
             </Typography>
 
-            <p>
+            <Typography component="p">
               در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از
               این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه
               اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
               نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.
-            </p>
+            </Typography>
           </Grid>
+
           <Grid item xs={12} md={6} className={style.heroIll}>
             <img src={homeHeroIcon} alt="hero" />
           </Grid>

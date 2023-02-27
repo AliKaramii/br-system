@@ -1,34 +1,37 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-import GalleryHero from "../../common/gallery-hero";
 import CheckedIcon from "../../base/checked-icon";
 import MenuInTab from "../../common/menu-in-tab";
-import CommentsInTab from "../../common/comments-in-tab";
+import CommentInfoLayout from "../../layout/comment-info";
+import ImageGallery from "react-image-gallery";
+import "./style.scss";
 
-const ReservationLayout = () => {
+const ReservationLayout = ({ resevationData, commentsData }) => {
+  // !come from API
+  const { images, menu, name, rules } = resevationData;
+
   return (
     <Container>
       <Grid container columnSpacing={3}>
-        <Grid item md={6}>
-          <GalleryHero />
+        <Grid item xs={12} md={6}>
+          <ImageGallery
+            items={images}
+            showFullscreenButton={false}
+            showPlayButton={false}
+            showNav={false}
+            isRTL={true}
+          />
         </Grid>
-        <Grid item md={6}>
-          <Paper elevation={1} sx={{ height: "450px" }}>
+        <Grid item xs={12} md={6}>
+          <Paper elevation={1} sx={{ height: "440px" }}>
             <Box padding={3}>
-              <Typography variant="h2" className="primaryTitle">
-                کافی شاپ تک ستاره
-              </Typography>
-              <div>
-                <strong>قوانین</strong>
-                <p>
-                  صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک
-                  از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و
-                  ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
-                  نماید،
-                </p>
-              </div>
+              <Typography variant="mainIconTitle">{name}</Typography>
               <Box marginY={4}>
+                <strong>قوانین</strong>
+                <p>{rules}</p>
+              </Box>
+              <Box>
                 <ul className="iconList">
                   <li>
                     <CheckedIcon />
@@ -49,10 +52,10 @@ const ReservationLayout = () => {
         </Grid>
       </Grid>
       <Grid container>
-        <MenuInTab />
+        <MenuInTab menuData={menu} />
       </Grid>
-      <Grid container>
-        <CommentsInTab />
+      <Grid container marginY={10}>
+        <CommentInfoLayout data={commentsData} />
       </Grid>
     </Container>
   );

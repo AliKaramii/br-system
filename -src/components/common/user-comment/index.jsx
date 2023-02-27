@@ -9,12 +9,6 @@ import style from "./style.module.scss";
 const UserComment = ({ data }) => {
   return (
     <div>
-      <Grid container marginY={2}>
-        <Typography component="p">
-          با ثبت نظرات خود در بهبود خدمات کمک کنید{" "}
-        </Typography>
-        <Button variant="contained">ثبت دیدگاه</Button>
-      </Grid>
       {data.map((item, j) => {
         return (
           <Grid
@@ -53,6 +47,7 @@ const UserComment = ({ data }) => {
                 </div>
               </div>
             </Grid>
+
             <Grid
               className="topLined"
               sx={{ borderTop: "1px solid lightgray" }}

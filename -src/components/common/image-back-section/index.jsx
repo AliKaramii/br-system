@@ -14,9 +14,11 @@ const ImageBackSection = ({ backImage, title, text }) => {
           <Box className={style.introBox}>
             <Typography
               component="h1"
-              className="primaryTitle"
+              variant="mainTitle"
             >{`رزرو ${title}`}</Typography>
-            <Typography component="p">{text}</Typography>
+            <Typography component="p" marginTop={2} marginBottom={3}>
+              {text}
+            </Typography>
             <Button href="#items" variant="outlined" className="primaryButton">
               رزرو
             </Button>

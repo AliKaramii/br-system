@@ -8,7 +8,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Button, Grid } from "@mui/material";
-import Cart from "../shopping-cart";
+import Cart from "../../common/shopping-cart";
 import style from "./style.module.scss";
 
 import MenuItemFood from "../../base/menu-item-food";
@@ -47,7 +47,7 @@ function a11yProps(index) {
   };
 }
 
-export default function MenuInTab({ menuData }) {
+export default function FoodMenuLayout({ menuData }) {
   const theme = useTheme();
   const [value, setValue] = React.useState(-1);
 
@@ -108,42 +108,28 @@ export default function MenuInTab({ menuData }) {
         index={value}
         onChangeIndex={handleChangeIndex}> */}
 
-        <Grid container>
-          <Grid item md={8}>
-            {menuData.map((cat, index) => {
-              // console.log("*****subcat:", index, cat);
-
-              return (
-                <TabPanel
-                  value={value}
-                  index={index}
-                  dir={theme.direction}
-                  key={index}
-                >
-                  {cat.category.map((item, i) => {
-                    // console.log("+++++nested:", index, item);
-                    return (
-                      <Box
-                        key={i}
-                        sx={{
-                          direction: "rtl",
-                          display: "flex",
-                        }}
-                      >
-                        <MenuItemFood menuItem={item.subCategory} />
-                      </Box>
-                    );
-                  })}
-                </TabPanel>
-              );
-            })}
-          </Grid>
-          <Grid item md={4}>
-            <Box>
-              <Cart />
-            </Box>
-          </Grid>
-        </Grid>
+        {menuData.map((cat, b) => {
+          console.log("*****subcat:", b, cat);
+          return (
+            <TabPanel value={value} index={b} dir="rtl" key={b}>
+              <Grid container>
+                <Grid item md={8}>
+                  <Box className={style.menuitem}>
+                    {cat.category.map((menuItem, i) => {
+                      console.log("+++++nested:", i, menuItem);
+                      return <MenuItemFood menuItem={menuItem.subCategory} />;
+                    })}
+                  </Box>
+                </Grid>
+                <Grid item md={4}>
+                  <Box>
+                    <Cart />
+                  </Box>
+                </Grid>
+              </Grid>
+            </TabPanel>
+          );
+        })}
 
         {/* </SwipeableViews> */}
       </Box>

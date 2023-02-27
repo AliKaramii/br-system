@@ -15,7 +15,7 @@ const HomePage = () => {
         <main
           style={{ minHeight: "75vh", textAlign: "center", paddingTop: "75px" }}
         >
-          <Typography className="primaryIconTitle" component="h2">
+          <Typography variant="mainIconTitle" component="h2">
             بخش های قابل رزرو
           </Typography>
           <IconTiles />

@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import img from "../../../assets/svg/cart-empty-ill.svg";
 import style from "./style.module.scss";
 

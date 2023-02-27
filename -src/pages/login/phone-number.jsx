@@ -3,14 +3,17 @@ import { TextField } from "@mui/material";
 
 const PhoneNumber = () => {
   return (
-    <div>
-      <form>
-        <div>
-          <p>شماره تماس</p>
-          <TextField variant="outlined" />
-        </div>
-      </form>
-    </div>
+    <form>
+      <div>
+        <p>شماره تماس</p>
+        <TextField
+          variant="outlined"
+          className="fullW"
+          placeholder="09121111111"
+          sx={{ direction: "ltr" }}
+        />
+      </div>
+    </form>
   );
 };
 

@@ -10,10 +10,9 @@ import Box from "@mui/material/Box";
 import { Button, Grid } from "@mui/material";
 import Cart from "../shopping-cart";
 import style from "./style.module.scss";
-import cakeIcon from "../../../assets/svg/cofe-icon-cake.svg";
-import drinkIcon from "../../../assets/svg/cofe-icon-drink.svg";
-import friesIcon from "../../../assets/svg/cofe-icon-fries.svg";
+
 import MenuItemFood from "../../base/menu-item-food";
+// import { Container } from "@mui/system";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,90 +47,103 @@ function a11yProps(index) {
   };
 }
 
-export default function MenuInTab() {
+export default function MenuInTab({ menuData }) {
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(-1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
+  // const handleChangeIndex = (index) => {
+  //   setValue(index);
+  // };
 
   return (
     <>
       <Box className={style.menuType}>
-        <Button>
-          <img src={friesIcon} alt="منو" />
-          کیک ها
-        </Button>
-        <Button>
-          <img src={drinkIcon} alt="منو" />
-          نوشیدنی ها
-        </Button>
-        <Button>
-          <img src={cakeIcon} alt="منو" />
-          میان وعده
-        </Button>
+        {menuData.map((item, index) => {
+          return (
+            <Button key={index}>
+              <img src={item.groupIcon} alt="منو" />
+              {item.groupTitle}
+            </Button>
+          );
+        })}
       </Box>
       <Box sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
-        <AppBar position="static" sx={{ bgcolor: "#f0f0f0" }}>
+        <AppBar
+          position="static"
+          sx={{ bgcolor: "#f0f0f0", width: "100%", boxShadow: "none" }}
+        >
           <Tabs
-            sx={{ color: "#444444" }}
+            sx={{
+              color: "#444444",
+              borderBottom: "1px solid lightgray",
+              height: "55px",
+            }}
             value={value}
             onChange={handleChange}
             indicatorColor="secondary"
-            textColor="red"
+            textColor="primary"
             variant="fullWidth"
             aria-label="full width tabs example"
           >
-            <Tab label="نوشیدنی های گرم" {...a11yProps(0)} />
-            <Tab label="نوشیدنی های سرد" {...a11yProps(1)} />
-            <Tab label="نوشیدنی دم نوش ها" {...a11yProps(2)} />
-            <Tab label="نوشیدنی میوه ای" {...a11yProps(3)} />
+            {/* {menuData.map((item, index) => {
+              return (
+                <Tab
+                  label={item.category[index].categoryTitle}
+                  {...a11yProps({ index })}
+                />
+              );
+            })} */}
+
+            <Tab label="انواع اسموتی" {...a11yProps(0)} />
+            <Tab label="قهوه و شیک" {...a11yProps(1)} />
+            <Tab label="دمنوش ها" {...a11yProps(2)} />
           </Tabs>
         </AppBar>
         {/* <SwipeableViews
-      axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-      index={value}
-      onChangeIndex={handleChangeIndex}> */}
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          <Grid container columnSpacing={3}>
-            <Grid item md={4}>
-              <Cart />
-            </Grid>
-            <Grid item container md={8} sx={{ direction: "rtl" }}>
-              <Grid md={6}>
-                <MenuItemFood />
-                <MenuItemFood />
-              </Grid>
-              <Grid md={6}>
-                <MenuItemFood />
-                <MenuItemFood />
-                <MenuItemFood />
-              </Grid>
-            </Grid>
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        index={value}
+        onChangeIndex={handleChangeIndex}> */}
+
+        <Grid container>
+          <Grid item md={8}>
+            {menuData.map((cat, index) => {
+              // console.log("*****subcat:", index, cat);
+
+              return (
+                <TabPanel
+                  value={value}
+                  index={index}
+                  dir={theme.direction}
+                  key={index}
+                >
+                  {cat.category.map((item, i) => {
+                    // console.log("+++++nested:", index, item);
+                    return (
+                      <Box
+                        key={i}
+                        sx={{
+                          direction: "rtl",
+                          display: "flex",
+                        }}
+                      >
+                        <MenuItemFood menuItem={item.subCategory} />
+                      </Box>
+                    );
+                  })}
+                </TabPanel>
+              );
+            })}
           </Grid>
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
-          <Grid container columnSpacing={3}>
-            <Grid item md={4}>
+          <Grid item md={4}>
+            <Box>
               <Cart />
-            </Grid>
-            <Grid item container md={8} sx={{ direction: "rtl" }}>
-              <Grid md={6}>
-                <MenuItemFood />
-                <MenuItemFood />
-                <MenuItemFood />
-              </Grid>
-              <Grid md={6}>
-                <MenuItemFood />
-              </Grid>
-            </Grid>
+            </Box>
           </Grid>
-        </TabPanel>
+        </Grid>
 
         {/* </SwipeableViews> */}
       </Box>

@@ -36,7 +36,7 @@ const ItemSelectionCard = ({
       </Box>
       <div className={style.btnBox}>
         <Button
-          href="cafe/reservation"
+          href="/cafe/reservation"
           variant="outlined"
           className="primaryButton"
         >

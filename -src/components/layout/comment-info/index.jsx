@@ -1,12 +1,13 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 // import SwipeableViews from "react-swipeable-views";
-import { useTheme } from "@mui/material/styles";
+// import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import UserComment from "../../common/user-comment";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -41,26 +42,27 @@ function a11yProps(index) {
   };
 }
 
-const CommentsInTab = () => {
-  const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+const CommentInfoLayout = ({ data }) => {
+  //   const theme = useTheme();
+  const [value, setValue] = React.useState(-1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
+  //   const handleChangeIndex = (index) => {
+  //     setValue(index);
+  //   };
 
   return (
-    <Box sx={{ bgcolor: "", width: "100%", marginTop: "100px" }}>
-      <AppBar position="static">
+    <Box sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
+      <AppBar position="static" sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
         <Tabs
+          sx={{ color: "#444444" }}
           value={value}
           onChange={handleChange}
           indicatorColor="secondary"
-          textColor="inherit"
+          textColor="primary"
           variant="fullWidth"
           aria-label="full width tabs example"
         >
@@ -74,28 +76,20 @@ const CommentsInTab = () => {
       axis={theme.direction === "rtl" ? "x-reverse" : "x"}
       index={value}
       onChangeIndex={handleChangeIndex}> */}
-      <TabPanel value={value} index={0} dir={theme.direction}>
-        <Box>
-          <h2>دیدگاه کاربر 1 در باره این سرویس</h2>
-          <h2>دیدگاه کاربر 1 در باره این سرویس</h2>
-          <h2>دیدگاه کاربر 1 در باره این سرویس</h2>
-          <h2>دیدگاه کاربر 1 در باره این سرویس</h2>
-          <h2>دیدگاه کاربر 1 در باره این سرویس</h2>
-        </Box>
+      <TabPanel value={value} index={0} dir="rtl">
+        <UserComment data={data} />
       </TabPanel>
-      <TabPanel value={value} index={1} dir={theme.direction}>
-        <Box>
-          <h2>سوالات متداول در باره ارائه این خدمت</h2>
-          <h2>سوالات متداول در باره ارائه این خدمت</h2>
-          <h2>سوالات متداول در باره ارائه این خدمت</h2>
-          <h2>سوالات متداول در باره ارائه این خدمت</h2>
-          <h2>سوالات متداول در باره ارائه این خدمت</h2>
-        </Box>
+      <TabPanel value={value} index={1} dir="rtl">
+        <span>سوالات متداول در باره ارائه این خدمت</span>
       </TabPanel>
-
-      <TabPanel value={value} index={4} dir={theme.direction}></TabPanel>
+      <TabPanel value={value} index={2} dir="rtl">
+        <span>امکانات سالن </span>
+      </TabPanel>
+      <TabPanel value={value} index={3} dir="rtl">
+        <span>شرایط استفاده </span>
+      </TabPanel>
       {/* </SwipeableViews> */}
     </Box>
   );
 };
-export default CommentsInTab;
+export default CommentInfoLayout;
