@@ -13,7 +13,6 @@ const IntroSelectionLayout = ({ placeData, itemsData }) => {
         text={placeData.introText}
         title={placeData.title}
       />
-
       <TitleList title={placeData.title} rules={placeData.rules} />
       <Container>
         <Box id="items" marginY={4}>

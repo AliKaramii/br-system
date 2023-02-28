@@ -1,0 +1,24 @@
+@import "../../../assets//defines.scss";
+
+.addToCartCounter {
+  background-color: $primColor;
+  border-radius: 16px;
+  border: 1px solid $primColor;
+  width: 93px;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & span,
+  & button {
+    color: $color6;
+    background-color: transparent;
+    border: none;
+  }
+
+  & button {
+    border-radius: 16px;
+    width: 32px;
+    height: 32px;
+  }
+}

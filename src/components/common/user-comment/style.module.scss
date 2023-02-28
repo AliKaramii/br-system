@@ -1,3 +1,4 @@
+@import "../../../assets//general-style.scss";
 .userDataBox {
   display: flex;
   flex-direction: column;
@@ -15,16 +16,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   & > div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
-
     width: 88px;
     height: 43px;
     border-radius: 8px;
+    padding: 8px 16px;
+    overflow: hidden;
+
+    & button:hover {
+      background: none;
+    }
   }
 
   .likeBox {
@@ -36,5 +43,22 @@
 
   img {
     margin-right: 8px;
+  }
+}
+.dislikeBox::before,
+.likeBox::before {
+  content: "1";
+}
+
+.addCommentBox {
+  @extend .underlined;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pointBox {
+  & span {
+    display: list-item;
+    margin-right: 16px;
   }
 }

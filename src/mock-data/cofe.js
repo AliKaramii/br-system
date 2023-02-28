@@ -6,7 +6,7 @@ import sampleImage4 from "../assets/images/cofe-sample4.png";
 import cakeIcon from "../assets/svg/cofe-icon-cake.svg";
 import drinkIcon from "../assets/svg/cofe-icon-drink.svg";
 import friesIcon from "../assets/svg/cofe-icon-fries.svg";
-import foodMenuItem from "../assets/images/food-menu-item.png";
+import foodMenuItem from "../assets/images/cofe-sample.png";
 // * Cafe Selection
 export const cafeData = {
   introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
@@ -19,6 +19,7 @@ export const cafeData = {
     "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
   ],
 };
+
 export const SampleCofeItems = [
   {
     name: "کافی شاپ تک ستاره",
@@ -89,8 +90,12 @@ export const SampleCofeItems = [
 // * Cafe  reservation
 export const cafeItemData = {
   name: "کافی شاپ تک ستاره",
-  rules:
-    "صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید ",
+  rules: [
+    "حضور شما حتی بدون سفارش بلامانع است",
+    "لطفا برای تغییر میز هماهنگ فرمایید",
+    "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
+    " استعمال دخانیات در فضای داخلی ممنوع است",
+  ],
   images: [
     {
       original: sampleImage2,

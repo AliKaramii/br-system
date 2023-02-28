@@ -2,8 +2,6 @@
 import { sampleComments } from "../../mock-data/comments.js";
 import { cafeItemData } from "../../mock-data/cofe.js";
 
-import { Container } from "@mui/system";
-import { Grid } from "@mui/material";
 import React from "react";
 import HeaderLayout from "../../components/layout/header";
 import FooterLayout from "../../components/layout/footer";
@@ -13,22 +11,16 @@ import FoodMenuLayout from "../../components/layout/food-menu";
 
 const { menu } = cafeItemData;
 
-const ReservationPage = () => {
+const CafeReservationPage = () => {
   return (
     <>
       <HeaderLayout />
-      <Container>
-        <GalleryRulesLayout data={cafeItemData} />
-        <Grid container>
-          <FoodMenuLayout menuData={menu} />
-        </Grid>
-        <Grid container marginY={10}>
-          <CommentInfoLayout data={sampleComments} />
-        </Grid>
-      </Container>
+      <GalleryRulesLayout data={cafeItemData} />
+      <FoodMenuLayout menuData={menu} />
+      <CommentInfoLayout data={sampleComments} />
       <FooterLayout />
     </>
   );
 };
 
-export default ReservationPage;
+export default CafeReservationPage;

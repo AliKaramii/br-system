@@ -1,8 +1,10 @@
 @import "../../../assets/defines.scss";
 
-.menuItem {
+.foodMenuItem {
   display: flex;
-  max-width: 350px;
+  padding: 8px;
+  width: calc(50% - 24px);
+  min-width: 330px;
   margin: 8px;
 
   & img {
@@ -29,4 +31,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 8px;
+  & img {
+    border-radius: 8px;
+  }
 }

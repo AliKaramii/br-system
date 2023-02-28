@@ -1,38 +1,32 @@
-import { Button, Card, Typography } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import AddToCartCounterBtn from "../../common/add-to-cart-counter";
+import BtnCircle from "../btn-circle";
 import style from "./style.module.scss";
 
-const MenuItemFood = ({ menuItem }) => {
-  console.log(menuItem);
+const MenuItemFood = ({ menuItems }) => {
+  const menuItemData = menuItems.subCategory;
+
   return (
     <>
-      {menuItem.map((item, index) => {
+      {menuItemData.map((menuItem, index) => {
         return (
-          <Card className={style.menuItem} key={index}>
+          <Card key={index} className={style.foodMenuItem}>
             <Box className={style.menuItemImage}>
-              <img src={item.img} alt={item.name} />
+              <img src={menuItem.img} alt={menuItem.itemName} />
             </Box>
             <Box className={style.meuItemContent}>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <Typography variant="p" component="div">
-                  {item.itemName}
+                  {menuItem.itemName}
                 </Typography>
-                <span>{item.ing}</span>
+                <span>{menuItem.ing}</span>
               </Box>
               <Box className={style.meuItemPurchase}>
-                <Typography>{item.price} ریال</Typography>
-                <Button
-                  sx={{
-                    background: "#6a14d1",
-                    borderRadius: "40px",
-
-                    height: "30px",
-                    color: "#fff",
-                  }}
-                >
-                  +
-                </Button>
+                <Typography>{menuItem.price} ریال</Typography>
+                <BtnCircle text="+" />
+                <AddToCartCounterBtn />
               </Box>
             </Box>
           </Card>

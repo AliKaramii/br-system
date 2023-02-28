@@ -1,18 +1,16 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 // import SwipeableViews from "react-swipeable-views";
-import { useTheme } from "@mui/material/styles";
+// import { useTheme } from "@mui/material/styles";
+import { Button, Container, Grid } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Button, Grid } from "@mui/material";
 import Cart from "../../common/shopping-cart";
-import style from "./style.module.scss";
-
 import MenuItemFood from "../../base/menu-item-food";
-// import { Container } from "@mui/system";
+import style from "./style.module.scss";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,8 +46,8 @@ function a11yProps(index) {
 }
 
 export default function FoodMenuLayout({ menuData }) {
-  const theme = useTheme();
-  const [value, setValue] = React.useState(-1);
+  // const theme = useTheme();
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -60,7 +58,7 @@ export default function FoodMenuLayout({ menuData }) {
   // };
 
   return (
-    <>
+    <Container sx={{ marginBottom: 5 }}>
       <Box className={style.menuType}>
         {menuData.map((item, index) => {
           return (
@@ -109,16 +107,15 @@ export default function FoodMenuLayout({ menuData }) {
         onChangeIndex={handleChangeIndex}> */}
 
         {menuData.map((cat, b) => {
-          console.log("*****subcat:", b, cat);
+          // console.log("*****cat.category:", cat.category, "B:", b);
+          const currentData = cat.category[b];
+          console.log("currentData:::", currentData);
           return (
             <TabPanel value={value} index={b} dir="rtl" key={b}>
               <Grid container>
                 <Grid item md={8}>
                   <Box className={style.menuitem}>
-                    {cat.category.map((menuItem, i) => {
-                      console.log("+++++nested:", i, menuItem);
-                      return <MenuItemFood menuItem={menuItem.subCategory} />;
-                    })}
+                    <MenuItemFood menuItems={currentData} indicator={b} />
                   </Box>
                 </Grid>
                 <Grid item md={4}>
@@ -133,6 +130,6 @@ export default function FoodMenuLayout({ menuData }) {
 
         {/* </SwipeableViews> */}
       </Box>
-    </>
+    </Container>
   );
 }

@@ -8,6 +8,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import UserComment from "../../common/user-comment";
+import { Container } from "@mui/system";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -44,7 +45,7 @@ function a11yProps(index) {
 
 const CommentInfoLayout = ({ data }) => {
   //   const theme = useTheme();
-  const [value, setValue] = React.useState(-1);
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -55,41 +56,43 @@ const CommentInfoLayout = ({ data }) => {
   //   };
 
   return (
-    <Box sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
-      <AppBar position="static" sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
-        <Tabs
-          sx={{ color: "#444444" }}
-          value={value}
-          onChange={handleChange}
-          indicatorColor="secondary"
-          textColor="primary"
-          variant="fullWidth"
-          aria-label="full width tabs example"
-        >
-          <Tab label="دیدگاه ها" {...a11yProps(0)} />
-          <Tab label="سوالات متداول" {...a11yProps(1)} />
-          <Tab label="امکانات سالن" {...a11yProps(2)} />
-          <Tab label="شرایط استفاده" {...a11yProps(3)} />
-        </Tabs>
-      </AppBar>
-      {/* <SwipeableViews
+    <Container sx={{ marginBottom: 5 }}>
+      <Box sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
+        <AppBar position="static" sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
+          <Tabs
+            sx={{ color: "#444444" }}
+            value={value}
+            onChange={handleChange}
+            indicatorColor="secondary"
+            textColor="primary"
+            variant="fullWidth"
+            aria-label="full width tabs example"
+          >
+            <Tab label="دیدگاه ها" {...a11yProps(0)} />
+            <Tab label="سوالات متداول" {...a11yProps(1)} />
+            <Tab label="امکانات سالن" {...a11yProps(2)} />
+            <Tab label="شرایط استفاده" {...a11yProps(3)} />
+          </Tabs>
+        </AppBar>
+        {/* <SwipeableViews
       axis={theme.direction === "rtl" ? "x-reverse" : "x"}
       index={value}
       onChangeIndex={handleChangeIndex}> */}
-      <TabPanel value={value} index={0} dir="rtl">
-        <UserComment data={data} />
-      </TabPanel>
-      <TabPanel value={value} index={1} dir="rtl">
-        <span>سوالات متداول در باره ارائه این خدمت</span>
-      </TabPanel>
-      <TabPanel value={value} index={2} dir="rtl">
-        <span>امکانات سالن </span>
-      </TabPanel>
-      <TabPanel value={value} index={3} dir="rtl">
-        <span>شرایط استفاده </span>
-      </TabPanel>
-      {/* </SwipeableViews> */}
-    </Box>
+        <TabPanel value={value} index={0} dir="rtl">
+          <UserComment data={data} />
+        </TabPanel>
+        <TabPanel value={value} index={1} dir="rtl">
+          <span>سوالات متداول در باره ارائه این خدمت</span>
+        </TabPanel>
+        <TabPanel value={value} index={2} dir="rtl">
+          <span>امکانات سالن </span>
+        </TabPanel>
+        <TabPanel value={value} index={3} dir="rtl">
+          <span>شرایط استفاده </span>
+        </TabPanel>
+        {/* </SwipeableViews> */}
+      </Box>
+    </Container>
   );
 };
 export default CommentInfoLayout;

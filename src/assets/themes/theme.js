@@ -4,8 +4,12 @@ const colors = {
   primary: {
     main: "#6a14d1",
   },
+
   secondary: {
     main: "#C82090",
+  },
+  text: {
+    light9: "#fafafa;",
   },
 };
 
@@ -16,6 +20,9 @@ export const theme = createTheme({
     },
     secondary: {
       main: colors.secondary.main,
+    },
+    text: {
+      light: colors.text.light9,
     },
   },
   components: {

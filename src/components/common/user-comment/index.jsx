@@ -1,20 +1,28 @@
 import { Box, Button, Grid, Pagination, Typography } from "@mui/material";
 import * as React from "react";
+
 import userIcon from "../../../assets/svg/user-icon.svg";
 import dateIcon from "../../../assets/svg/calendar-icon.svg";
 import likeIcon from "../../../assets/svg/like-icon.svg";
 import dislikeIcon from "../../../assets/svg/dislike-icon.svg";
 import style from "./style.module.scss";
+import AddCommentModal from "../../layout/add-comment-modal";
 
 const UserComment = ({ data }) => {
   return (
-    <div>
-      <Grid container marginY={2}>
+    <Box margin={4}>
+      <Grid
+        container
+        marginBottom={8}
+        paddingY={2}
+        className={style.addCommentBox}
+      >
         <Typography component="p">
-          با ثبت نظرات خود در بهبود خدمات کمک کنید{" "}
+          با ثبت نظرات خود ما را در بهبود خدمات یاری کنید.
         </Typography>
-        <Button variant="contained">ثبت دیدگاه</Button>
+        <AddCommentModal />
       </Grid>
+
       {data.map((item, j) => {
         return (
           <Grid
@@ -38,35 +46,32 @@ const UserComment = ({ data }) => {
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div className={style.reactionsDataBox}>
                   <p>آیا این نظر برای شما مفید بود؟</p>
-                  <div className={style.likeBox}>
+                  <Grid className={style.likeBox} marginY={1}>
                     <p>{item.likes}</p>
                     <Button>
                       <img src={likeIcon} alt="user icon" />
                     </Button>
-                  </div>
-                  <div className={style.dislikeBox}>
+                  </Grid>
+                  <Grid className={style.dislikeBox} marginY={1}>
                     <p>{item.disLikes}</p>
                     <Button>
                       <img src={dislikeIcon} alt="user icon" />
                     </Button>
-                  </div>
+                  </Grid>
                 </div>
               </div>
             </Grid>
-            <Grid
-              className="topLined"
-              sx={{ borderTop: "1px solid lightgray" }}
-            >
+            <Grid className="topLined" paddingY={2}>
               <p>{item.commentBody}</p>
             </Grid>
-            <Grid item xs={12} md={6} marginY={2}>
-              <Typography variant="successText">+ نقاط قوت</Typography>
+            <Grid item xs={12} md={6} marginY={2} className={style.pointBox}>
+              <Typography variant="successText">نقاط قوت</Typography>
               {item.posetivePoints.map((point, index) => {
                 return <p key={index}>{point}</p>;
               })}
             </Grid>
-            <Grid item xs={12} md={6} marginY={2}>
-              <Typography variant="dangerText">- نقاط ضعف</Typography>
+            <Grid item xs={12} md={6} marginY={2} className={style.pointBox}>
+              <Typography variant="dangerText">نقاط ضعف</Typography>
               {item.negativePoints.map((point, index) => {
                 return <p key={index}>{point}</p>;
               })}
@@ -75,9 +80,9 @@ const UserComment = ({ data }) => {
         );
       })}
       <Box display="flex" justifyContent="center">
-        <Pagination variant="outlined" count={4} shape="rounded" dir="ltr" />
+        <Pagination count={4} color="primary" shape="rounded" dir="ltr" />
       </Box>
-    </div>
+    </Box>
   );
 };
 export default UserComment;
