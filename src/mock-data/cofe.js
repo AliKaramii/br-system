@@ -1,12 +1,12 @@
-import sectionBackground from "../assets/images/cofe-banner.jpg";
-import sampleImage from "../assets/images/cofe-sample.png";
-import sampleImage2 from "../assets/images/cofe-sample2.png";
-import sampleImage3 from "../assets/images/cofe-sample3.png";
-import sampleImage4 from "../assets/images/cofe-sample4.png";
-import cakeIcon from "../assets/svg/cofe-icon-cake.svg";
-import drinkIcon from "../assets/svg/cofe-icon-drink.svg";
-import friesIcon from "../assets/svg/cofe-icon-fries.svg";
-import foodMenuItem from "../assets/images/cofe-sample.png";
+import sectionBackground from "../assets/images/cafe-banner.jpg";
+import sampleImage from "../assets/images/cafe-sample.png";
+import sampleImage2 from "../assets/images/cafe-sample2.png";
+import sampleImage3 from "../assets/images/cafe-sample3.png";
+import sampleImage4 from "../assets/images/cafe-sample4.png";
+import cakeIcon from "../assets/svg/cafe-icon-cake.svg";
+import drinkIcon from "../assets/svg/cafe-icon-drink.svg";
+import friesIcon from "../assets/svg/cafe-icon-fries.svg";
+import foodMenuItem from "../assets/images/cafe-sample.png";
 // * Cafe Selection
 export const cafeData = {
   introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,

@@ -22,7 +22,7 @@ const HeaderLayout = () => {
             </Typography>
           </Grid>
           <Grid item xs={3} className={style.profile}>
-            <Link
+            {/* <Link
               to="/login"
               style={{
                 color: "rgb(209 209 209 / 61%)",
@@ -30,9 +30,10 @@ const HeaderLayout = () => {
                 textDecoration: "none",
               }}
             >
-              LOGIN
+              LOGIN 
             </Link>
             PROFILE
+              */}
           </Grid>
         </Grid>
       </Container>

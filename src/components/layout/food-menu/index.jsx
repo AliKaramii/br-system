@@ -8,7 +8,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Cart from "../../common/shopping-cart";
+import ShoppingCart from "../../common/shopping-cart";
 import MenuItemFood from "../../base/menu-item-food";
 import style from "./style.module.scss";
 
@@ -120,7 +120,7 @@ export default function FoodMenuLayout({ menuData }) {
                 </Grid>
                 <Grid item md={4}>
                   <Box>
-                    <Cart />
+                    <ShoppingCart />
                   </Box>
                 </Grid>
               </Grid>

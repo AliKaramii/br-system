@@ -4,6 +4,8 @@ import pathes from "./pathes";
 import CafeIntroSelectionPage from "../pages/cafe/cafe-intro-selection-page.jsx";
 import CafeReservationPage from "../pages/cafe/cafe-reservation-page.jsx";
 import HallIntroSelectionPage from "../pages/hall/hall-intro-selection-page.jsx";
+import CheckoutPage from "../pages/checkout";
+import FormSecondStep from "../pages/form-second-step";
 
 const routes = [
   {
@@ -17,6 +19,20 @@ const routes = [
     name: "HOMEPAGE",
     path: pathes.HOMEPAGE,
     component: HomePage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "RESERVATION",
+    path: "/reservation",
+    component: FormSecondStep,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "CHECKOUT",
+    path: "/checkout",
+    component: CheckoutPage,
     exact: true,
     needAuth: false,
   },
