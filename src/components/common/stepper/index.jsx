@@ -4,7 +4,7 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 
-const steps = ["انتخاب کافی شاپ", "ورود اطلاعات رزرو", " بررسی نهایی"];
+const steps = ["انتخاب کافی شاپ", "ورود اطلاعات ", " بررسی و پرداخت"];
 
 function FormStepper({ activeStep }) {
   return (

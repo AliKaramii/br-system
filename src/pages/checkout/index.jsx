@@ -2,8 +2,8 @@ import React from "react";
 import Header from "../../components/layout/header";
 import Footer from "../../components/layout/footer";
 import { Container } from "@mui/system";
-import { Link } from "react-router-dom";
 import FormStepper from "../../components/common/stepper";
+import CheckoutTable from "../../components/common/checkout-table";
 
 const CheckoutPage = () => {
   return (
@@ -11,9 +11,8 @@ const CheckoutPage = () => {
       <Header />
       <Container>
         <FormStepper activeStep={2} />
-        <h1>Checkout</h1>
+        <CheckoutTable />
       </Container>
-      <Link to="#">ورود به درگاه و پرداخت</Link>
       <Footer />
     </>
   );

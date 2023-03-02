@@ -6,7 +6,7 @@ import dateIcon from "../../../assets/svg/calendar-icon.svg";
 import likeIcon from "../../../assets/svg/like-icon.svg";
 import dislikeIcon from "../../../assets/svg/dislike-icon.svg";
 import style from "./style.module.scss";
-import AddCommentModal from "../../layout/add-comment-modal";
+import AddCommentModal from "../../layout/modal-add-comment";
 
 const UserComment = ({ data }) => {
   return (

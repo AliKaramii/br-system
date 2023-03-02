@@ -53,6 +53,10 @@ const AddCommentModal = () => {
                     <input placeholder="وارد کنید" />
                   </div>
                   <div>
+                    <label>توضیحات</label> <br />
+                    <input type="textarea" />
+                  </div>
+                  <div>
                     <label>نقاط قوت</label> <br />
                     <AddableFormFeild />
                   </div>
@@ -86,7 +90,7 @@ const AddCommentModal = () => {
                 </Typography>
                 <div>
                   <input type="checkbox" />
-                  <label>قوانسسسین را مطالعه کردم</label>
+                  <label>قوانین را مطالعه کردم</label>
                 </div>
               </div>
             </Grid>

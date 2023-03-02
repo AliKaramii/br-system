@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 
-const ReservationFormFitrstStep = () => {
+const ReservationFormFirstStepLayout = () => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -55,4 +55,4 @@ const ReservationFormFitrstStep = () => {
     </>
   );
 };
-export default ReservationFormFitrstStep;
+export default ReservationFormFirstStepLayout;
