@@ -2,7 +2,6 @@ import { Card, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import AddToCartCounterBtn from "../../common/add-to-cart-counter";
-import BtnCircle from "../btn-circle";
 import style from "./style.module.scss";
 
 const MenuItemFood = ({ menuItems }) => {
@@ -25,8 +24,7 @@ const MenuItemFood = ({ menuItems }) => {
               </Box>
               <Box className={style.meuItemPurchase}>
                 <Typography>{menuItem.price} ریال</Typography>
-                <BtnCircle text="+" />
-                <AddToCartCounterBtn />
+                <AddToCartCounterBtn id={index} />
               </Box>
             </Box>
           </Card>

@@ -4,9 +4,9 @@ const pathes = {
   CHECKOUT: "checkout",
   RESERVATION: "reservation",
   HALLINTROSELECTION: "hall",
-  COFEINTROSELECTION: "cafe",
+  CAFEINTROSELECTION: "cafe",
   FORBIDDEN: "/401",
-  NOT_FOUND: "*",
+  NOTFOUND: "*",
 };
 
 export default pathes;

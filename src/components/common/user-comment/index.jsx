@@ -86,6 +86,3 @@ const UserComment = ({ data }) => {
   );
 };
 export default UserComment;
-
-// posetivePoints:
-// negativePoints:

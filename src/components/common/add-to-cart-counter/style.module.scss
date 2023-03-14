@@ -22,3 +22,15 @@
     height: 32px;
   }
 }
+.addToCartBtn {
+  border: "none";
+  border-radius: "16px";
+  width: "32px";
+  height: "32px";
+  background-color: "primary.main";
+  color: "text.light";
+  background-color: $primColor !important;
+  &:hover {
+    background-color: $primColor2;
+  }
+}

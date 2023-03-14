@@ -46,6 +46,7 @@ function a11yProps(index) {
 }
 
 export default function FoodMenuLayout({ menuData }) {
+  console.log("**menuData**", menuData);
   // const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -109,7 +110,7 @@ export default function FoodMenuLayout({ menuData }) {
         {menuData.map((cat, b) => {
           // console.log("*****cat.category:", cat.category, "B:", b);
           const currentData = cat.category[b];
-          console.log("currentData:::", currentData);
+          // console.log("currentData:::", currentData);
           return (
             <TabPanel value={value} index={b} dir="rtl" key={b}>
               <Grid container>

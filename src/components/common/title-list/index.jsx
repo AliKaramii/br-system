@@ -5,23 +5,21 @@ import CheckedIcon from "../../base/checked-icon";
 
 const TitleList = ({ title, rules }) => {
   return (
-    <Container>
-      <Box marginY={4}>
-        <Typography component="h2" variant="mainIconTitle" title={title}>
-          امکانات کلی {title}
-        </Typography>
-        <ul className="iconList">
-          {rules.map((ruleItem, index) => {
-            return (
-              <li key={index}>
-                <CheckedIcon />
-                <p>{ruleItem}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </Box>
-    </Container>
+    <Box>
+      <Typography component="strong" variant="strong" title={title}>
+        {title}
+      </Typography>
+      <ul className="iconList">
+        {rules.map((ruleItem, index) => {
+          return (
+            <li key={index}>
+              <CheckedIcon />
+              <p>{ruleItem}</p>
+            </li>
+          );
+        })}
+      </ul>
+    </Box>
   );
 };
 

@@ -7,6 +7,10 @@ import cakeIcon from "../assets/svg/cafe-icon-cake.svg";
 import drinkIcon from "../assets/svg/cafe-icon-drink.svg";
 import friesIcon from "../assets/svg/cafe-icon-fries.svg";
 import foodMenuItem from "../assets/images/cafe-sample.png";
+
+import img from "../assets/images/cafe-sample.png";
+import img2 from "../assets/images/cafe-sample2.png";
+
 // * Cafe Selection
 export const cafeData = {
   introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
@@ -20,7 +24,7 @@ export const cafeData = {
   ],
 };
 
-export const SampleCofeItems = [
+export const sampleCafeItems = [
   {
     name: "کافی شاپ تک ستاره",
     description: "جهت برگزاری جلسات مدیریت ",
@@ -123,16 +127,20 @@ export const cafeItemData = {
           categoryTitle: "انواع اسموتی",
           subCategory: [
             {
+              id: 1,
               itemName: "نوشیدنی سرد  1",
-              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-              price: "10000",
+              price: 600.0,
+              amount: 11,
               max: 30,
               img: foodMenuItem,
+              ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
             },
             {
+              id: 2,
               itemName: "نوشیدنی سرد 2",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-              price: "10000",
+              price: 600.0,
+              amount: 2,
               max: 30,
               img: foodMenuItem,
             },
@@ -142,16 +150,21 @@ export const cafeItemData = {
           categoryTitle: "قهوه و شیک",
           subCategory: [
             {
+              id: 3,
               itemName: "آیس کافی  1",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-              price: "2000",
+              price: 80,
+              amount: 0,
               max: 20,
               img: foodMenuItem,
             },
             {
+              id: 4,
+              price: 200,
+              amount: 3,
               itemName: "آیس کافی 2",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-              price: "2500",
+
               max: 11,
               img: foodMenuItem,
             },
@@ -161,16 +174,20 @@ export const cafeItemData = {
           categoryTitle: "دمنوش ها",
           subCategory: [
             {
+              id: 5,
               itemName: "دمنوش  1",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-              price: "2000",
+              price: 50,
+              amount: 0,
               max: 20,
               img: foodMenuItem,
             },
             {
+              id: 6,
               itemName: "دمنوش 2",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-              price: "2500",
+              price: 6000,
+              amount: 5,
               max: 11,
               img: foodMenuItem,
             },
@@ -187,6 +204,7 @@ export const cafeItemData = {
           categoryTitle: "انواع کیک ",
           subCategory: [
             {
+              id: 7,
               itemName: "کیک شکلاتی  1",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "10000",
@@ -194,6 +212,7 @@ export const cafeItemData = {
               img: foodMenuItem,
             },
             {
+              id: 8,
               itemName: "کیک وانیلی 2",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "10000",
@@ -206,6 +225,7 @@ export const cafeItemData = {
           categoryTitle: "انواع دسر",
           subCategory: [
             {
+              id: 9,
               itemName: "نوشیدنی گرم 1",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "2000",
@@ -213,6 +233,7 @@ export const cafeItemData = {
               img: foodMenuItem,
             },
             {
+              id: 10,
               itemName: "نوشیدنی گرم 2",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "2500",
@@ -231,6 +252,7 @@ export const cafeItemData = {
           categoryTitle: "کیک ها",
           subCategory: [
             {
+              id: 12,
               itemName: "کیک  1",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "10000",
@@ -238,6 +260,7 @@ export const cafeItemData = {
               img: foodMenuItem,
             },
             {
+              id: 13,
               itemName: "کیک 2",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "10000",
@@ -250,6 +273,7 @@ export const cafeItemData = {
           categoryTitle: "دسر ها",
           subCategory: [
             {
+              id: 14,
               itemName: "دسر 1",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "2000",
@@ -257,6 +281,7 @@ export const cafeItemData = {
               img: foodMenuItem,
             },
             {
+              id: 15,
               itemName: "دسر 2",
               ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
               price: "2500",
@@ -269,3 +294,39 @@ export const cafeItemData = {
     },
   ],
 };
+
+export const cafeMenuMock = [
+  {
+    groupTitle: "نوشیدنی ها",
+    categoryTitle: "انواع اسموتی",
+    id: 1,
+    itemName: "نوشیدنی سرد  1",
+    price: 200,
+    amount: 1,
+    max: 30,
+    img: img2,
+    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+  },
+  {
+    groupTitle: "نوشیدنی ها",
+    categoryTitle: "انواع اسموتی",
+    id: 2,
+    itemName: "نوشیدنی سرد  2",
+    price: 100,
+    amount: 1,
+    max: 30,
+    img: img,
+    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+  },
+  {
+    groupTitle: "نوشیدنی ها",
+    categoryTitle: "انواع اسموتی",
+    id: 3,
+    itemName: "نوشیدنی سرد  3",
+    price: 600,
+    amount: 1,
+    max: 30,
+    img: img2,
+    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+  },
+];

@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Grid, Paper, Typography } from "@mui/material";
-import CheckedIcon from "../../base/checked-icon";
 import ImageGallery from "react-image-gallery";
 import { Container } from "@mui/system";
+import TitleList from "../../common/title-list";
 
 const GalleryRulesLayout = ({ data }) => {
   const { images, name, rules } = data;
@@ -23,18 +23,8 @@ const GalleryRulesLayout = ({ data }) => {
           <Paper elevation={1} sx={{ height: "440px" }}>
             <Box padding={3}>
               <Typography variant="mainIconTitle">{name}</Typography>
-              <Box marginY={4}>
-                <strong>قوانین</strong>
-                <ul className="iconList">
-                  {rules.map((rule, index) => {
-                    return (
-                      <li key={index}>
-                        <CheckedIcon />
-                        <p>{rule}</p>
-                      </li>
-                    );
-                  })}
-                </ul>
+              <Box marginY={4} sx={{ maxHeight: "400px", overflow: "auto" }}>
+                <TitleList title={"قوانین"} rules={rules} />
               </Box>
             </Box>
           </Paper>

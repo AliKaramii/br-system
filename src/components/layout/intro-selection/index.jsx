@@ -3,7 +3,6 @@ import { Box, Container } from "@mui/system";
 import React from "react";
 import ItemSelectionCard from "../../common/card";
 import ImageBackSection from "../../common/image-back-section";
-import TitleList from "../../common/title-list";
 
 const IntroSelectionLayout = ({ placeData, itemsData }) => {
   return (
@@ -13,9 +12,9 @@ const IntroSelectionLayout = ({ placeData, itemsData }) => {
         text={placeData.introText}
         title={placeData.title}
       />
-      <TitleList title={placeData.title} rules={placeData.rules} />
+      {/* <TitleList title={placeData.title} rules={placeData.rules} /> */}
       <Container>
-        <Box id="items" marginY={4}>
+        <Box id="items" marginY={8}>
           <Typography component="h2" variant="mainIconTitle">
             {placeData.title}
           </Typography>

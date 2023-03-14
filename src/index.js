@@ -5,12 +5,20 @@ import RouterProvider from "./router";
 import "./assets/general-style.scss";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./assets/themes/theme.js";
+import { Provider } from "react-redux";
+import store from "./store/index.js";
+
+// ! Remove - came from API
+import "./services/mock-data/cafe-mock-server.js";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // *comented because of double rendering
   // <React.StrictMode>
   <ThemeProvider theme={theme}>
-    <RouterProvider />
+    <Provider store={store}>
+      <RouterProvider />
+    </Provider>
   </ThemeProvider>
   // </React.StrictMode>
 );

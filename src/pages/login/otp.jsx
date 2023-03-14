@@ -50,7 +50,7 @@ const OtpEntry = () => {
             alignItems: "center",
           }}
         >
-          <p>00:{time}</p>
+          <p>{time}</p>
           {!allowToResend ? (
             <p>تا ارسال دوباره کد</p>
           ) : (

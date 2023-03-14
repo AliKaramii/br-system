@@ -6,7 +6,7 @@ import CafeReservationPage from "../pages/cafe/cafe-reservation-page.jsx";
 import HallIntroSelectionPage from "../pages/hall/hall-intro-selection-page.jsx";
 import CheckoutPage from "../pages/checkout";
 import FormSecondStepPage from "../pages/cafe/form-second-step";
-
+import NotFoundPage from "../pages/not-found";
 const routes = [
   {
     name: "LOGIN",
@@ -37,14 +37,14 @@ const routes = [
     needAuth: false,
   },
   {
-    name: "COFEINTROSELECTION",
+    name: "CAFEINTROSELECTION",
     path: "cafe",
     component: CafeIntroSelectionPage,
     exact: true,
     needAuth: false,
   },
   {
-    name: "COFERESERVATION",
+    name: "CAFERESERVATION",
     path: "cafe/reservation",
     component: CafeReservationPage,
     exact: true,
@@ -52,8 +52,15 @@ const routes = [
   },
   {
     name: "HALLINTROSELECTION",
-    path: "hall",
+    path: pathes.HALLINTROSELECTION,
     component: HallIntroSelectionPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "NOTFOUND",
+    path: pathes.NOTFOUND,
+    component: NotFoundPage,
     exact: true,
     needAuth: false,
   },
