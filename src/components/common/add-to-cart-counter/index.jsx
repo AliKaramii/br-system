@@ -80,9 +80,9 @@ const AddToCartCounterBtn = ({ id }) => {
         >
           +
         </Button>
-        {items.map((item) => {
+        {items.map((item,index) => {
           if (item.amount && item.id === id) {
-            return <span>{item.amount}</span>;
+            return <span key={index}>{item.amount}</span>;
           } else return null;
         })}
         <Button

@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import CartReducer from "./features/shopping-cart-food-slice.js";
+import cartSlice from "./features/shopping-cart-food-slice.js";
+import loginSlice from "./features/login-slice.js";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "redux";
@@ -10,14 +11,13 @@ import { combineReducers } from "redux";
 //   storage,
 // };
 
-// const reducer = combineReducers({
-//   foodShoppingCart: CartReducer,
-// });
+const rootReducers = combineReducers({
+  foodShoppingCart: cartSlice,
+  login: loginSlice,
+});
 
 // const persistedReducer = persistReducer(persistConfig, reducer);
 
-const store = configureStore({
-  reducer: { foodShoppingCart: CartReducer },
-});
+const store = configureStore({ reducer: rootReducers });
 
 export default store;

@@ -1,40 +1,23 @@
 import Grid from "@mui/material/Grid";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import loginIll from "../../assets/svg/loginIll.svg";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import PhoneNumber from "./phone-number";
 import { useNavigate } from "react-router-dom";
 import OtpEntry from "./otp";
+import { useSelector } from "react-redux";
 
 const Login = () => {
-  const [step, setStep] = useState(1);
+  const { formStep } = useSelector((state) => state.login);
 
-  const navigating = useNavigate();
-  const handleSteps = () => {
-    setStep(2);
-    if (step === 2) {
-      return navigating("/");
-    }
+  const renderForm = () => {
+    console.log("formStep renderform:", formStep);
+    return formStep === 1 ? <PhoneNumber /> : <OtpEntry />;
   };
-
-  const handleFormStep = () => {
-    setStep(1);
-  };
-
-  const renderNumberEditor = () => {
-    if (step === 2) {
-      return (
-        <Button
-          onClick={handleFormStep}
-          className="fullW"
-          sx={{ marginTop: "0.5rem" }}
-        >
-          ویرایش شماره
-        </Button>
-      );
-    }
-  };
+  useEffect(() => {
+    renderForm();
+  }, [formStep]);
 
   return (
     <main className={style.loginIllArea}>
@@ -44,18 +27,7 @@ const Login = () => {
             ثبت نام/ورود
           </Typography>
           <Paper padding={4} className={style.formBox}>
-            {step === 1 ? <PhoneNumber /> : <OtpEntry />}
-            <Box paddingX={6} marginY={2}>
-              <Button
-                variant="contained"
-                onClick={handleSteps}
-                className="fullW"
-              >
-                تایید
-              </Button>
-
-              {renderNumberEditor()}
-            </Box>
+            {renderForm()}
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6} padding={2}>

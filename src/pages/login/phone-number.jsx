@@ -1,7 +1,32 @@
 import React, { useState } from "react";
-import { TextField } from "@mui/material";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import { Button, Container, TextField } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { setFormStep } from "../../store/features/login-slice";
+
+const validationSchema = yup.object({
+  phoneNumber: yup
+    .string()
+    .min(1, "شماره همراه شامل 11 رقم است  ")
+    // .max(11, "شماره همراه شامل 11 رقم است  ")
+    .required("شماره خود را وارد کنید"),
+});
 
 const PhoneNumber = () => {
+  const dispatch = useDispatch();
+  const { formStep } = useSelector((state) => state.login);
+
+  const formik = useFormik({
+    initialValues: {
+      phoneNumber: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      dispatch(setFormStep(2));
+    },
+  });
+
   const [number, setNumber] = useState("");
 
   const handleOnChange = (e) => {
@@ -9,19 +34,27 @@ const PhoneNumber = () => {
   };
 
   return (
-    <form>
+    <form onSubmit={formik.handleSubmit}>
       <div>
         <p>شماره تماس</p>
         <TextField
-          type="number"
-          pattern="[0-9]*"
-          value={number}
-          onChange={(e) => handleOnChange(e)}
-          variant="outlined"
-          className="fullW"
+          sx={{ marginBottom: 10 }}
+          fullWidth
+          id="phoneNumber"
+          name="phoneNumber"
           placeholder="09121111111"
-          sx={{ direction: "ltr" }}
+          type="number"
+          value={formik.values.phoneNumber}
+          onChange={formik.handleChange}
+          error={
+            formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber)
+          }
+          helperText={formik.touched.phoneNumber && formik.errors.phoneNumber}
         />
+
+        <Button variant="contained" fullWidth type="submit">
+          تایید
+        </Button>
       </div>
     </form>
   );
