@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "@mui/system";
 import CheckoutItemCard from "../../base/checkout-item-card";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Grid,
+  Typography,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import FormStepper from "../../common/stepper";
 import FormAccordion from "../../common/form-accordion";
@@ -36,11 +43,12 @@ const FormSecondStepLayout = ({ icons }) => {
           <Box className={style.formBody}>
             <FormAccordion />
             <Box marginY={2}>
-              <input type="checkbox" />
-              <label>
-                <GeneralDataShowModal>قوانین</GeneralDataShowModal> را مطالعه
-                کردم
-              </label>
+              <FormControlLabel
+                sx={{ margin: "0" }}
+                control={<Checkbox defaultChecked />}
+                // disabled
+              ></FormControlLabel>
+              <GeneralDataShowModal>قوانین را مطالعه کردم</GeneralDataShowModal>
             </Box>
             <Box className="flexRowReverse">
               <Link to="/checkout">

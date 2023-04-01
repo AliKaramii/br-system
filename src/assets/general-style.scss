@@ -59,3 +59,21 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+// user panel forms ans fields
+.userFormStyle {
+  input {
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+  }
+  input:not([type="textarea"]) {
+    border: none;
+    border-bottom: 1px solid $color5;
+  }
+
+  input[type="textarea"] {
+    height: 165px;
+    border: 1px solid $color5;
+  }
+}
+//

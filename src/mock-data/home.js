@@ -5,10 +5,11 @@ import hallIcon from "../assets/svg/icon-home-hall.svg";
 import logisticsIcon from "../assets/svg/icon-home-logistics.svg";
 import poolIcon from "../assets/svg/icon-home-pool.svg";
 import cafeIcon from "../assets/svg/icon-home-coffeeshop.svg";
+import pathes from "../router/pathes";
 
 export const homeItems = [
-  { name: "رزرو کافی شاپ", icon: cafeIcon, path: "cafe" },
-  { name: "رزرو تشریفات", icon: hallIcon, path: "hall" },
+  { name: "رزرو کافی شاپ", icon: cafeIcon, path: pathes.CAFEINTROSELECTION },
+  { name: "رزرو تشریفات", icon: hallIcon, path: pathes.HALLINTROSELECTION },
   { name: "رزرو سینما", icon: cinemaIcon, path: "#" },
   { name: "رزرو رستوران", icon: resataurantIcon, path: "#" },
   { name: "رزرو پارکینگ", icon: parkingIcon, path: "#" },

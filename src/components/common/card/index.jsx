@@ -1,6 +1,7 @@
 import { Button, Paper, Rating, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import pathes from "../../../router/pathes";
 import style from "./style.module.scss";
 
 const ItemSelectionCard = ({
@@ -36,7 +37,7 @@ const ItemSelectionCard = ({
       </Box>
       <div className={style.btnBox}>
         <Button
-          href="/cafe/reservation"
+          href={pathes.CAFERESERVATION}
           variant="outlined"
           className="primaryButton"
         >

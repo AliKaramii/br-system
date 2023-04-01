@@ -1,12 +1,13 @@
 const pathes = {
   LOGIN: "/login",
   HOMEPAGE: "/",
-  CHECKOUT: "checkout",
-  RESERVATION: "reservation",
-  HALLINTROSELECTION: "hall",
-  CAFEINTROSELECTION: "cafe",
+  CHECKOUT: "/checkout",
+  RESERVATION: "/reservation",
+  HALLINTROSELECTION: "/hall",
+  CAFEINTROSELECTION: "/cafe",
+  CAFERESERVATION: "/cafe/reservation",
   FORBIDDEN: "/401",
-  NOTFOUND: "*",
+  NOTFOUND: "/*",
 };
 
 export default pathes;

@@ -26,7 +26,7 @@ class RouterProvider extends React.Component {
       }
     }, 300);
   }
-  hendlePouterEnter = (route) => {
+  hendleRouterEnter = (route) => {
     const { isAuthenticated } = this.state;
     if (isAuthenticated && route.needAuth) {
       return <route.component />;
@@ -52,7 +52,7 @@ class RouterProvider extends React.Component {
               exact={route.exact}
               element={
                 route.needAuth ? (
-                  this.hendlePouterEnter(route)
+                  this.hendleRouterEnter(route)
                 ) : (
                   <route.component />
                 )

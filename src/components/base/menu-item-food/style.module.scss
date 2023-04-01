@@ -3,8 +3,9 @@
 .foodMenuItem {
   display: flex;
   padding: 8px;
-  width: calc(50% - 24px);
-  min-width: 330px;
+  // width: calc(50% - 24px);
+  width: 100%;
+  min-width: 200px;
   margin: 8px;
 
   & img {
@@ -12,6 +13,7 @@
     height: 100px;
   }
 }
+
 .meuItemContent {
   display: flex;
   flex-direction: column;

@@ -38,14 +38,14 @@ const routes = [
   },
   {
     name: "CAFEINTROSELECTION",
-    path: "cafe",
+    path: pathes.CAFEINTROSELECTION,
     component: CafeIntroSelectionPage,
     exact: true,
     needAuth: false,
   },
   {
     name: "CAFERESERVATION",
-    path: "cafe/reservation",
+    path: pathes.CAFERESERVATION,
     component: CafeReservationPage,
     exact: true,
     needAuth: false,

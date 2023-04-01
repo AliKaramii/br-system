@@ -25,7 +25,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -112,12 +112,11 @@ export default function FoodMenuLayout({ menuData }) {
           const currentData = cat.category[b];
           // console.log("currentData:::", currentData);
           return (
+            // ToDo > p nesting error
             <TabPanel value={value} index={b} dir="rtl" key={b}>
               <Grid container>
                 <Grid item md={8}>
-                  <Box className={style.menuitem}>
-                    <MenuItemFood menuItems={currentData} indicator={b} />
-                  </Box>
+                  <MenuItemFood menuItems={currentData} indicator={b} />
                 </Grid>
                 <Grid item md={4}>
                   <Box>
