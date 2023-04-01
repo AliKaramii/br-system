@@ -3,8 +3,6 @@
 .foodMenuItem {
   display: flex;
   padding: 8px;
-  // width: calc(50% - 24px);
-  width: 100%;
   min-width: 200px;
   margin: 8px;
 
@@ -17,6 +15,7 @@
 .meuItemContent {
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   & span {
     font-size: 12px;

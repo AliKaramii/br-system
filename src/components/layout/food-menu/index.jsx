@@ -114,9 +114,11 @@ export default function FoodMenuLayout({ menuData }) {
           return (
             // ToDo > p nesting error
             <TabPanel value={value} index={b} dir="rtl" key={b}>
-              <Grid container>
+              <Grid container spacing={4}>
                 <Grid item md={8}>
-                  <MenuItemFood menuItems={currentData} indicator={b} />
+                  <Grid container spacing={2}>
+                    <MenuItemFood menuItems={currentData} indicator={b} />
+                  </Grid>
                 </Grid>
                 <Grid item md={4}>
                   <Box>
