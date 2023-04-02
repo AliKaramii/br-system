@@ -16,7 +16,7 @@ const sx = {
   height: "32px",
   color: "text.light",
   minWidth: "0",
-  padding: "2px 0 0 2px",
+  padding: "1px 0 0 0",
   backgroundColor: "primary.main",
   "&:hover": { backgroundColor: "secondary.main" },
 };
@@ -73,20 +73,15 @@ const AddToCartCounterBtn = ({ id }) => {
   ) : (
     <>
       <Box className={style.addToCartCounter}>
-        <Button
-          sx={sx}
-          onClick={() => dispatch(increase(id))}
-          className="addToCartBtn"
-        >
+        <Button sx={sx} onClick={() => dispatch(increase(id))}>
           +
         </Button>
-        {items.map((item,index) => {
+        {items.map((item, index) => {
           if (item.amount && item.id === id) {
             return <span key={index}>{item.amount}</span>;
           } else return null;
         })}
         <Button
-          className="addToCartBtn"
           sx={sx}
           // onClick={handleDecreaseCounter}
           onClick={() => dispatch(decrease(id))}

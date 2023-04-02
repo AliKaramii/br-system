@@ -1,4 +1,12 @@
-import { Button, Grid, Modal, Typography } from "@mui/material";
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Grid,
+  Modal,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import AddableFormFeild from "../../common/addable-form-field";
@@ -47,29 +55,44 @@ const AddCommentModal = () => {
                   دیدگاه خود را شرح دهید
                 </Typography>
                 <form>
-                  <div>
-                    <label>عنوان نظر</label>
-                    <br />
-                    <input placeholder="وارد کنید" />
-                  </div>
-                  <div>
-                    <label>توضیحات</label> <br />
-                    <input type="textarea" />
-                  </div>
-                  <div>
-                    <label>نقاط قوت</label> <br />
-                    <AddableFormFeild />
-                  </div>
-                  <div>
-                    <label>نقاط ضعف</label> <br />
-                    <AddableFormFeild />
-                  </div>
-                  <div>
-                    <input type="checkbox" />
-                    <label>ارسال دیدگاه به صورت ناشناس</label>
-                  </div>
+                  <TextField
+                    variant="standard"
+                    sx={{ marginBottom: 4 }}
+                    fullWidth
+                    id="title"
+                    name="title"
+                    label="نام عنوان نظر"
+                    // value={formik.values.user}
+                    // onChange={formik.handleChange}
+                    // error={formik.touched.user && Boolean(formik.errors.user)}
+                    // helperText={formik.touched.user && formik.errors.user}
+                  />
 
-                  <Button variant="contained">ثبت دیدگاه</Button>
+                  <div>
+                    <AddableFormFeild
+                      label="نقاط قوت"
+                      id="posPoints"
+                      name="posPoints"
+                    />
+                  </div>
+                  <div>
+                    <AddableFormFeild
+                      label="نقاط ضعف"
+                      id="negPoints"
+                      name="negPoints"
+                    />
+                  </div>
+                  <Box>
+                    <FormControlLabel
+                      sx={{ margin: "0" }}
+                      control={<Checkbox />}
+                      // disabled
+                    ></FormControlLabel>
+                    ارسال به صورت ناشناس
+                  </Box>
+                  <Box className="flexRowReverse">
+                    <Button variant="outlined">ثبت دیدگاه</Button>
+                  </Box>
                 </form>
               </div>
             </Grid>
@@ -88,10 +111,14 @@ const AddCommentModal = () => {
                   تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
                   است لورم ایپسوم متن لورم ایپسوم متن است
                 </Typography>
-                <div>
-                  <input type="checkbox" />
-                  <label>قوانین را مطالعه کردم</label>
-                </div>
+                <Box>
+                  <FormControlLabel
+                    sx={{ margin: "0" }}
+                    control={<Checkbox />}
+                    // disabled
+                  ></FormControlLabel>
+                  قوانین را مطالعه کردم
+                </Box>
               </div>
             </Grid>
           </Grid>

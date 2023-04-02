@@ -6,7 +6,7 @@ import React from "react";
 import HeaderLayout from "../../components/layout/header";
 import FooterLayout from "../../components/layout/footer";
 import CommentInfoLayout from "../../components/layout/comment-info";
-import GalleryRulesLayout from "../../components/layout/gallery-rule-section";
+import GalleryRulesLayout from "../../components/layout/gallery-rules";
 import FoodMenuLayout from "../../components/layout/food-menu";
 
 const { menu } = cafeItemData;

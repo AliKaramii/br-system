@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "@mui/system";
 import { Box, Button, Typography } from "@mui/material";
-import CheckoutTableFeild from "../../base/checkout-table-feild";
+import CheckoutTableFeild from "./checkout-table-feild.jsx";
 import style from "./style.module.scss";
 import { Link } from "react-router-dom";
 

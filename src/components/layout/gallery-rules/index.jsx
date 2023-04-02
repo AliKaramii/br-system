@@ -24,7 +24,7 @@ const GalleryRulesLayout = ({ data }) => {
             <Box padding={3}>
               <Typography variant="mainIconTitle">{name}</Typography>
               <Box marginY={4} sx={{ maxHeight: "400px", overflow: "auto" }}>
-                <TitleList title={"قوانین"} rules={rules} />
+                <TitleList title={"قوانین"} texts={rules} />
               </Box>
             </Box>
           </Paper>

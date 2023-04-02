@@ -1,3 +1,5 @@
+@import "../../../assets/defines.scss";
+
 .menuType {
   display: flex;
   justify-content: space-between;
@@ -11,8 +13,41 @@
     margin-left: 8px;
   }
 }
-// .menuitem {
-//   display: flex;
-//   justify-content: flex-start;
-//   flex-wrap: wrap;
-// }
+
+.foodMenuItem {
+  display: flex;
+  padding: 8px;
+  min-width: 200px;
+  margin: 8px;
+
+  & img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.meuItemContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & span {
+    font-size: 12px;
+  }
+}
+.meuItemPurchase {
+  display: flex;
+  font-size: 14px;
+  margin: 4px;
+  justify-content: space-between;
+  color: $primColor;
+}
+.menuItemImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+  & img {
+    border-radius: 8px;
+  }
+}

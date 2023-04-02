@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React from "react";
-import ItemSelectionCard from "../../common/card";
+import ItemSelectionCard from "../../common/selection-card";
 import ImageBackSection from "../../common/image-back-section";
 
 const IntroSelectionLayout = ({ placeData, itemsData }) => {
@@ -12,7 +12,7 @@ const IntroSelectionLayout = ({ placeData, itemsData }) => {
         text={placeData.introText}
         title={placeData.title}
       />
-      {/* <TitleList title={placeData.title} rules={placeData.rules} /> */}
+      {/* <TitleList title={placeData.title} texts={placeData.rules} /> */}
       <Container>
         <Box id="items" marginY={8}>
           <Typography component="h2" variant="mainIconTitle">

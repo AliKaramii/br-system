@@ -1,20 +1,19 @@
-import { Box, Typography } from "@mui/material";
-import { Container } from "@mui/system";
 import React from "react";
+import { Box, Typography } from "@mui/material";
 import CheckedIcon from "../../base/checked-icon";
 
-const TitleList = ({ title, rules }) => {
+const TitleList = ({ title, texts }) => {
   return (
     <Box>
       <Typography component="strong" variant="strong" title={title}>
         {title}
       </Typography>
       <ul className="iconList">
-        {rules.map((ruleItem, index) => {
+        {texts.map((textItem, index) => {
           return (
             <li key={index}>
               <CheckedIcon />
-              <p>{ruleItem}</p>
+              <p>{textItem}</p>
             </li>
           );
         })}

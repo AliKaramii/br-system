@@ -6,22 +6,10 @@ import {
   getCartTotal,
   remove,
 } from "../../../store/features/shopping-cart-food-slice";
-import ReservationFormFirstStepLayout from "../../layout/reservation-form-first-step";
+import ReservationFormFirstStepLayout from "../../layout/reservation-forms/reservation-form-first-step";
 import AddToCartCounterBtn from "../add-to-cart-counter";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import style from "./style.module.scss";
-
-const sx = {
-  border: "none",
-  borderRadius: "16px",
-  width: "32px",
-  height: "32px",
-  color: "text.light",
-  minWidth: "0",
-  padding: "2px 0 0 2px",
-  backgroundColor: "primary.main",
-  "&:hover": { backgroundColor: "secondary.main" },
-};
 
 const ShoppingCart = () => {
   const { items, totalAmount, totalCount } = useSelector(

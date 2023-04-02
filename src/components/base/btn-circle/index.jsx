@@ -12,6 +12,7 @@ const BtnCircle = ({ text }) => {
         height: "32px",
         backgroundColor: "primary.main",
         color: "text.light",
+        padding: "1px 0 0 0 ",
         " &:hover": {
           backgroundColor: "secondary.main",
         },

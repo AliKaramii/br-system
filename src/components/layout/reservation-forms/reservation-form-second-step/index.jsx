@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "@mui/system";
-import CheckoutItemCard from "../../base/checkout-item-card";
+import CheckoutItemCard from "../../../common/checkout-card";
+import { Link } from "react-router-dom";
+import FormStepper from "../../../common/stepper";
+import FormAccordion from "../../../common/form-accordion";
+import GeneralDataShowModal from "../../../common/modal-general-data-show";
 import {
   Box,
   Button,
@@ -9,10 +13,6 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
-import FormStepper from "../../common/stepper";
-import FormAccordion from "../../common/form-accordion";
-import GeneralDataShowModal from "../../common/modal-general-data-show";
 import style from "./style.module.scss";
 
 const FormSecondStepLayout = ({ icons }) => {
@@ -45,7 +45,7 @@ const FormSecondStepLayout = ({ icons }) => {
             <Box marginY={2}>
               <FormControlLabel
                 sx={{ margin: "0" }}
-                control={<Checkbox defaultChecked />}
+                control={<Checkbox />}
                 // disabled
               ></FormControlLabel>
               <GeneralDataShowModal>قوانین را مطالعه کردم</GeneralDataShowModal>

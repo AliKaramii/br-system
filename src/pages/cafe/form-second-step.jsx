@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/layout/header";
 import Footer from "../../components/layout/footer";
-import FormSecondStepLayout from "../../components/layout/reservation-form-second-step";
+import FormSecondStepLayout from "../../components/layout/reservation-forms/reservation-form-second-step";
 
 // !
 import iconClock from "../../assets/svg/reservation-icon-calendar.svg";

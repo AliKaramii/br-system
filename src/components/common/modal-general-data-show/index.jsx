@@ -5,7 +5,11 @@ import React, { useState } from "react";
 import style from "./style.module.scss";
 
 // !most com from outside
-const defaultData = { title: "blank", subTitle: "blank", bodyText: "blank" };
+const defaultData = {
+  title: "قوانین کافی شاپ",
+  subTitle: "لورم ایپسوم یک متن ساختگی و آزمایشی برای کمک به طراح است",
+  bodyText: "blank",
+};
 
 const GeneralDataShowModal = ({ children }) => {
   const { title, subTitle, bodyText } = defaultData;

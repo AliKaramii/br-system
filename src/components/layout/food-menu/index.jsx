@@ -6,10 +6,9 @@ import { Button, Container, Grid } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ShoppingCart from "../../common/shopping-cart";
-import MenuItemFood from "../../base/menu-item-food";
+import MenuItemFood from "./menu-item-food";
 import style from "./style.module.scss";
 
 function TabPanel(props) {
