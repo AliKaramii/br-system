@@ -24,6 +24,7 @@ const PhoneNumber = () => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       dispatch(setFormStep(2));
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 

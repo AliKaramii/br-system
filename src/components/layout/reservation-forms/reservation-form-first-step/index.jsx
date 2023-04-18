@@ -10,6 +10,7 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 // import { position } from "stylis";
 import style from "./style.module.scss";
+import pathes from "../../../../router/pathes";
 // import { useTheme } from "@emotion/react";
 
 const validationSchema = yup.object({
@@ -162,7 +163,7 @@ const ReservationFormFirstStepLayout = () => {
                 </div>
               </Grid>
               <Box marginY={3} minWidth="100%" className="flexRowReverse">
-                <Link to="/reservation">
+                <Link to={pathes.RESERVATION}>
                   <Button variant="outlined" type="submit">
                     مرحله بعد
                   </Button>

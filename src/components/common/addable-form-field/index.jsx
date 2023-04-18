@@ -1,11 +1,19 @@
-import { IconButton, InputAdornment, TextField } from "@mui/material";
+import {
+  IconButton,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const AddableFormFeild = ({ label, id, name }) => {
+  let [addedList, setAddedList] = useState([]);
   const itemField = useRef();
+
   const handleItemAdding = () => {
-    console.log(itemField.current.value);
+    setAddedList((current) => [itemField.current.value, ...current]);
+    itemField.current.value = "";
   };
 
   return (
@@ -35,6 +43,15 @@ const AddableFormFeild = ({ label, id, name }) => {
           ),
         }}
       />
+      <div style={{ height: "60px", overflow: "auto" }}>
+        {addedList.map((addedItem, index) => {
+          return (
+            <Typography key={index} component="p">
+              {addedItem}
+            </Typography>
+          );
+        })}
+      </div>
     </>
   );
 };

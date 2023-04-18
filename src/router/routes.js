@@ -24,7 +24,7 @@ const routes = [
   },
   {
     name: "RESERVATION",
-    path: "/reservation",
+    path: pathes.RESERVATION,
     component: FormSecondStepPage,
     exact: true,
     needAuth: false,

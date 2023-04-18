@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import * as React from "react";
 import AppLogo from "../../../assets/svg/app-logo.svg";
 import style from "./style.module.scss";
+import pathes from "../../../router/pathes";
 
 const HeaderLayout = () => {
   return (
@@ -23,7 +24,7 @@ const HeaderLayout = () => {
           </Grid>
           <Grid item xs={3} className={style.profile}>
             <Link
-              to="/login"
+              to={pathes.LOGIN}
               style={{
                 color: "rgb(209 209 209 / 61%)",
                 marginLeft: "16px",

@@ -2,10 +2,10 @@ const pathes = {
   LOGIN: "/login",
   HOMEPAGE: "/",
   CHECKOUT: "/checkout",
-  RESERVATION: "/reservation",
+  RESERVATION: "/reserve-data",
   HALLINTROSELECTION: "/hall",
   CAFEINTROSELECTION: "/cafe",
-  CAFERESERVATION: "/cafe/reservation",
+  CAFERESERVATION: "/cafe-reserve",
   FORBIDDEN: "/401",
   NOTFOUND: "/*",
 };

@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import pathes from "../../../router/pathes";
 import style from "./style.module.scss";
+import { Link } from "react-router-dom";
 
 const ItemSelectionCard = ({
   name,
@@ -36,13 +37,11 @@ const ItemSelectionCard = ({
         </div>
       </Box>
       <div className={style.btnBox}>
-        <Button
-          href={pathes.CAFERESERVATION}
-          variant="outlined"
-          className="primaryButton"
-        >
-          رزرو
-        </Button>
+        <Link to={pathes.CAFERESERVATION}>
+          <Button variant="outlined" className="primaryButton">
+            رزرو
+          </Button>
+        </Link>
       </div>
     </Paper>
   );

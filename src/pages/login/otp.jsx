@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button, TextField } from "@mui/material";
-import { Box } from "@mui/system";
-import style from "./style.module.scss";
+import { Box, Button, TextField } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { setFormStep } from "../../store/features/login-slice";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import pathes from "../../router/pathes";
+import style from "./style.module.scss";
 
 const validationSchema = yup.object({
   digit1: yup.string().min(1, "*").max(1, "* ").required("*"),
@@ -16,11 +16,12 @@ const validationSchema = yup.object({
   digit5: yup.string().min(1, "*").max(1, "* ").required("*"),
 });
 
-const OtpEntry = () => {
-  const navigating = useNavigate();
+function OtpEntry() {
   const dispatch = useDispatch();
-  let [time, setTime] = useState(2);
-  const [allowToResend, setAllowToResend] = useState(false);
+  const navigating = useNavigate();
+  let [count, setCount] = useState({
+    num: 4,
+  });
 
   const formik = useFormik({
     initialValues: {
@@ -32,114 +33,124 @@ const OtpEntry = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      return navigating("/");
+      dispatch(setFormStep(1));
+      return navigating(pathes.HOMEPAGE);
     },
   });
 
-  const timerFunction = () => {
-    setTime(2);
+  const myInterval = () =>
     setInterval(() => {
-      if (time > 0) {
-        setTime((prevTime) => (time = prevTime - 1));
-        console.log("interval");
-      } else {
-        setAllowToResend(true);
-      }
+      setCount((prevState) => {
+        if (prevState.num > 0) {
+          console.log(prevState.num);
+          return {
+            num: prevState.num - 1,
+          };
+        }
+        console.log("out of if");
+        return 0;
+      });
     }, 1000);
+
+  const handleCodeResend = () => {
+    console.log("code resended");
+    setCount({
+      num: 6,
+    });
   };
 
   useEffect(() => {
-    timerFunction();
+    myInterval();
 
     return () => {
-      clearInterval(timerFunction);
+      clearInterval(myInterval);
     };
   }, []);
 
-  const handleCodeResend = () => {
-    timerFunction();
-    console.log("code resended");
-  };
-
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <div>
-        <p>ورود کد</p>
-        <Box className={style.otpBox}>
-          <TextField
-            id="digit1"
-            name="digit1"
-            type="number"
-            value={formik.values.digit1}
-            onChange={formik.handleChange}
-            error={formik.touched.digit1 && Boolean(formik.errors.digit1)}
-            helperText={formik.touched.digit1 && formik.errors.digit1}
-          />
-          <TextField
-            id="digit2"
-            name="digit2"
-            type="number"
-            value={formik.values.digit2}
-            onChange={formik.handleChange}
-            error={formik.touched.digit2 && Boolean(formik.errors.digit2)}
-            helperText={formik.touched.digit2 && formik.errors.digit2}
-          />
-          <TextField
-            id="digit3"
-            name="digit3"
-            type="number"
-            value={formik.values.digit3}
-            onChange={formik.handleChange}
-            error={formik.touched.digit3 && Boolean(formik.errors.digit3)}
-            helperText={formik.touched.digit3 && formik.errors.digit3}
-          />
-          <TextField
-            id="digit4"
-            name="digit4"
-            type="number"
-            value={formik.values.digit4}
-            onChange={formik.handleChange}
-            error={formik.touched.digit4 && Boolean(formik.errors.digit4)}
-            helperText={formik.touched.digit4 && formik.errors.digit4}
-          />
-          <TextField
-            id="digit5"
-            name="digit5"
-            type="number"
-            value={formik.values.digit5}
-            onChange={formik.handleChange}
-            error={formik.touched.digit5 && Boolean(formik.errors.digit5)}
-            helperText={formik.touched.digit5 && formik.errors.digit5}
-          />
-        </Box>
-        <Box
-          sx={{
-            marginBottom: "48px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <p>{time}</p>
-          {!allowToResend ? (
-            <p>تا ارسال دوباره کد</p>
-          ) : (
-            <Button onClick={handleCodeResend}>ارسال دوباره کد</Button>
-          )}
-        </Box>
-        <Button variant="contained" fullWidth type="submit">
-          تایید
-        </Button>
-        <Button
-          onClick={() => dispatch(setFormStep(1))}
-          className="fullW"
-          sx={{ marginTop: "0.5rem" }}
-        >
-          ویرایش شماره
-        </Button>
-      </div>
-    </form>
+    <>
+      <form onSubmit={formik.handleSubmit}>
+        <div>
+          <p>ورود کد</p>
+          <Box className={style.otpBox}>
+            <TextField
+              // ref={inp1}
+              // onInput={(e) => handleSetFocuse(e)}
+              id="digit1"
+              name="digit1"
+              type="number"
+              value={formik.values.digit1}
+              onChange={formik.handleChange}
+              error={formik.touched.digit1 && Boolean(formik.errors.digit1)}
+              helperText={formik.touched.digit1 && formik.errors.digit1}
+            />
+            <TextField
+              // ref={inp2}
+              id="digit2"
+              name="digit2"
+              type="number"
+              value={formik.values.digit2}
+              onChange={formik.handleChange}
+              error={formik.touched.digit2 && Boolean(formik.errors.digit2)}
+              helperText={formik.touched.digit2 && formik.errors.digit2}
+            />
+            <TextField
+              id="digit3"
+              name="digit3"
+              type="number"
+              value={formik.values.digit3}
+              onChange={formik.handleChange}
+              error={formik.touched.digit3 && Boolean(formik.errors.digit3)}
+              helperText={formik.touched.digit3 && formik.errors.digit3}
+            />
+            <TextField
+              id="digit4"
+              name="digit4"
+              type="number"
+              value={formik.values.digit4}
+              onChange={formik.handleChange}
+              error={formik.touched.digit4 && Boolean(formik.errors.digit4)}
+              helperText={formik.touched.digit4 && formik.errors.digit4}
+            />
+            <TextField
+              id="digit5"
+              name="digit5"
+              type="number"
+              value={formik.values.digit5}
+              onChange={formik.handleChange}
+              error={formik.touched.digit5 && Boolean(formik.errors.digit5)}
+              helperText={formik.touched.digit5 && formik.errors.digit5}
+            />
+          </Box>
+          <Box
+            sx={{
+              marginBottom: "48px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <p>{count.num ? count.num : 0}</p>
+            {count.num > 0 ? (
+              <p>تا ارسال دوباره کد</p>
+            ) : (
+              <Button onClick={handleCodeResend}>ارسال دوباره کد</Button>
+            )}
+          </Box>
+          <Button variant="contained" fullWidth type="submit">
+            تایید
+          </Button>
+          <Button
+            onClick={() => dispatch(setFormStep(1))}
+            className="fullW"
+            sx={{ marginTop: "0.5rem" }}
+          >
+            ویرایش شماره
+          </Button>
+        </div>
+      </form>
+    </>
   );
-};
+}
 
 export default OtpEntry;
