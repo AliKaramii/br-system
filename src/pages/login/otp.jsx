@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box, Button, TextField } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { setFormStep } from "../../store/features/login-slice";
@@ -19,6 +19,12 @@ const validationSchema = yup.object({
 function OtpEntry() {
   const dispatch = useDispatch();
   const navigating = useNavigate();
+  const ref1 = useRef();
+  const ref2 = useRef();
+  const ref3 = useRef();
+  const ref4 = useRef();
+  const ref5 = useRef();
+  const confirmBtnRef = useRef();
   let [count, setCount] = useState({
     num: 4,
   });
@@ -60,12 +66,17 @@ function OtpEntry() {
   };
 
   useEffect(() => {
+    ref1.current.focus();
     myInterval();
 
     return () => {
       clearInterval(myInterval);
     };
   }, []);
+
+  const handleRefDetect = (nextRef) => {
+    nextRef.current.focus();
+  };
 
   return (
     <>
@@ -74,50 +85,57 @@ function OtpEntry() {
           <p>ورود کد</p>
           <Box className={style.otpBox}>
             <TextField
-              // ref={inp1}
-              // onInput={(e) => handleSetFocuse(e)}
+              inputRef={ref5}
               id="digit1"
               name="digit1"
               type="number"
               value={formik.values.digit1}
               onChange={formik.handleChange}
+              onInput={() => handleRefDetect(confirmBtnRef)}
               error={formik.touched.digit1 && Boolean(formik.errors.digit1)}
               helperText={formik.touched.digit1 && formik.errors.digit1}
             />
             <TextField
-              // ref={inp2}
+              inputRef={ref4}
               id="digit2"
               name="digit2"
               type="number"
               value={formik.values.digit2}
               onChange={formik.handleChange}
+              onInput={() => handleRefDetect(ref5)}
               error={formik.touched.digit2 && Boolean(formik.errors.digit2)}
               helperText={formik.touched.digit2 && formik.errors.digit2}
             />
             <TextField
+              inputRef={ref3}
               id="digit3"
               name="digit3"
               type="number"
               value={formik.values.digit3}
+              onInput={() => handleRefDetect(ref4)}
               onChange={formik.handleChange}
               error={formik.touched.digit3 && Boolean(formik.errors.digit3)}
               helperText={formik.touched.digit3 && formik.errors.digit3}
             />
             <TextField
+              inputRef={ref2}
               id="digit4"
               name="digit4"
               type="number"
               value={formik.values.digit4}
               onChange={formik.handleChange}
+              onInput={() => handleRefDetect(ref3)}
               error={formik.touched.digit4 && Boolean(formik.errors.digit4)}
               helperText={formik.touched.digit4 && formik.errors.digit4}
             />
             <TextField
+              inputRef={ref1}
               id="digit5"
               name="digit5"
               type="number"
               value={formik.values.digit5}
               onChange={formik.handleChange}
+              onInput={() => handleRefDetect(ref2)}
               error={formik.touched.digit5 && Boolean(formik.errors.digit5)}
               helperText={formik.touched.digit5 && formik.errors.digit5}
             />
@@ -137,7 +155,12 @@ function OtpEntry() {
               <Button onClick={handleCodeResend}>ارسال دوباره کد</Button>
             )}
           </Box>
-          <Button variant="contained" fullWidth type="submit">
+          <Button
+            ref={confirmBtnRef}
+            variant="contained"
+            fullWidth
+            type="submit"
+          >
             تایید
           </Button>
           <Button
