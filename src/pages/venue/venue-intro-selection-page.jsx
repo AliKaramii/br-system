@@ -4,16 +4,19 @@ import HeaderLayout from "../../components/layout/header";
 import IntroSelectionLayout from "../../components/layout/intro-selection";
 
 // ! come from API
-import { SampleHallItems, hallData } from "../../mock-data/hall.js";
+import { SampleVenueItems, venueData } from "../../services/mock-data/venue.js";
 
-const HallIntroSelectionPage = () => {
+const VenueIntroSelectionPage = () => {
   return (
     <>
       <HeaderLayout />
-      <IntroSelectionLayout itemsData={SampleHallItems} placeData={hallData} />
+      <IntroSelectionLayout
+        itemsData={SampleVenueItems}
+        placeData={venueData}
+      />
       <FooterLayout />
     </>
   );
 };
 
-export default HallIntroSelectionPage;
+export default VenueIntroSelectionPage;

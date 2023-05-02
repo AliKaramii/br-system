@@ -5,7 +5,7 @@ import Header from "../../components/layout/header";
 import IntroSelectionLayout from "../../components/layout/intro-selection";
 
 // ! come from API
-import { sampleCafeItems, cafeData } from "../../mock-data/cafe.js";
+import { sampleCafeItems, cafeData } from "../../services/mock-data/cafe.js";
 
 const CafeIntroSelectionPage = () => {
   useEffect(() => {

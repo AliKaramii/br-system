@@ -3,7 +3,7 @@ const pathes = {
   HOMEPAGE: "/",
   CHECKOUT: "/checkout",
   RESERVATION: "/reserve-data",
-  HALLINTROSELECTION: "/hall",
+  VENUEINTROSELECTION: "/venue",
   CAFEINTROSELECTION: "/cafe",
   CAFERESERVATION: "/cafe-reserve",
   FORBIDDEN: "/401",

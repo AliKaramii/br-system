@@ -1,6 +1,6 @@
 // !come from API
-import { sampleComments } from "../../mock-data/comments.js";
-import { cafeItemData } from "../../mock-data/cafe.js";
+import { sampleComments } from "../../services/mock-data/comments.js";
+import { cafeItemData } from "../../services/mock-data//cafe.js";
 
 import React from "react";
 import HeaderLayout from "../../components/layout/header";

@@ -1,15 +1,15 @@
-import sectionBackground from "../assets/images/cafe-banner.jpg";
-import sampleImage from "../assets/images/cafe-sample.png";
-import sampleImage2 from "../assets/images/cafe-sample2.png";
-import sampleImage3 from "../assets/images/cafe-sample3.png";
-import sampleImage4 from "../assets/images/cafe-sample4.png";
-import cakeIcon from "../assets/svg/cafe-icon-cake.svg";
-import drinkIcon from "../assets/svg/cafe-icon-drink.svg";
-import friesIcon from "../assets/svg/cafe-icon-fries.svg";
-import foodMenuItem from "../assets/images/cafe-sample.png";
+import sectionBackground from "../../assets/images/cafe-banner.jpg";
+import sampleImage from "../../assets/images/cafe-sample.png";
+import sampleImage2 from "../../assets/images/cafe-sample2.png";
+import sampleImage3 from "../../assets/images/cafe-sample3.png";
+import sampleImage4 from "../../assets/images/cafe-sample4.png";
+import cakeIcon from "../../assets/svg/cafe-icon-cake.svg";
+import drinkIcon from "../../assets/svg/cafe-icon-drink.svg";
+import friesIcon from "../../assets/svg/cafe-icon-fries.svg";
+import foodMenuItem from "../../assets/images/cafe-sample.png";
 
-import img from "../assets/images/cafe-sample.png";
-import img2 from "../assets/images/cafe-sample2.png";
+import img from "../../assets/images/cafe-sample.png";
+import img2 from "../../assets/images/cafe-sample2.png";
 
 // * Cafe Selection
 export const cafeData = {
@@ -302,7 +302,7 @@ export const cafeMenuMock = [
     id: 1,
     itemName: "نوشیدنی سرد  1",
     price: 200,
-    amount: 1,
+    amount: 0,
     max: 30,
     img: img2,
     ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
@@ -313,7 +313,7 @@ export const cafeMenuMock = [
     id: 2,
     itemName: "نوشیدنی سرد  2",
     price: 100,
-    amount: 1,
+    amount: 0,
     max: 30,
     img: img,
     ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
@@ -324,7 +324,7 @@ export const cafeMenuMock = [
     id: 3,
     itemName: "نوشیدنی سرد  3",
     price: 600,
-    amount: 1,
+    amount: 2,
     max: 30,
     img: img2,
     ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",

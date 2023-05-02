@@ -8,7 +8,7 @@ import { theme } from "./assets/themes/theme.js";
 import { Provider } from "react-redux";
 import store from "./store/index.js";
 // ! Remove - came from API
-import "./services/mock-data/cafe-mock-server.js";
+import "./services/mock-data/mock-server.js";
 
 // for rtl
 import { CacheProvider } from "@emotion/react";

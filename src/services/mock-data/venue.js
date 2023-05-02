@@ -1,8 +1,8 @@
-import sampleImage from "../assets/images/hall-sample.png";
-import sampleImage2 from "../assets/images/hall-sample2.png";
-import sectionBackground from "../assets/images/hall-banner.jpg";
+import sampleImage from "../../assets/images/venue-sample.png";
+import sampleImage2 from "../../assets/images/venue-sample2.png";
+import sectionBackground from "../../assets/images/venue-banner.jpg";
 
-export const SampleHallItems = [
+export const SampleVenueItems = [
   {
     name: "اتاق فکر شیشه ای",
     description: "جهت برگزاری جلسات مدیریت ",
@@ -37,7 +37,7 @@ export const SampleHallItems = [
   },
 ];
 
-export const hallData = {
+export const venueData = {
   introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
   title: " سالن تشریفات",
   background: sectionBackground,

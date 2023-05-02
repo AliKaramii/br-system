@@ -5,16 +5,19 @@ import {
   Typography,
 } from "@mui/material";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const AddableFormFeild = ({ label, id, name }) => {
+const AddableFormFeild = ({ label, id, name, pointListTaker }) => {
   let [addedList, setAddedList] = useState([]);
   const itemField = useRef();
-
   const handleItemAdding = () => {
     setAddedList((current) => [itemField.current.value, ...current]);
     itemField.current.value = "";
   };
+
+  useEffect(() => {
+    pointListTaker(addedList);
+  }, [addedList]);
 
   return (
     <>

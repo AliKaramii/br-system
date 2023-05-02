@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 import ShoppingCart from "../../common/shopping-cart";
 import MenuItemFood from "./menu-item-food";
 import style from "./style.module.scss";
+import ShoppingCartModal from "../../common/shopping-cart/shopping-cart-modal";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -111,7 +112,6 @@ export default function FoodMenuLayout({ menuData }) {
           const currentData = cat.category[b];
           // console.log("currentData:::", currentData);
           return (
-            // ToDo > p nesting error
             <TabPanel value={value} index={b} dir="rtl" key={b}>
               <Grid container spacing={4}>
                 <Grid item md={8}>
@@ -120,9 +120,10 @@ export default function FoodMenuLayout({ menuData }) {
                   </Grid>
                 </Grid>
                 <Grid item md={4}>
-                  <Box>
+                  <Box sx={{ display: { xs: "none", md: "block" } }}>
                     <ShoppingCart />
                   </Box>
+                  <ShoppingCartModal />
                 </Grid>
               </Grid>
             </TabPanel>

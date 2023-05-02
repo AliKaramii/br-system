@@ -1,13 +1,11 @@
-import style from "./style.module.scss";
+import React from "react";
 import { Link } from "react-router-dom";
+import style from "./style.module.scss";
 
-// ! come from API
-import { homeItems } from "../../mock-data/home.js";
-
-const IconTiles = () => {
+const IconTiles = ({ data }) => {
   return (
     <div className={style.tileContainer}>
-      {homeItems.map((item, index) => {
+      {data.data.map((item, index) => {
         return (
           <div key={index} className={style.item}>
             <Link to={item.path}>

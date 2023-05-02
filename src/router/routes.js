@@ -3,7 +3,7 @@ import HomePage from "../pages/home-page";
 import pathes from "./pathes";
 import CafeIntroSelectionPage from "../pages/cafe/cafe-intro-selection-page.jsx";
 import CafeReservationPage from "../pages/cafe/cafe-reservation-page.jsx";
-import HallIntroSelectionPage from "../pages/hall/hall-intro-selection-page.jsx";
+import VenueIntroSelectionPage from "../pages/venue/venue-intro-selection-page.jsx";
 import CheckoutPage from "../pages/checkout";
 import FormSecondStepPage from "../pages/cafe/form-second-step";
 import NotFoundPage from "../pages/not-found";
@@ -51,9 +51,9 @@ const routes = [
     needAuth: false,
   },
   {
-    name: "HALLINTROSELECTION",
-    path: pathes.HALLINTROSELECTION,
-    component: HallIntroSelectionPage,
+    name: "VENUEINTROSELECTION",
+    path: pathes.VENUEINTROSELECTION,
+    component: VenueIntroSelectionPage,
     exact: true,
     needAuth: false,
   },

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { cafeMenuMock } from "../../mock-data/cafe";
+import { cafeMenuMock } from "../../services/mock-data/cafe.js";
 
 const cartSlice = createSlice({
   name: "post",

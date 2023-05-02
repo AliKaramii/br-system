@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartSlice from "./features/shopping-cart-food-slice.js";
 import loginSlice from "./features/login-slice.js";
-import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
+// import storage from "redux-persist/lib/storage";
+// import { persistReducer } from "redux-persist";
 import { combineReducers } from "redux";
 
 // const persistConfig = {

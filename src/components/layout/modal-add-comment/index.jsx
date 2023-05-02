@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Button,
   Checkbox,
@@ -8,22 +9,23 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
 import AddableFormFeild from "../../common/addable-form-field";
-import style from "./style.module.scss";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import style from "./style.module.scss";
 
 const validationSchema = yup.object({
-  date: yup
+  desc: yup
     .string()
-    .min(3, "عنوان نظر")
-    .max(300, "تاریخ  ")
-    .required("عنوان نظر را وارد کنید"),
+    .min(3, "کوتاه تر از حداقل کاراکتر مجاز")
+    .max(300, "طولانی تر از حداکثر کاراکتر مجاز ")
+    .required("توضیحات را وارد کنید"),
 });
 
 const AddCommentModal = () => {
   const [open, setOpen] = useState(false);
+  const [posPoints, setPosPoints] = useState("POS");
+  const [negPoints, setNegPoints] = useState("NEG");
 
   const handleOpen = () => {
     setOpen(true);
@@ -32,12 +34,20 @@ const AddCommentModal = () => {
     setOpen(false);
   };
 
+  const setValues = () => {
+    formik.values.negPoints = negPoints;
+    formik.values.posPoints = posPoints;
+  };
+
   const formik = useFormik({
     initialValues: {
-      title: "",
+      desc: "",
+      posPoints: "",
+      negPoints: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
+      setValues();
       console.log(values);
       return setOpen(false);
     },
@@ -81,21 +91,20 @@ const AddCommentModal = () => {
                       variant="standard"
                       sx={{ marginBottom: 2 }}
                       fullWidth
-                      id="title"
-                      name="title"
-                      label="عنوان نظر"
-                      value={formik.values.title}
+                      id="desc"
+                      name="desc"
+                      label="توضیحات"
+                      value={formik.values.desc}
                       onChange={formik.handleChange}
-                      error={
-                        formik.touched.title && Boolean(formik.errors.title)
-                      }
-                      helperText={formik.touched.title && formik.errors.title}
+                      error={formik.touched.desc && Boolean(formik.errors.desc)}
+                      helperText={formik.touched.desc && formik.errors.desc}
                     />
                   </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <div>
                     <AddableFormFeild
+                      pointListTaker={setPosPoints}
                       label="نقاط قوت"
                       id="posPoints"
                       name="posPoints"
@@ -105,6 +114,7 @@ const AddCommentModal = () => {
                 <Grid item xs={12} md={6}>
                   <div>
                     <AddableFormFeild
+                      pointListTaker={setNegPoints}
                       label="نقاط ضعف"
                       id="negPoints"
                       name="negPoints"

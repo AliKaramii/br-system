@@ -30,7 +30,12 @@ const Login = () => {
             {renderForm()}
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6} padding={2}>
+        <Grid
+          item
+          sx={{ display: { xs: "none", sm: "block" } }}
+          sm={6}
+          padding={2}
+        >
           <div className={style.loginImage}>
             <img src={loginIll} alt="login" />
           </div>

@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Button, TextField } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setFormStep } from "../../store/features/login-slice";
 
 const validationSchema = yup.object({
-  phoneNumber: yup
-    .string()
-    .min(1, "شماره همراه شامل 11 رقم است  ")
-    // .max(11, "شماره همراه شامل 11 رقم است  ")
-    .required("شماره خود را وارد کنید"),
+  phoneNumber: yup.string(),
+  // .min(11, "شماره همراه شامل 11 رقم است  ")
+  // .max(11, "شماره همراه شامل 11 رقم است  ")
+  // .required("شماره خود را وارد کنید"),
 });
 
 const PhoneNumber = () => {
   const dispatch = useDispatch();
-  const { formStep } = useSelector((state) => state.login);
+  // const { formStep } = useSelector((state) => state.login);
 
   const formik = useFormik({
     initialValues: {
@@ -28,11 +27,11 @@ const PhoneNumber = () => {
     },
   });
 
-  const [number, setNumber] = useState("");
+  // const [number, setNumber] = useState("");
 
-  const handleOnChange = (e) => {
-    setNumber(e.target.value);
-  };
+  // const handleOnChange = (e) => {
+  //   setNumber(e.target.value);
+  // };
 
   return (
     <form onSubmit={formik.handleSubmit}>

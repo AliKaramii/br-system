@@ -77,3 +77,21 @@ input::-webkit-inner-spin-button {
   }
 }
 //
+.dateTime-input > div > div:not(.MuiInputAdornment-root) {
+  position: absolute;
+  width: 100%;
+}
+.rmdp-container {
+  width: 100%;
+}
+.rmdp-container input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding-left: 30px;
+}
+.rmdp-input:focus {
+  border: none;
+  box-shadow: none;
+}

@@ -8,3 +8,18 @@
   align-items: center;
   height: 500px;
 }
+.modal {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 80%;
+  height: 80vh;
+  overflow: auto;
+  background-color: $color9;
+}
+.modalTitle {
+  padding: 16px;
+}
+.modalBody {
+  padding: 16px 40px;
+}

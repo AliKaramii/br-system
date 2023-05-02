@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Pagination, Typography } from "@mui/material";
-import * as React from "react";
+import React, { useState } from "react";
 
 import userIcon from "../../../assets/svg/user-icon.svg";
 import dateIcon from "../../../assets/svg/calendar-icon.svg";
@@ -9,6 +9,17 @@ import style from "./style.module.scss";
 import AddCommentModal from "../../layout/modal-add-comment";
 
 const UserComment = ({ data }) => {
+  const [page, setPage] = useState(1);
+  const PER_PAGE = 2;
+  console.log("env:", process.env.REACT_APP_COMMENT_PER_PAGE);
+  const count = 10; // TODO > remove this line and uncomment next line in API integration
+  // const count = Math.ceil(data.length / PER_PAGE);
+
+  const handleChange = (event, value) => {
+    setPage(value);
+    console.log();
+  };
+
   return (
     <Box margin={4}>
       <Grid
@@ -80,7 +91,14 @@ const UserComment = ({ data }) => {
         );
       })}
       <Box display="flex" justifyContent="center">
-        <Pagination count={4} color="primary" shape="rounded" dir="ltr" />
+        <Pagination
+          count={count}
+          page={page}
+          onChange={handleChange}
+          color="primary"
+          shape="rounded"
+          dir="ltr"
+        />
       </Box>
     </Box>
   );

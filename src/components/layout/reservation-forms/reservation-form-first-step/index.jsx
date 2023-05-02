@@ -1,5 +1,15 @@
 import React, { useState } from "react";
-import { Button, Grid, Modal, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Modal,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
@@ -7,10 +17,12 @@ import { useFormik } from "formik";
 import InputAdornment from "@mui/material/InputAdornment";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import DateRangeIcon from "@mui/icons-material/DateRange";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+// import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 // import { position } from "stylis";
 import style from "./style.module.scss";
 import pathes from "../../../../router/pathes";
+import PersianDatePicker from "../../../base/dateTime/persianDatePicker";
+import PersianTimePicker from "../../../base/dateTime/persianTimePicker";
 // import { useTheme } from "@emotion/react";
 
 const validationSchema = yup.object({
@@ -72,78 +84,106 @@ const ReservationFormFirstStepLayout = () => {
               className={style.modalBody}
             >
               {/* {console.log("theme >", theme.direction)} */}
-              <Grid xs={6} item>
+              <Grid item xs={12} sm={6}>
                 <div>
                   <TextField
                     variant="standard"
                     sx={{ marginBottom: 4 }}
                     fullWidth
+                    className="dateTime-input"
                     id="date"
                     name="date"
-                    label="انتخاب تاریخ"
                     value={formik.values.date}
                     onChange={formik.handleChange}
                     error={formik.touched.date && Boolean(formik.errors.date)}
                     helperText={formik.touched.date && formik.errors.date}
                     InputProps={{
                       endAdornment: (
-                        <InputAdornment position="end">
-                          <DateRangeIcon />
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                </div>
-
-                <div>
-                  <TextField
-                    variant="standard"
-                    sx={{ marginBottom: 4 }}
-                    fullWidth
-                    id="servingPlace"
-                    name="servingPlace"
-                    label="محل ارائه"
-                    value={formik.values.servingPlace}
-                    onChange={formik.handleChange}
-                    error={
-                      formik.touched.servingPlace &&
-                      Boolean(formik.errors.servingPlace)
-                    }
-                    helperText={
-                      formik.touched.servingPlace && formik.errors.servingPlace
-                    }
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <LocationOnOutlinedIcon />
-                        </InputAdornment>
+                        <>
+                          <PersianDatePicker />
+                          <InputAdornment position="end">
+                            <DateRangeIcon />
+                          </InputAdornment>
+                        </>
                       ),
                     }}
                   />
                 </div>
               </Grid>
-              <Grid item xs={6}>
+
+              <Grid item xs={12} sm={6}>
                 <div>
                   <TextField
                     variant="standard"
                     sx={{ marginBottom: 4 }}
+                    className="dateTime-input"
                     fullWidth
                     id="time"
                     name="time"
-                    label="انتخاب ساعت"
                     value={formik.values.time}
                     onChange={formik.handleChange}
                     error={formik.touched.time && Boolean(formik.errors.time)}
                     helperText={formik.touched.time && formik.errors.time}
                     InputProps={{
                       endAdornment: (
-                        <InputAdornment position="end">
-                          <AccessTimeIcon />
-                        </InputAdornment>
+                        <>
+                          <PersianTimePicker />
+                          <InputAdornment position="end">
+                            <AccessTimeIcon />
+                          </InputAdornment>
+                        </>
                       ),
                     }}
                   />
                 </div>
+              </Grid>
+              <Grid item xs={12}>
+                <Grid container>
+                  <Grid item xs={12} sm={6}>
+                    <div>
+                      <FormControl
+                        fullWidth
+                        variant="standard"
+                        sx={{ marginBottom: 4 }}
+                        id="servingPlace"
+                        name="servingPlace"
+                        label="محل ارائه"
+                        value={formik.values.servingPlace}
+                        onChange={formik.handleChange}
+                        error={
+                          formik.touched.servingPlace &&
+                          Boolean(formik.errors.servingPlace)
+                        }
+                      >
+                        <InputLabel id="demo-simple-select-label">
+                          محل ارائه
+                        </InputLabel>
+                        <Select
+                          // helperText={
+                          //   formik.touched.servingPlace &&
+                          //   formik.errors.servingPlace
+                          // }
+                          // InputProps={{
+                          //   endAdornment: (
+                          //     <InputAdornment position="end">
+                          //       <LocationOnOutlinedIcon />
+                          //     </InputAdornment>
+                          //   ),
+                          // }}
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value="10"
+                          label="محل ارائه"
+                        >
+                          <MenuItem value={10}>محل کافی شاپ</MenuItem>
+                          <MenuItem value={20}>واحد 201</MenuItem>
+                          <MenuItem value={30}>لابی ساختمان</MenuItem>
+                          <MenuItem value={30}>اتاق تشریفات </MenuItem>
+                        </Select>
+                      </FormControl>
+                    </div>
+                  </Grid>
+                </Grid>
               </Grid>
               <Grid item xs={12}>
                 <div>
