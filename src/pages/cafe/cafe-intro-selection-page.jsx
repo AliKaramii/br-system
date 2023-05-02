@@ -1,28 +1,37 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect, useState } from "react";
+import { Box } from "@mui/material";
+import { fetchData } from "../../services/http-client";
 import Footer from "../../components/layout/footer";
 import Header from "../../components/layout/header";
 import IntroSelectionLayout from "../../components/layout/intro-selection";
-
-// ! come from API
-import { sampleCafeItems, cafeData } from "../../services/mock-data/cafe.js";
+import Loading from "../../components/common/loading";
 
 const CafeIntroSelectionPage = () => {
+  const [cafeItemsData, setCafeItemsData] = useState();
+  const [cafeData, setCafeData] = useState();
+
   useEffect(() => {
-    fetch("/api/cafe/places")
-      .then((res) => {
-        console.log("res:>", res);
-        return res.json();
-      })
-      .then((data) => {
-        console.log("data:>", data);
-      });
+    fetchData("/cafe/places").then((fetchedData) =>
+      setCafeItemsData(fetchedData)
+    );
+
+    fetchData("/cafe").then((fetchedData) => setCafeData(fetchedData));
   }, []);
+
+  const renderSelectionLayout = () => {
+    return cafeItemsData && cafeData ? (
+      <IntroSelectionLayout itemsData={cafeItemsData} placeData={cafeData} />
+    ) : (
+      <Box sx={{ minHeight: "80vh" }}>
+        <Loading />
+      </Box>
+    );
+  };
 
   return (
     <>
       <Header />
-      <IntroSelectionLayout itemsData={sampleCafeItems} placeData={cafeData} />
+      {renderSelectionLayout()}
       <Footer />
     </>
   );

@@ -46,7 +46,7 @@ function a11yProps(index) {
 }
 
 export default function FoodMenuLayout({ menuData }) {
-  console.log("**menuData**", menuData);
+  // console.log("**menuData**", menuData);
   // const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -63,7 +63,7 @@ export default function FoodMenuLayout({ menuData }) {
       <Box className={style.menuType}>
         {menuData.map((item, index) => {
           return (
-            <Button key={index}>
+            <Button key={index} sx={{ padding: "16px 8px" }}>
               <img src={item.groupIcon} alt="منو" />
               {item.groupTitle}
             </Button>

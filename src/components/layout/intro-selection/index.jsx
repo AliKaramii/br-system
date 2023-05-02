@@ -26,7 +26,7 @@ const IntroSelectionLayout = ({ placeData, itemsData }) => {
                     <ItemSelectionCard
                       name={item.name}
                       description={item.description}
-                      image={item.image}
+                      image={item.featuredImage}
                       capacity={item.capacity}
                       ratting={item.ratting}
                       person={item.person}

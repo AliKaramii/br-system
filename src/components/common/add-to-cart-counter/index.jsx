@@ -22,7 +22,7 @@ const sx = {
 };
 
 const AddToCartCounterBtn = ({ id }) => {
-  console.log("id from adBTN:", id);
+  // console.log("id from adBTN:", id);
   const dispatch = useDispatch();
 
   // const { totalAmount } = useSelector((state) => state.foodShoppingCart);

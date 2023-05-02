@@ -32,6 +32,12 @@ createServer({
   routes() {
     this.namespace = "api";
 
+    this.get("/login", () => {
+      return {
+        otpKey: 11111,
+      };
+    });
+
     this.get("/home", () => {
       return {
         data: [
@@ -85,7 +91,7 @@ createServer({
 
     this.get("/cafe", () => {
       return {
-        cafeData: {
+        data: {
           introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
           title: "کافی شاپ",
           background: sectionBackground,
@@ -101,7 +107,7 @@ createServer({
 
     this.get("/cafe/places", () => {
       return {
-        cafe: [
+        data: [
           {
             name: "کافی شاپ تک ستاره",
             description: "جهت برگزاری جلسات مدیریت ",
@@ -139,7 +145,7 @@ createServer({
           {
             name: "کافی شاپ پینار",
             description: "جهت برگزاری جلسات مدیریت",
-            image: sampleImage2,
+            featuredImage: sampleImage2,
             capacity: 22,
             ratting: 4,
             person: 59,
@@ -155,7 +161,7 @@ createServer({
           {
             name: "کافی شاپ شاملو",
             description: "جهت برگزاری جلسات مدیریت",
-            image: sampleImage3,
+            featuredImage: sampleImage3,
             capacity: 10,
             ratting: 4,
             person: 452,
@@ -171,7 +177,7 @@ createServer({
           {
             name: "روف گاردن بار",
             description: "جهت برگزاری جلسات مدیریت",
-            image: sampleImage4,
+            featuredImage: sampleImage4,
             capacity: 50,
             ratting: 5,
             person: 20,
@@ -370,15 +376,17 @@ createServer({
 
     this.get("/venue", () => {
       return {
-        introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
-        title: " سالن تشریفات",
-        background: venueSectionBackground,
-        rules: [
-          "حضور شما حتی بدون سفارش بلامانع است",
-          "لطفا برای تغییر میز هماهنگ فرمایید",
-          "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
-          "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
-        ],
+        data: {
+          introText: `از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.`,
+          title: " سالن تشریفات",
+          background: venueSectionBackground,
+          rules: [
+            "حضور شما حتی بدون سفارش بلامانع است",
+            "لطفا برای تغییر میز هماهنگ فرمایید",
+            "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
+            "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+          ],
+        },
       };
     });
 
@@ -388,7 +396,7 @@ createServer({
           {
             name: "اتاق فکر شیشه ای",
             description: "جهت برگزاری جلسات مدیریت ",
-            image: venueSampleImage,
+            featuredImage: venueSampleImage,
             capacity: 15,
             ratting: 3,
             person: 130,
@@ -396,7 +404,7 @@ createServer({
           {
             name: "اتاق جلسات VIP",
             description: "جهت برگزاری جلسات مدیریت",
-            image: venueSampleImage2,
+            featuredImage: venueSampleImage2,
             capacity: 22,
             ratting: 4,
             person: 59,
@@ -404,7 +412,7 @@ createServer({
           {
             name: "سالن کنفرانس",
             description: "جهت برگزاری جلسات مدیریت",
-            image: venueSampleImage,
+            featuredImage: venueSampleImage,
             capacity: 10,
             ratting: 4,
             person: 452,
@@ -412,7 +420,7 @@ createServer({
           {
             name: "سالن همایش",
             description: "جهت برگزاری جلسات مدیریت",
-            image: venueSampleImage2,
+            featuredImage: venueSampleImage2,
             capacity: 50,
             ratting: 5,
             person: 20,

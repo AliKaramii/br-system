@@ -10,8 +10,8 @@ import AddCommentModal from "../../layout/modal-add-comment";
 
 const UserComment = ({ data }) => {
   const [page, setPage] = useState(1);
-  const PER_PAGE = 2;
-  console.log("env:", process.env.REACT_APP_COMMENT_PER_PAGE);
+  // const PER_PAGE = 2;
+  // console.log("env:", process.env.REACT_APP_COMMENT_PER_PAGE);
   const count = 10; // TODO > remove this line and uncomment next line in API integration
   // const count = Math.ceil(data.length / PER_PAGE);
 

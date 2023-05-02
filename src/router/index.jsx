@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import checkAuth from "../services/mock-data/auth-mock/check-auth";
 import Loading from "../components/common/loading";
@@ -6,28 +6,20 @@ import routes from "./routes";
 
 const token = checkAuth(false);
 
-class RouterProvider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isAuthenticated: null,
-    };
-  }
-  componentDidMount() {
+const RouterProvider = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
+
+  useEffect(() => {
     setTimeout(() => {
       if (token) {
-        this.setState({
-          isAuthenticated: true,
-        });
+        setIsAuthenticated(true);
       } else {
-        this.setState({
-          isAuthenticated: false,
-        });
+        setIsAuthenticated(false);
       }
-    }, 300);
-  }
-  hendleRouterEnter = (route) => {
-    const { isAuthenticated } = this.state;
+    }, 200);
+  }, []);
+
+  const hendleRouterEnter = (route) => {
     if (isAuthenticated && route.needAuth) {
       return <route.component />;
     } else {
@@ -35,15 +27,12 @@ class RouterProvider extends React.Component {
       //   return <Redirect to="/403" />;
     }
   };
-  render() {
-    const { isAuthenticated } = this.state;
 
-    if (isAuthenticated === null) {
-      return <Loading />;
-    }
-
+  if (isAuthenticated === null) {
+    return <Loading />;
+  } else {
     return (
-      <BrowserRouter>
+      <BrowserRouter scrollRestoration="manual">
         <Routes>
           {routes.map((route, index) => (
             <Route
@@ -51,11 +40,7 @@ class RouterProvider extends React.Component {
               path={route.path}
               exact={route.exact}
               element={
-                route.needAuth ? (
-                  this.hendleRouterEnter(route)
-                ) : (
-                  <route.component />
-                )
+                route.needAuth ? hendleRouterEnter(route) : <route.component />
               }
             ></Route>
           ))}
@@ -63,6 +48,6 @@ class RouterProvider extends React.Component {
       </BrowserRouter>
     );
   }
-}
+};
 
 export default RouterProvider;
