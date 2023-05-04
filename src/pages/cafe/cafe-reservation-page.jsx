@@ -1,6 +1,3 @@
-// !come from API
-import { cafeItemData } from "../../services/mock-data//cafe.js";
-
 import React, { useEffect, useState } from "react";
 import HeaderLayout from "../../components/layout/header";
 import FooterLayout from "../../components/layout/footer";
@@ -9,20 +6,24 @@ import GalleryRulesLayout from "../../components/layout/gallery-rules";
 import FoodMenuLayout from "../../components/layout/food-menu";
 import { fetchData } from "../../services/http-client.js";
 
-const { menu } = cafeItemData;
-
 const CafeReservationPage = () => {
   const [commentData, setData] = useState();
+  const [cafeItemData, setCafeItemData] = useState();
+  const [cafeMenu, setCafeMenu] = useState();
 
   useEffect(() => {
     fetchData("/comments").then((fetchedData) => setData(fetchedData));
+    fetchData("/cafe/places").then((fetchedData) =>
+      setCafeItemData(fetchedData[0])
+    );
+    fetchData("/foodmenu").then((fetchedData) => setCafeMenu(fetchedData));
   }, []);
 
   return (
     <>
       <HeaderLayout />
-      <GalleryRulesLayout data={cafeItemData} />
-      <FoodMenuLayout menuData={menu} />
+      {cafeItemData && <GalleryRulesLayout data={cafeItemData} />}
+      {cafeMenu && <FoodMenuLayout menuData={cafeMenu} />}
       {commentData && <CommentInfoLayout data={commentData} />}
       <FooterLayout />
     </>

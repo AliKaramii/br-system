@@ -26,7 +26,7 @@ function OtpEntry() {
   const ref5 = useRef();
   const confirmBtnRef = useRef();
   let [count, setCount] = useState({
-    num: 4,
+    num: process.env.REACT_APP_LOGIN_OTP_TIMER,
   });
 
   const formik = useFormik({

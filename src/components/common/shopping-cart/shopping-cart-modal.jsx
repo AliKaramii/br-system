@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { Button, Modal } from "@mui/material";
 import { Box } from "@mui/system";
 import style from "./style.module.scss";
+import { useSelector } from "react-redux";
 import ShoppingCart from ".";
 
 const ShoppingCartModal = () => {
   const [open, setOpen] = useState(false);
   const [showCartBtn, setShowCartBtn] = useState(true);
+  const { totalCount } = useSelector((state) => state.foodShoppingCart);
 
   const handleOpen = () => {
     setOpen(true);
@@ -26,15 +28,15 @@ const ShoppingCartModal = () => {
           onClick={handleOpen}
           sx={{
             display: { xs: "Block", md: "none" },
-            width: "calc(100% - 8px)",
+            width: "calc(100% - 32px)",
             position: "fixed",
             bottom: "8px",
-            left: "4px",
-            right: "4px",
+            left: "16px",
+            right: "16px",
             zIndex: 2000,
           }}
         >
-          سبد خرید
+          سبد خرید ({totalCount})
         </Button>
       )}
 

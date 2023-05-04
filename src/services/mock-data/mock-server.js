@@ -112,6 +112,17 @@ createServer({
             name: "کافی شاپ تک ستاره",
             description: "جهت برگزاری جلسات مدیریت ",
             featuredImage: sampleImage,
+            capacity: 15,
+            ratting: 3,
+            person: 130,
+            ruleDescription:
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            rules: [
+              "حضور شما حتی بدون سفارش بلامانع است",
+              "لطفا برای تغییر میز هماهنگ فرمایید",
+              "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            ],
             gallery: [
               {
                 original: sampleImage2,
@@ -130,17 +141,6 @@ createServer({
                 thumbnail: sampleImage4,
               },
             ],
-            capacity: 15,
-            ratting: 3,
-            person: 130,
-            ruleDescription:
-              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
-            rules: [
-              "حضور شما حتی بدون سفارش بلامانع است",
-              "لطفا برای تغییر میز هماهنگ فرمایید",
-              "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
-              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
-            ],
           },
           {
             name: "کافی شاپ پینار",
@@ -156,6 +156,24 @@ createServer({
               "لطفا برای تغییر میز هماهنگ فرمایید",
               "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
               "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            ],
+            gallery: [
+              {
+                original: sampleImage2,
+                thumbnail: sampleImage2,
+              },
+              {
+                original: sampleImage,
+                thumbnail: sampleImage,
+              },
+              {
+                original: sampleImage3,
+                thumbnail: sampleImage3,
+              },
+              {
+                original: sampleImage4,
+                thumbnail: sampleImage4,
+              },
             ],
           },
           {
@@ -173,6 +191,24 @@ createServer({
               "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
               "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
             ],
+            gallery: [
+              {
+                original: sampleImage2,
+                thumbnail: sampleImage2,
+              },
+              {
+                original: sampleImage,
+                thumbnail: sampleImage,
+              },
+              {
+                original: sampleImage3,
+                thumbnail: sampleImage3,
+              },
+              {
+                original: sampleImage4,
+                thumbnail: sampleImage4,
+              },
+            ],
           },
           {
             name: "روف گاردن بار",
@@ -189,6 +225,24 @@ createServer({
               "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
               "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
             ],
+            gallery: [
+              {
+                original: sampleImage2,
+                thumbnail: sampleImage2,
+              },
+              {
+                original: sampleImage,
+                thumbnail: sampleImage,
+              },
+              {
+                original: sampleImage3,
+                thumbnail: sampleImage3,
+              },
+              {
+                original: sampleImage4,
+                thumbnail: sampleImage4,
+              },
+            ],
           },
         ],
       };
@@ -196,7 +250,7 @@ createServer({
 
     this.get("/foodmenu", () => {
       return {
-        menu: [
+        data: [
           {
             groupTitle: "نوشیدنی ها",
             groupIcon: drinkIcon,

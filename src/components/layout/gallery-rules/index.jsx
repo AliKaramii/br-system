@@ -5,14 +5,14 @@ import { Container } from "@mui/system";
 import TitleList from "../../common/title-list";
 
 const GalleryRulesLayout = ({ data }) => {
-  const { images, name, rules } = data;
+  const { name, gallery, rules } = data;
 
   return (
     <Container>
       <Grid container columnSpacing={3}>
         <Grid item xs={12} md={6}>
           <ImageGallery
-            items={images}
+            items={gallery}
             showFullscreenButton={false}
             showPlayButton={false}
             showNav={false}

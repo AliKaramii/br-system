@@ -20,21 +20,23 @@ const FormSecondStepLayout = ({ icons }) => {
     <>
       <Container>
         <FormStepper activeStep={1} />
-        <Grid container spacing={5}>
-          <Grid item xs={12} sm={4} marginY={2}>
-            <CheckoutItemCard text={"کافی شاپ پینار"} icon={icons.iconCafe} />
+        <Box marginY={3}>
+          <Grid container spacing={5}>
+            <Grid item xs={12} sm={4}>
+              <CheckoutItemCard text={"کافی شاپ پینار"} icon={icons.iconCafe} />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <CheckoutItemCard
+                text={"تاریخ رزرو : 1402/11/06"}
+                icon={icons.iconClock}
+              />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <CheckoutItemCard text={"17:30"} icon={icons.iconCalendar} />
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={4} marginY={2}>
-            <CheckoutItemCard
-              text={"تاریخ رزرو : 1402/11/06"}
-              icon={icons.iconClock}
-            />
-          </Grid>
-          <Grid item xs={12} sm={4} marginY={2}>
-            <CheckoutItemCard text={"17:30"} icon={icons.iconCalendar} />
-          </Grid>
-        </Grid>
-        <Box>
+        </Box>
+        <Box marginY={2}>
           <Box className={style.formHeader}>
             <Typography component="h3" variant="p">
               رزرو کافی شاپ پینار
