@@ -5,11 +5,9 @@ import AddToCartCounterBtn from "../../common/add-to-cart-counter";
 import style from "./style.module.scss";
 
 const MenuItemFood = ({ menuItems }) => {
-  const menuItemData = menuItems.subCategory;
-
   return (
     <>
-      {menuItemData.map((menuItem, index) => {
+      {menuItems.map((menuItem, index) => {
         return (
           <Grid item xs={12} md={6} key={index}>
             <Card className={style.foodMenuItem}>
@@ -24,7 +22,7 @@ const MenuItemFood = ({ menuItems }) => {
                   <span>{menuItem.ing}</span>
                 </Box>
                 <Box className={style.meuItemPurchase}>
-                  <Typography>{menuItem.price} ریال</Typography>
+                  <Typography>{menuItem.price} تومان</Typography>
                   <AddToCartCounterBtn id={index} />
                 </Box>
               </Box>

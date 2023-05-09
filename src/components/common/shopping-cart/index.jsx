@@ -16,7 +16,7 @@ const ShoppingCart = () => {
     (state) => state.foodShoppingCart
   );
   const { foodShoppingCart } = useSelector((state) => state);
-  console.log(foodShoppingCart);
+  // console.log(foodShoppingCart);
 
   const dispatch = useDispatch();
   useEffect(() => {

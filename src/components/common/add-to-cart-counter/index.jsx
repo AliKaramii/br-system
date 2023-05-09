@@ -22,42 +22,10 @@ const sx = {
 };
 
 const AddToCartCounterBtn = ({ id }) => {
-  // console.log("id from adBTN:", id);
   const dispatch = useDispatch();
 
-  // const { totalAmount } = useSelector((state) => state.foodShoppingCart);
   const { items } = useSelector((state) => state.foodShoppingCart);
-  // const itemTest = items.map((item) => item.id === id);
-  // const myId = itemTest.amount;
-  // console.log("totalAmount:", totalAmount);
 
-  // items.map((item) => {
-  //   // console.log("@item>", item.amount);
-  //   return item.amount === 0 ? (
-  //     <Button sx={sx} onClick={() => dispatch(increase(id))}>
-  //       +
-  //     </Button>
-  //   ) : (
-  //     <Box className={style.addToCartCounter}>
-  //       <Button
-  //         sx={sx}
-  //         onClick={() => dispatch(increase(id))}
-  //         className="addToCartBtn"
-  //       >
-  //         +
-  //       </Button>
-  //       <span>{item.amount}</span>
-  //       <Button
-  //         className="addToCartBtn"
-  //         sx={sx}
-  //         // onClick={handleDecreaseCounter}
-  //         onClick={() => dispatch(decrease(id))}
-  //       >
-  //         -
-  //       </Button>
-  //     </Box>
-  //   );
-  // });
   let testCount = 0;
   items.map((item) => {
     if (item.id === id) return (testCount = item.amoumt);
@@ -91,40 +59,6 @@ const AddToCartCounterBtn = ({ id }) => {
       </Box>
     </>
   );
-
-  //   items.map((item) => {
-  //     return item.amount === 0 ? (
-  //       <Button sx={sx} onClick={() => dispatch(increase(id))}>
-  //         +
-  //       </Button>
-  //     ) : (
-  //       <>
-  //         <Box className={style.addToCartCounter}>
-  //           <Button
-  //             sx={sx}
-  //             onClick={() => dispatch(increase(id))}
-  //             className="addToCartBtn"
-  //           >
-  //             +
-  //           </Button>
-  //           {items.map((item) => {
-  //             if (item.amount && item.id === id) {
-  //               return <span>{item.amount}</span>;
-  //             } else return null;
-  //           })}
-  //           <Button
-  //             className="addToCartBtn"
-  //             sx={sx}
-  //             // onClick={handleDecreaseCounter}
-  //             onClick={() => dispatch(decrease(id))}
-  //           >
-  //             -
-  //           </Button>
-  //         </Box>
-  //       </>
-  //     );
-  //   });
-  // };
 };
 
 export default AddToCartCounterBtn;

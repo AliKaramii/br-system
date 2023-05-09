@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import * as React from "react";
 import PropTypes from "prop-types";
 // import SwipeableViews from "react-swipeable-views";
 // import { useTheme } from "@mui/material/styles";
@@ -11,7 +11,6 @@ import ShoppingCart from "../../common/shopping-cart";
 import MenuItemFood from "./menu-item-food";
 import style from "./style.module.scss";
 import ShoppingCartModal from "../../common/shopping-cart/shopping-cart-modal";
-import Loading from "../../common/loading";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,10 +45,10 @@ function a11yProps(index) {
   };
 }
 
-function FoodMenuLayout({ menuData }) {
+export default function FoodMenuLayout({ menuData }) {
+  // console.log("**menuData**", menuData);
   // const theme = useTheme();
-  const [value, setValue] = useState(0);
-  const [currentMenuData, setCurrentMenuData] = useState();
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -59,34 +58,18 @@ function FoodMenuLayout({ menuData }) {
   //   setValue(index);
   // };
 
-  const handleUpdateMenu = (menuCatId) => {
-    setCurrentMenuData(menuData[menuCatId]);
-
-    return;
-  };
-
-  // Todo remove this state from use effect
-  useEffect(() => {
-    setCurrentMenuData(menuData[0]);
-  }, []);
-
-  return currentMenuData ? (
+  return (
     <Container sx={{ marginBottom: 5 }}>
       <Box className={style.menuType}>
         {menuData.map((item, index) => {
           return (
-            <Button
-              key={index}
-              onClick={() => handleUpdateMenu(index)}
-              sx={{ padding: "16px 8px" }}
-            >
+            <Button key={index} sx={{ padding: "16px 8px" }}>
               <img src={item.groupIcon} alt="منو" />
               {item.groupTitle}
             </Button>
           );
         })}
       </Box>
-
       <Box sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
         <AppBar
           position="static"
@@ -106,35 +89,34 @@ function FoodMenuLayout({ menuData }) {
             aria-label="full width tabs example"
           >
             {/* {menuData.map((item, index) => {
-                  return (
-                    <Tab
-                      label={item.category[index].categoryTitle}
-                      {...a11yProps({ index })}
-                    />
-                  );
-                })} */}
-
-            {currentMenuData.category.map((catItem, index) => {
-              const { categoryTitle } = catItem;
               return (
-                <Tab key={index} label={categoryTitle} {...a11yProps(index)} />
+                <Tab
+                  label={item.category[index].categoryTitle}
+                  {...a11yProps({ index })}
+                />
               );
-            })}
+            })} */}
+
+            <Tab label="انواع اسموتی" {...a11yProps(0)} />
+            <Tab label="قهوه و شیک" {...a11yProps(1)} />
+            <Tab label="دمنوش ها" {...a11yProps(2)} />
           </Tabs>
         </AppBar>
         {/* <SwipeableViews
-            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-            index={value}
-            onChangeIndex={handleChangeIndex}> */}
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        index={value}
+        onChangeIndex={handleChangeIndex}> */}
 
-        {currentMenuData.category.map((cat, b) => {
-          const { menuItems } = cat;
+        {menuData.map((cat, b) => {
+          // console.log("*****cat.category:", cat.category, "B:", b);
+          const currentData = cat.category[b];
+          // console.log("currentData:::", currentData);
           return (
             <TabPanel value={value} index={b} dir="rtl" key={b}>
               <Grid container spacing={4}>
                 <Grid item md={8}>
                   <Grid container spacing={2}>
-                    <MenuItemFood menuItems={menuItems} indicator={b} />
+                    <MenuItemFood menuItems={currentData} indicator={b} />
                   </Grid>
                 </Grid>
                 <Grid item md={4}>
@@ -151,9 +133,5 @@ function FoodMenuLayout({ menuData }) {
         {/* </SwipeableViews> */}
       </Box>
     </Container>
-  ) : (
-    <Loading />
   );
 }
-
-export default FoodMenuLayout;

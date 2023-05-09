@@ -18,6 +18,27 @@ import cakeIcon from "../../assets/svg/cafe-icon-cake.svg";
 import drinkIcon from "../../assets/svg/cafe-icon-drink.svg";
 import friesIcon from "../../assets/svg/cafe-icon-fries.svg";
 import foodMenuItem from "../../assets/images/cafe-sample.png";
+
+// Foodmenu  images
+import img1 from "../../assets/images/foodMenu/1-min.png";
+import img2 from "../../assets/images/foodMenu/2-min.png";
+import img3 from "../../assets/images/foodMenu/3-min.png";
+import img4 from "../../assets/images/foodMenu/4-min.png";
+import img5 from "../../assets/images/foodMenu/5-min.png";
+import img6 from "../../assets/images/foodMenu/6-min.png";
+import img7 from "../../assets/images/foodMenu/7-min.png";
+import img8 from "../../assets/images/foodMenu/8-min.png";
+import img9 from "../../assets/images/foodMenu/9-min.png";
+import img10 from "../../assets/images/foodMenu/10-min.png";
+import img11 from "../../assets/images/foodMenu/11-min.png";
+import img12 from "../../assets/images/foodMenu/12-min.png";
+import img13 from "../../assets/images/foodMenu/13-min.png";
+import img14 from "../../assets/images/foodMenu/14-min.png";
+import img15 from "../../assets/images/foodMenu/15-min.png";
+import img16 from "../../assets/images/foodMenu/16-min.png";
+import img17 from "../../assets/images/foodMenu/17-min.png";
+import img18 from "../../assets/images/foodMenu/18-min.png";
+
 // import img from "../../assets/images/cafe-sample.png";
 // import img2 from "../../assets/images/cafe-sample2.png";
 
@@ -257,54 +278,54 @@ createServer({
             category: [
               {
                 categoryTitle: "انواع اسموتی",
-                subCategory: [
+                menuItems: [
                   {
                     id: 1,
-                    itemName: "نوشیدنی سرد  1",
+                    itemName: "اسموتی  1",
                     price: 600.0,
                     amount: 11,
                     max: 30,
-                    img: foodMenuItem,
+                    img: img1,
                     ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
                   },
                   {
                     id: 2,
-                    itemName: "نوشیدنی سرد 2",
+                    itemName: "اسموتی 2",
                     ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
                     price: 600.0,
                     amount: 2,
                     max: 30,
-                    img: foodMenuItem,
+                    img: img2,
                   },
                 ],
               },
               {
-                categoryTitle: "قهوه و شیک",
-                subCategory: [
+                categoryTitle: "انواع قهوه و شیک",
+                menuItems: [
                   {
                     id: 3,
-                    itemName: "آیس کافی  1",
+                    itemName: "قهوه و شیک  1",
                     ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
                     price: 80,
                     amount: 0,
                     max: 20,
-                    img: foodMenuItem,
+                    img: img3,
                   },
                   {
                     id: 4,
                     price: 200,
                     amount: 3,
-                    itemName: "آیس کافی 2",
+                    itemName: "قهوه و شیک 2",
                     ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
 
                     max: 11,
-                    img: foodMenuItem,
+                    img: img4,
                   },
                 ],
               },
               {
-                categoryTitle: "دمنوش ها",
-                subCategory: [
+                categoryTitle: "انواع دمنوش ها",
+                menuItems: [
                   {
                     id: 5,
                     itemName: "دمنوش  1",
@@ -312,7 +333,7 @@ createServer({
                     price: 50,
                     amount: 0,
                     max: 20,
-                    img: foodMenuItem,
+                    img: img5,
                   },
                   {
                     id: 6,
@@ -321,7 +342,7 @@ createServer({
                     price: 6000,
                     amount: 5,
                     max: 11,
-                    img: foodMenuItem,
+                    img: img6,
                   },
                 ],
               },
@@ -333,44 +354,65 @@ createServer({
             groupIcon: cakeIcon,
             category: [
               {
-                categoryTitle: "انواع کیک ",
-                subCategory: [
+                categoryTitle: " انواع کیک شکلاتی ",
+                menuItems: [
                   {
                     id: 7,
                     itemName: "کیک شکلاتی  1",
-                    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-                    price: "10000",
+                    ing: "1 اسلایس 300 گرمی کیک شکلاتی ای ",
+                    price: "130000",
                     max: 30,
-                    img: foodMenuItem,
+                    img: img7,
                   },
                   {
                     id: 8,
-                    itemName: "کیک وانیلی 2",
-                    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-                    price: "10000",
+                    itemName: "کیک شکلاتی 2",
+                    ing: "1 اسلایس 400 گرمی کیک شکلاتی ای ",
+                    price: "150000",
                     max: 30,
-                    img: foodMenuItem,
+                    img: img8,
                   },
                 ],
               },
               {
-                categoryTitle: "انواع دسر",
-                subCategory: [
+                categoryTitle: "انواع کیک وانیلی",
+                menuItems: [
                   {
                     id: 9,
-                    itemName: "نوشیدنی گرم 1",
-                    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-                    price: "2000",
+                    itemName: "کیک وانیلی 1",
+                    ing: "1 اسلایس 300 گرمی کیک وانیلی  ",
+                    price: "150000",
                     max: 20,
-                    img: foodMenuItem,
+                    img: img9,
                   },
                   {
                     id: 10,
-                    itemName: "نوشیدنی گرم 2",
-                    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-                    price: "2500",
+                    itemName: "کیک وانیلی 2",
+                    ing: "1 اسلایس 300 گرمی کیک وانیلی - تکه های میوه  ",
+                    price: "160000",
                     max: 11,
-                    img: foodMenuItem,
+                    img: img10,
+                  },
+                ],
+              },
+              {
+                categoryTitle: "انواع کیک میوه ای ",
+                menuItems: [
+                  {
+                    id: 11,
+                    itemName: "کیک میوه ای 1",
+                    ing: "1 اسلایس 300 گرمی کیک میوه ای ",
+                    price: "120000",
+                    max: 20,
+                    img: img11,
+                  },
+                  {
+                    id: 12,
+                    itemName: "کیک میوه ای 2",
+                    ing: "1 اسلایس 300 گرمی کیک میوه ای ",
+                    price: "135000",
+                    max: 11,
+                    img: img12,
                   },
                 ],
               },
@@ -381,44 +423,65 @@ createServer({
             groupIcon: friesIcon,
             category: [
               {
-                categoryTitle: "کیک ها",
-                subCategory: [
-                  {
-                    id: 12,
-                    itemName: "کیک  1",
-                    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-                    price: "10000",
-                    max: 30,
-                    img: foodMenuItem,
-                  },
+                categoryTitle: "انواع معجون ها",
+                menuItems: [
                   {
                     id: 13,
-                    itemName: "کیک 2",
-                    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-                    price: "10000",
+                    itemName: "معجون  1",
+                    ing: "بستنی اسکوپی - گردو - پسته ",
+                    price: "200000",
                     max: 30,
-                    img: foodMenuItem,
+                    img: img13,
+                  },
+                  {
+                    id: 14,
+                    itemName: "معجون 2",
+                    ing: "بستنی اسکوپی - خامه - پسته سس شکلات",
+                    price: "250000",
+                    max: 30,
+                    img: img14,
                   },
                 ],
               },
               {
-                categoryTitle: "دسر ها",
-                subCategory: [
-                  {
-                    id: 14,
-                    itemName: "دسر 1",
-                    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
-                    price: "2000",
-                    max: 20,
-                    img: foodMenuItem,
-                  },
+                categoryTitle: "معجون سیب  ها",
+                menuItems: [
                   {
                     id: 15,
-                    itemName: "دسر 2",
-                    ing: "۲۰۰ سی‌سی شیر - ۱۰۰ سی سی پودر قهوه- نصف قاشق غذا خوری شکر",
+                    itemName: "سیب ساده 1",
+                    ing: "600 گرم سیب زمینی - ادویه - سس",
+                    price: "2000",
+                    max: 20,
+                    img: img15,
+                  },
+                  {
+                    id: 16,
+                    itemName: "سیب ویژه 2",
+                    ing: "600 گرم سیب زمینی - ادویه - قارچ - پنیر ",
                     price: "2500",
                     max: 11,
-                    img: foodMenuItem,
+                    img: img16,
+                  },
+                ],
+              },
+              {
+                categoryTitle: "انواع سوخاری ها",
+                menuItems: [
+                  {
+                    id: 17,
+                    itemName: "سوخاری 1",
+                    ing: "300 گرم قارچ تازه",
+                    price: "65000",
+                    max: 20,
+                    img: img17,
+                  },
+                  {
+                    id: 18,
+                    itemName: "سوخاری 2",
+                    ing: "200 گرم فیله مرغ",
+                    price: "75000",
+                    max: 11,
+                    img: img18,
                   },
                 ],
               },
