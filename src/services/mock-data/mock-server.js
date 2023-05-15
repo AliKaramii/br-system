@@ -130,6 +130,7 @@ createServer({
       return {
         data: [
           {
+            id: 111,
             name: "کافی شاپ تک ستاره",
             description: "جهت برگزاری جلسات مدیریت ",
             featuredImage: sampleImage,
@@ -164,6 +165,7 @@ createServer({
             ],
           },
           {
+            id: 112,
             name: "کافی شاپ پینار",
             description: "جهت برگزاری جلسات مدیریت",
             featuredImage: sampleImage2,
@@ -198,6 +200,7 @@ createServer({
             ],
           },
           {
+            id: 113,
             name: "کافی شاپ شاملو",
             description: "جهت برگزاری جلسات مدیریت",
             featuredImage: sampleImage3,
@@ -232,6 +235,7 @@ createServer({
             ],
           },
           {
+            id: 114,
             name: "روف گاردن بار",
             description: "جهت برگزاری جلسات مدیریت",
             featuredImage: sampleImage4,
@@ -511,36 +515,144 @@ createServer({
       return {
         data: [
           {
+            id: 222,
             name: "اتاق فکر شیشه ای",
             description: "جهت برگزاری جلسات مدیریت ",
             featuredImage: venueSampleImage,
             capacity: 15,
             ratting: 3,
             person: 130,
+            ruleDescription:
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            rules: [
+              "حضور شما حتی بدون سفارش بلامانع است",
+              "لطفا برای تغییر میز هماهنگ فرمایید",
+              "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            ],
+            gallery: [
+              {
+                original: venueSampleImage,
+                thumbnail: venueSampleImage,
+              },
+              {
+                original: venueSampleImage2,
+                thumbnail: venueSampleImage2,
+              },
+              {
+                original: venueSampleImage,
+                thumbnail: venueSampleImage,
+              },
+              {
+                original: venueSampleImage2,
+                thumbnail: venueSampleImage2,
+              },
+            ],
           },
           {
+            id: 223,
             name: "اتاق جلسات VIP",
             description: "جهت برگزاری جلسات مدیریت",
             featuredImage: venueSampleImage2,
             capacity: 22,
             ratting: 4,
             person: 59,
+            ruleDescription:
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            rules: [
+              "حضور شما حتی بدون سفارش بلامانع است",
+              "لطفا برای تغییر میز هماهنگ فرمایید",
+              "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            ],
+            gallery: [
+              {
+                original: venueSampleImage,
+                thumbnail: venueSampleImage,
+              },
+              {
+                original: sampleImage,
+                thumbnail: sampleImage,
+              },
+              {
+                original: sampleImage3,
+                thumbnail: sampleImage3,
+              },
+              {
+                original: sampleImage4,
+                thumbnail: sampleImage4,
+              },
+            ],
           },
           {
+            id: 224,
             name: "سالن کنفرانس",
             description: "جهت برگزاری جلسات مدیریت",
             featuredImage: venueSampleImage,
             capacity: 10,
             ratting: 4,
             person: 452,
+            ruleDescription:
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            rules: [
+              "حضور شما حتی بدون سفارش بلامانع است",
+              "لطفا برای تغییر میز هماهنگ فرمایید",
+              "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            ],
+            gallery: [
+              {
+                original: venueSampleImage,
+                thumbnail: venueSampleImage,
+              },
+              {
+                original: sampleImage,
+                thumbnail: sampleImage,
+              },
+              {
+                original: sampleImage3,
+                thumbnail: sampleImage3,
+              },
+              {
+                original: sampleImage4,
+                thumbnail: sampleImage4,
+              },
+            ],
           },
           {
+            id: 225,
             name: "سالن همایش",
             description: "جهت برگزاری جلسات مدیریت",
             featuredImage: venueSampleImage2,
             capacity: 50,
             ratting: 5,
             person: 20,
+            ruleDescription:
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            rules: [
+              "حضور شما حتی بدون سفارش بلامانع است",
+              "لطفا برای تغییر میز هماهنگ فرمایید",
+              "کنسلی رزرو تا یک ساعت قبل از ساعت رزرو انجام شود",
+              "برای نهایت استفاده از هوای پاک، استعمال دخانیات در فضای داخلی ممنونع است",
+            ],
+            gallery: [
+              {
+                original: venueSampleImage,
+                thumbnail: venueSampleImage,
+              },
+              {
+                original: sampleImage,
+                thumbnail: sampleImage,
+              },
+              {
+                original: sampleImage3,
+                thumbnail: sampleImage3,
+              },
+              {
+                original: sampleImage4,
+                thumbnail: sampleImage4,
+              },
+            ],
           },
         ],
       };

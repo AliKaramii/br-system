@@ -4,7 +4,7 @@ import React from "react";
 import ItemSelectionCard from "../../common/selection-card";
 import ImageBackSection from "../../common/image-back-section";
 
-const IntroSelectionLayout = ({ placeData, itemsData }) => {
+const IntroSelectionLayout = ({ placeData, itemsData, module }) => {
   return (
     <>
       <ImageBackSection
@@ -23,14 +23,7 @@ const IntroSelectionLayout = ({ placeData, itemsData }) => {
               {itemsData.map((item, index) => {
                 return (
                   <Grid item padding={1} key={index}>
-                    <ItemSelectionCard
-                      name={item.name}
-                      description={item.description}
-                      image={item.featuredImage}
-                      capacity={item.capacity}
-                      ratting={item.ratting}
-                      person={item.person}
-                    />
+                    <ItemSelectionCard data={item} module={module} />
                   </Grid>
                 );
               })}

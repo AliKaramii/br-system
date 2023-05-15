@@ -4,7 +4,7 @@ import { fetchData } from "../../services/http-client";
 import Footer from "../../components/layout/footer";
 import Header from "../../components/layout/header";
 import IntroSelectionLayout from "../../components/layout/intro-selection";
-import Loading from "../../components/common/loading";
+import Loading from "../../components/base/loading";
 
 const CafeIntroSelectionPage = () => {
   const [cafeItemsData, setCafeItemsData] = useState();
@@ -20,7 +20,11 @@ const CafeIntroSelectionPage = () => {
 
   const renderSelectionLayout = () => {
     return cafeItemsData && cafeData ? (
-      <IntroSelectionLayout itemsData={cafeItemsData} placeData={cafeData} />
+      <IntroSelectionLayout
+        itemsData={cafeItemsData}
+        placeData={cafeData}
+        module="cafe"
+      />
     ) : (
       <Box sx={{ minHeight: "80vh" }}>
         <Loading />

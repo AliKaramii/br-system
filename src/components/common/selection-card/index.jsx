@@ -5,17 +5,16 @@ import pathes from "../../../router/pathes";
 import style from "./style.module.scss";
 import { Link } from "react-router-dom";
 
-const ItemSelectionCard = ({
-  name,
-  description,
-  image,
-  capacity,
-  person,
-  ratting,
-}) => {
+const ItemSelectionCard = ({ data, module }) => {
+  const { name, description, featuredImage, capacity, person, ratting, id } =
+    data;
   return (
     <Paper className={style.cardContainer}>
-      <img src={image} alt={`سالن ${name}`} className={style.cardImage} />
+      <img
+        src={featuredImage}
+        alt={`سالن ${name}`}
+        className={style.cardImage}
+      />
       <Box>
         <Typography variant="mainTitle" component="h3" marginY={3}>
           {name}
@@ -37,7 +36,7 @@ const ItemSelectionCard = ({
         </div>
       </Box>
       <div className={style.btnBox}>
-        <Link to={pathes.CAFERESERVATION}>
+        <Link to={`/${module}-reserve/${id}`}>
           <Button variant="outlined" className="primaryButton">
             رزرو
           </Button>

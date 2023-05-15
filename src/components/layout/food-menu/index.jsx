@@ -11,7 +11,7 @@ import ShoppingCart from "../../common/shopping-cart";
 import MenuItemFood from "./menu-item-food";
 import style from "./style.module.scss";
 import ShoppingCartModal from "../../common/shopping-cart/shopping-cart-modal";
-import Loading from "../../common/loading";
+import Loading from "../../base/loading";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

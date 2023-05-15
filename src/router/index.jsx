@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import checkAuth from "../services/mock-data/auth-mock/check-auth";
-import Loading from "../components/common/loading";
-import routes from "./routes";
-
+import Loading from "../components/base/loading";
+import { routesList, routesParamList } from "./routes";
+import CafeReservationPage from "../pages/cafe/cafe-reservation-page.jsx";
 const token = checkAuth(false);
 
 const RouterProvider = () => {
@@ -34,7 +34,7 @@ const RouterProvider = () => {
     return (
       <BrowserRouter scrollRestoration="manual">
         <Routes>
-          {routes.map((route, index) => (
+          {routesList.map((route, index) => (
             <Route
               key={index}
               path={route.path}
@@ -44,6 +44,17 @@ const RouterProvider = () => {
               }
             ></Route>
           ))}
+          {/* //Todo refactor single product routes */}
+          {routesParamList.map((route, index) => {
+            return (
+              <Route
+                key={index}
+                path={`${route.path}/:id`}
+                exact="true"
+                element={<route.component />}
+              ></Route>
+            );
+          })}
         </Routes>
       </BrowserRouter>
     );

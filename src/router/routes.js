@@ -4,10 +4,11 @@ import pathes from "./pathes";
 import CafeIntroSelectionPage from "../pages/cafe/cafe-intro-selection-page.jsx";
 import CafeReservationPage from "../pages/cafe/cafe-reservation-page.jsx";
 import VenueIntroSelectionPage from "../pages/venue/venue-intro-selection-page.jsx";
+import VenueReservationPage from "../pages/venue/venue-reservation-page.jsx";
 import CheckoutPage from "../pages/checkout";
 import FormSecondStepPage from "../pages/cafe/form-second-step";
 import NotFoundPage from "../pages/not-found";
-const routes = [
+export const routesList = [
   {
     name: "LOGIN",
     path: pathes.LOGIN,
@@ -43,13 +44,14 @@ const routes = [
     exact: true,
     needAuth: false,
   },
-  {
-    name: "CAFERESERVATION",
-    path: pathes.CAFERESERVATION,
-    component: CafeReservationPage,
-    exact: true,
-    needAuth: false,
-  },
+  // {
+  //   name: "CAFERESERVATION",
+  //   path: pathes.CAFERESERVATION,
+  //   component: CafeReservationPage,
+  //   exact: true,
+  //   needAuth: false,
+  // },
+
   {
     name: "VENUEINTROSELECTION",
     path: pathes.VENUEINTROSELECTION,
@@ -66,4 +68,19 @@ const routes = [
   },
 ];
 
-export default routes;
+export const routesParamList = [
+  {
+    name: "CAFERESERVATION",
+    path: pathes.CAFERESERVATION,
+    component: CafeReservationPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "VENUERESERVATION",
+    path: pathes.VENURESERVATION,
+    component: VenueReservationPage,
+    exact: true,
+    needAuth: false,
+  },
+];
