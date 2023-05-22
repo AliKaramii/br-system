@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import checkAuth from "../services/mock-data/auth-mock/check-auth";
 import Loading from "../components/base/loading";
 import { routesList, routesParamList } from "./routes";
-import CafeReservationPage from "../pages/cafe/cafe-reservation-page.jsx";
+// import CafeReservationPage from "../pages/cafe/cafe-reservation-page.jsx";
 const token = checkAuth(false);
 
 const RouterProvider = () => {

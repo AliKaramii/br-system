@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
-  FormControl,
   Grid,
-  InputLabel,
-  MenuItem,
   Modal,
-  Select,
   TextField,
   Typography,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -21,22 +21,26 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 // import { position } from "stylis";
 import style from "./style.module.scss";
 import pathes from "../../../../router/pathes";
-import PersianDatePicker from "../../../base/dateTime/persianDatePicker";
-import PersianTimePicker from "../../../base/dateTime/persianTimePicker";
+import CustomDatePicker from "../../../base/custom-date-Time/date-picker";
+import CustomTimePicker from "../../../base/custom-date-Time/time-picker";
+
 // import { useTheme } from "@emotion/react";
 
 const validationSchema = yup.object({
-  date: yup
-    .string()
-    .min(1, "تاریخ  ")
-    // .max(11, "تاریخ  ")
-    .required("تاریخ را انتخاب کنید"),
+  date: yup.string().required("*"),
+  time: yup.string().required("*"),
+  desc: yup.string().max(200, "حداکثر طول توضیحات را رعایت کنید"),
 });
 
 const ReservationFormFirstStepLayout = () => {
   // const theme = useTheme();
   // theme.direction = "rtl";
+  const navigating = useNavigate();
   const [open, setOpen] = useState(false);
+  const [goToNextStep, setGoToNextStep] = useState(false);
+  const [chosenDate, setChosenDate] = useState();
+  const [chosenTime, setChosenTime] = useState();
+  const [chosenPlace, setChosenPlace] = useState(10);
 
   const handleOpen = () => {
     setOpen(true);
@@ -44,7 +48,14 @@ const ReservationFormFirstStepLayout = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const handlePlace = (e) => {
+    setChosenPlace(e.target.value);
+    console.log("e.t.v>", e.target.value);
+  };
+  const handleFillValues = () => {
+    formik.values.date = chosenDate;
+    formik.values.time = chosenTime;
+  };
   const formik = useFormik({
     initialValues: {
       date: "",
@@ -54,9 +65,20 @@ const ReservationFormFirstStepLayout = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
+      values.date = chosenDate;
+      values.time = chosenTime;
+      values.place = chosenPlace;
       console.log("values:", values);
+      console.log("form submit");
+      setGoToNextStep(true);
     },
   });
+
+  useEffect(() => {
+    if (goToNextStep) {
+      return navigating(pathes.RESERVATION);
+    }
+  }, [goToNextStep]);
 
   return (
     <>
@@ -88,7 +110,7 @@ const ReservationFormFirstStepLayout = () => {
                 <div>
                   <TextField
                     variant="standard"
-                    sx={{ marginBottom: 4 }}
+                    sx={{ marginBottom: 4, color: "#ffff" }}
                     fullWidth
                     className="dateTime-input"
                     id="date"
@@ -100,7 +122,7 @@ const ReservationFormFirstStepLayout = () => {
                     InputProps={{
                       endAdornment: (
                         <>
-                          <PersianDatePicker />
+                          <CustomDatePicker setChosenDate={setChosenDate} />
                           <InputAdornment position="end">
                             <DateRangeIcon />
                           </InputAdornment>
@@ -127,7 +149,8 @@ const ReservationFormFirstStepLayout = () => {
                     InputProps={{
                       endAdornment: (
                         <>
-                          <PersianTimePicker />
+                          <CustomTimePicker setChosenTime={setChosenTime} />
+                          {/* <PersianTimePicker /> */}
                           <InputAdornment position="end">
                             <AccessTimeIcon />
                           </InputAdornment>
@@ -148,11 +171,10 @@ const ReservationFormFirstStepLayout = () => {
                         id="servingPlace"
                         name="servingPlace"
                         label="محل ارائه"
-                        value={formik.values.servingPlace}
+                        value={formik.values.place}
                         onChange={formik.handleChange}
                         error={
-                          formik.touched.servingPlace &&
-                          Boolean(formik.errors.servingPlace)
+                          formik.touched.place && Boolean(formik.errors.place)
                         }
                       >
                         <InputLabel id="demo-simple-select-label">
@@ -160,8 +182,8 @@ const ReservationFormFirstStepLayout = () => {
                         </InputLabel>
                         <Select
                           // helperText={
-                          //   formik.touched.servingPlace &&
-                          //   formik.errors.servingPlace
+                          //   formik.touched.place &&
+                          //   formik.errors.place
                           // }
                           // InputProps={{
                           //   endAdornment: (
@@ -170,15 +192,18 @@ const ReservationFormFirstStepLayout = () => {
                           //     </InputAdornment>
                           //   ),
                           // }}
+
+                          onChange={(e) => handlePlace(e)}
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
-                          value="10"
+                          value={chosenPlace}
                           label="محل ارائه"
+                          displayEmpty
                         >
                           <MenuItem value={10}>محل کافی شاپ</MenuItem>
                           <MenuItem value={20}>واحد 201</MenuItem>
                           <MenuItem value={30}>لابی ساختمان</MenuItem>
-                          <MenuItem value={30}>اتاق تشریفات </MenuItem>
+                          <MenuItem value={40}>اتاق تشریفات </MenuItem>
                         </Select>
                       </FormControl>
                     </div>
@@ -203,11 +228,13 @@ const ReservationFormFirstStepLayout = () => {
                 </div>
               </Grid>
               <Box marginY={3} minWidth="100%" className="flexRowReverse">
-                <Link to={pathes.RESERVATION}>
-                  <Button variant="outlined" type="submit">
-                    مرحله بعد
-                  </Button>
-                </Link>
+                <Button
+                  variant="outlined"
+                  type="submit"
+                  onClick={handleFillValues}
+                >
+                  مرحله بعد
+                </Button>
               </Box>
             </Grid>
           </form>

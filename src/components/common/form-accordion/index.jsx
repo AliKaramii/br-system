@@ -20,11 +20,11 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 const validationSchema = yup.object({
-  date: yup
+  user: yup
     .string()
-    .min(1, "تاریخ  ")
-    // .max(11, "تاریخ  ")
-    .required("تاریخ را انتخاب کنید"),
+    .min(1, "user  ")
+    // .max(11, "user  ")
+    .required("user "),
 });
 
 export default function FormAccordion() {
@@ -36,7 +36,7 @@ export default function FormAccordion() {
 
   const formik = useFormik({
     initialValues: {
-      date: "",
+      user: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -46,7 +46,7 @@ export default function FormAccordion() {
 
   return (
     <Box>
-      <form>
+      <form onSubmit={formik.handleSubmit}>
         <Accordion
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}

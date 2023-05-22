@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "@mui/system";
 import CheckoutItemCard from "../../../common/checkout-card";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import FormStepper from "../../../common/stepper";
 import FormAccordion from "../../../common/form-accordion";
 import GeneralDataShowModal from "../../../common/modal-general-data-show";
@@ -53,9 +53,11 @@ const FormSecondStepLayout = ({ icons }) => {
               <GeneralDataShowModal>قوانین را مطالعه کردم</GeneralDataShowModal>
             </Box>
             <Box className="flexRowReverse">
-              <Link to="/checkout">
-                <Button variant="outlined">مرحله بعد</Button>
-              </Link>
+              {/* <Link to="/checkout"> */}
+              <Button variant="outlined" type="submit">
+                مرحله بعد
+              </Button>
+              {/* </Link> */}
             </Box>
           </Box>
         </Box>

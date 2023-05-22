@@ -81,6 +81,14 @@ input::-webkit-inner-spin-button {
   position: absolute;
   width: 100%;
 }
+
+// Hiding mui values in date/time field (we just need to see date picker time picker value)
+.dateTime-input {
+  & #date,
+  & #time {
+    color: transparent;
+  }
+}
 .rmdp-container {
   width: 100%;
 }
