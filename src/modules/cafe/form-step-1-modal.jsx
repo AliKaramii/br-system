@@ -19,20 +19,21 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 // import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 // import { position } from "stylis";
+import pathes from "../../router/pathes";
+import CustomDatePicker from "../../components/base/custom-date-Time/date-picker";
+import CustomTimePicker from "../../components/base/custom-date-Time/time-picker";
+import { useSelector, useDispatch } from "react-redux";
+import { setReserveData } from "../../store/features/reservation-slice.js";
 import style from "./style.module.scss";
-import pathes from "../../../../router/pathes";
-import CustomDatePicker from "../../../base/custom-date-Time/date-picker";
-import CustomTimePicker from "../../../base/custom-date-Time/time-picker";
-
 // import { useTheme } from "@emotion/react";
 
 const validationSchema = yup.object({
   date: yup.string().required("*"),
   time: yup.string().required("*"),
-  desc: yup.string().max(200, "حداکثر طول توضیحات را رعایت کنید"),
+  desc: yup.string().max(2, "حداکثر طول توضیحات را رعایت کنید"),
 });
 
-const ReservationFormFirstStepLayout = () => {
+const CafeFormFirstStepModal = ({ title }) => {
   // const theme = useTheme();
   // theme.direction = "rtl";
   const navigating = useNavigate();
@@ -41,6 +42,9 @@ const ReservationFormFirstStepLayout = () => {
   const [chosenDate, setChosenDate] = useState();
   const [chosenTime, setChosenTime] = useState();
   const [chosenPlace, setChosenPlace] = useState(10);
+
+  const myData = useSelector((state) => state.reservation);
+  const dispatch = useDispatch();
 
   const handleOpen = () => {
     setOpen(true);
@@ -65,18 +69,28 @@ const ReservationFormFirstStepLayout = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      values.date = chosenDate;
-      values.time = chosenTime;
-      values.place = chosenPlace;
       console.log("values:", values);
+      dispatch(
+        setReserveData({
+          module: "cafe",
+          title: title,
+          date: chosenDate,
+          time: chosenTime,
+          place: chosenPlace,
+          description: formik.values.desc,
+          // title: "کافی شاپ پینار",
+        })
+      );
+      console.log("myData:", myData);
       console.log("form submit");
+
       setGoToNextStep(true);
     },
   });
 
   useEffect(() => {
     if (goToNextStep) {
-      return navigating(pathes.RESERVATION);
+      return navigating(pathes.CAFERESERVATIONDATA);
     }
   }, [goToNextStep]);
 
@@ -243,4 +257,4 @@ const ReservationFormFirstStepLayout = () => {
     </>
   );
 };
-export default ReservationFormFirstStepLayout;
+export default CafeFormFirstStepModal;

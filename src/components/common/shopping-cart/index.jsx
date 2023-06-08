@@ -6,12 +6,11 @@ import {
   getCartTotal,
   remove,
 } from "../../../store/features/shopping-cart-food-slice";
-import ReservationFormFirstStepLayout from "../../layout/reservation-forms/reservation-form-first-step";
 import AddToCartCounterBtn from "../add-to-cart-counter";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import style from "./style.module.scss";
 
-const ShoppingCart = () => {
+const ShoppingCart = ({ children }) => {
   const { items, totalAmount, totalCount } = useSelector(
     (state) => state.foodShoppingCart
   );
@@ -76,7 +75,7 @@ const ShoppingCart = () => {
             </Box>
             <p>تعداد کل: {totalCount}</p>
           </Box>
-          <ReservationFormFirstStepLayout />
+          {children}
         </>
       ) : (
         <>

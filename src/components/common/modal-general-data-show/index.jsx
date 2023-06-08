@@ -1,18 +1,10 @@
 import { Modal, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
-
 import style from "./style.module.scss";
 
-// !most com from outside
-const defaultData = {
-  title: "قوانین کافی شاپ",
-  subTitle: "لورم ایپسوم یک متن ساختگی و آزمایشی برای کمک به طراح است",
-  bodyText: "blank",
-};
-
-const GeneralDataShowModal = ({ children }) => {
-  const { title, subTitle, bodyText } = defaultData;
+const GeneralDataShowModal = ({ children, data }) => {
+  const { title, subTitle, body } = data;
 
   const [open, setOpen] = useState(false);
 
@@ -37,11 +29,8 @@ const GeneralDataShowModal = ({ children }) => {
             <Typography variant="p" component="h3">
               {title}
             </Typography>
-            <Typography variant="p" component="p">
-              {subTitle}
-            </Typography>
           </Box>
-          <Box>{bodyText}</Box>
+          <Box className={style.modalBody}>{body}</Box>
         </Box>
       </Modal>
     </>

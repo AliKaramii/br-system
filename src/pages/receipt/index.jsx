@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/layout/header";
 import Footer from "../../components/layout/footer";
 import { Container } from "@mui/system";
-import FormStepper from "../../components/common/stepper";
 import CheckoutTable from "../../components/common/checkout-table";
+import { Alert, Box } from "@mui/material";
 import { fetchData } from "../../services/http-client";
 import pathes from "../../router/pathes";
 import Loading from "../../components/base/loading";
-import { Box } from "@mui/material";
 
-const CheckoutPage = () => {
+const ReceiptPage = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -23,14 +22,19 @@ const CheckoutPage = () => {
     <>
       <Header />
       <Container>
-        <FormStepper activeStep={2} />
         {data ? (
-          <CheckoutTable
-            title="بررسی نهایی و تایید رزرو"
-            data={data}
-            to={pathes.RECEIPT}
-            btnText="پرداخت با درگاه"
-          />
+          <>
+            <Container maxWidth="sm" sx={{ marginY: "24px" }}>
+              {console.log("data in body", data)}
+              <Alert severity="success">{data.message}</Alert>
+            </Container>
+            <CheckoutTable
+              title="رسید رزرو "
+              data={data}
+              to={pathes.HOMEPAGE}
+              btnText="بازگشت به صفحه اصلی"
+            />
+          </>
         ) : (
           <Box sx={{ height: "50vh" }}>
             <Loading />
@@ -42,4 +46,4 @@ const CheckoutPage = () => {
   );
 };
 
-export default CheckoutPage;
+export default ReceiptPage;

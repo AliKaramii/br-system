@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const [tilesData, setTilesData] = useState();
+
   useEffect(() => {
     fetch("/api/home")
       .then((res) => {
@@ -23,6 +24,7 @@ const HomePage = () => {
     <>
       <Header />
       <HomeHero />
+
       <Container>
         <main
           style={{ minHeight: "75vh", textAlign: "center", paddingTop: "75px" }}

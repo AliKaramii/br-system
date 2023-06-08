@@ -103,3 +103,9 @@ input::-webkit-inner-spin-button {
   border: none;
   box-shadow: none;
 }
+.link-style-text {
+  &:hover {
+    cursor: pointer;
+  }
+  color: $primColor;
+}

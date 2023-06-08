@@ -5,29 +5,34 @@ import CommentInfoLayout from "../../components/layout/comment-info";
 import GalleryRulesLayout from "../../components/layout/gallery-rules";
 import FoodMenuLayout from "../../components/layout/food-menu";
 import { fetchData } from "../../services/http-client.js";
+import CafeFormFirstStepModal from "./form-step-1-modal";
 
-const VenueReservationPage = () => {
+const CafeReservationPage = () => {
   const [commentData, setData] = useState();
-  const [venueItemData, srtVenueItemData] = useState();
-  const [venueMenu, srtVenueMenu] = useState();
+  const [cafeItemData, setCafeItemData] = useState();
+  const [cafeMenu, setCafeMenu] = useState();
 
   useEffect(() => {
     fetchData("/comments").then((fetchedData) => setData(fetchedData));
-    fetchData("/venue/places").then((fetchedData) =>
-      srtVenueItemData(fetchedData[0])
+    fetchData("/cafe/places").then((fetchedData) =>
+      setCafeItemData(fetchedData[0])
     );
-    fetchData("/foodmenu").then((fetchedData) => srtVenueMenu(fetchedData));
+    fetchData("/foodmenu").then((fetchedData) => setCafeMenu(fetchedData));
   }, []);
 
   return (
     <>
       <HeaderLayout />
-      {venueItemData && <GalleryRulesLayout data={venueItemData} />}
-      {/* {venueMenu && <FoodMenuLayout menuData={venueMenu} />} */}MENU
+      {cafeItemData && <GalleryRulesLayout data={cafeItemData} />}
+      {cafeMenu && (
+        <FoodMenuLayout menuData={cafeMenu}>
+          <CafeFormFirstStepModal title={"کافی شاپ پینار"} />
+        </FoodMenuLayout>
+      )}
       {commentData && <CommentInfoLayout data={commentData} />}
       <FooterLayout />
     </>
   );
 };
 
-export default VenueReservationPage;
+export default CafeReservationPage;

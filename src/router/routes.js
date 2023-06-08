@@ -1,13 +1,15 @@
+import pathes from "./pathes";
 import Login from "../pages/login";
 import HomePage from "../pages/home-page";
-import pathes from "./pathes";
-import CafeIntroSelectionPage from "../pages/cafe/cafe-intro-selection-page.jsx";
-import CafeReservationPage from "../pages/cafe/cafe-reservation-page.jsx";
-import VenueIntroSelectionPage from "../pages/venue/venue-intro-selection-page.jsx";
-import VenueReservationPage from "../pages/venue/venue-reservation-page.jsx";
 import CheckoutPage from "../pages/checkout";
-import FormSecondStepPage from "../pages/cafe/form-second-step";
+import ReceiptPage from "../pages/receipt";
+import CafeIntroSelectionPage from "../modules/cafe/cafe-intro-selection-page.jsx";
+import CafeReservationPage from "../modules/cafe/cafe-reservation-page.jsx";
+import VenueIntroSelectionPage from "../modules/venue/venue-intro-selection-page";
+import VenueReservationPage from "../modules/venue/venue-reservation-page.jsx";
 import NotFoundPage from "../pages/not-found";
+import CafeFormSecondStepPage from "../modules/cafe/form-step-2-page";
+
 export const routesList = [
   {
     name: "LOGIN",
@@ -24,9 +26,9 @@ export const routesList = [
     needAuth: false,
   },
   {
-    name: "RESERVATION",
-    path: pathes.RESERVATION,
-    component: FormSecondStepPage,
+    name: "CAFERESERVATIONDATA",
+    path: pathes.CAFERESERVATIONDATA,
+    component: CafeFormSecondStepPage,
     exact: true,
     needAuth: false,
   },
@@ -34,6 +36,13 @@ export const routesList = [
     name: "CHECKOUT",
     path: "/checkout",
     component: CheckoutPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "RECEIPT",
+    path: "/receipt",
+    component: ReceiptPage,
     exact: true,
     needAuth: false,
   },

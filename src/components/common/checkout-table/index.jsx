@@ -5,23 +5,26 @@ import CheckoutTableFeild from "./checkout-table-feild.jsx";
 import style from "./style.module.scss";
 import { Link } from "react-router-dom";
 
-const CheckoutTable = () => {
+const CheckoutTable = ({ title, data, to, btnText }) => {
   return (
     <Container maxWidth="sm">
       <Box className={style.tableHeader}>
         <Typography component="h3" variant="p">
-          بررسی نهایی رزرو کافی شاپ پینار
+          {`${title} ${data.title}`}
         </Typography>
       </Box>
       <Box className={style.tableBody}>
-        <CheckoutTableFeild text={"تاریخ: 1402/03/05"} />
-        <CheckoutTableFeild text={"ساعت: 15:30"} />
-        <CheckoutTableFeild text={"مبلغ: 320.000"} />
-        <Box className="flexRowReverse">
-          <Link to="#">
-            <Button variant="contained">پرداخت با درگاه</Button>
-          </Link>
-        </Box>
+        {data.rows.map((row, index) => {
+          console.log(row);
+          return <CheckoutTableFeild key={index} text={row} />;
+        })}
+        {to && (
+          <Box className="flexRowReverse" marginRight={2}>
+            <Link to={to}>
+              <Button variant="contained">{btnText}</Button>
+            </Link>
+          </Box>
+        )}
       </Box>
     </Container>
   );

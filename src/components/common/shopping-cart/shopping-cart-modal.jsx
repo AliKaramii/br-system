@@ -5,7 +5,7 @@ import style from "./style.module.scss";
 import { useSelector } from "react-redux";
 import ShoppingCart from ".";
 
-const ShoppingCartModal = () => {
+const ShoppingCartModal = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [showCartBtn, setShowCartBtn] = useState(true);
   const { totalCount } = useSelector((state) => state.foodShoppingCart);
@@ -48,7 +48,7 @@ const ShoppingCartModal = () => {
       >
         <Box className={style.modal}>
           <Box className={style.formSection}>
-            <ShoppingCart />
+            <ShoppingCart>{children}</ShoppingCart>
           </Box>
         </Box>
       </Modal>

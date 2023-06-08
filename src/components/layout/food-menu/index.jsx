@@ -46,7 +46,7 @@ function a11yProps(index) {
   };
 }
 
-function FoodMenuLayout({ menuData }) {
+function FoodMenuLayout({ menuData, children }) {
   // const theme = useTheme();
   const [value, setValue] = useState(0);
   const [currentMenuData, setCurrentMenuData] = useState();
@@ -139,9 +139,9 @@ function FoodMenuLayout({ menuData }) {
                 </Grid>
                 <Grid item md={4}>
                   <Box sx={{ display: { xs: "none", md: "block" } }}>
-                    <ShoppingCart />
+                    <ShoppingCart>{children}</ShoppingCart>
                   </Box>
-                  <ShoppingCartModal />
+                  <ShoppingCartModal>{children}</ShoppingCartModal>
                 </Grid>
               </Grid>
             </TabPanel>

@@ -110,6 +110,16 @@ createServer({
       };
     });
 
+    this.get("/sampleCafeReceipt", () => {
+      return {
+        data: {
+          message: "پرداخت و رزرو با موفقیت انجام شد",
+          title: "کافی شاپ پینار",
+          rows: ["تاریخ: 1402/03/05", "ساعت : 15:30", "قیمت: 3000000"],
+        },
+      };
+    });
+
     this.get("/cafe", () => {
       return {
         data: {

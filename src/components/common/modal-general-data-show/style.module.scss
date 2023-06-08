@@ -5,15 +5,17 @@
   top: 10%;
   right: 10%;
   width: 80%;
-  min-width: 800px;
   height: 500px;
   background-color: $color9;
+  overflow: hidden;
 }
 .modalTitle {
   padding: 16px;
 }
 .modalBody {
   padding: 16px 40px;
+  height: 450px;
+  overflow: auto;
 }
 .modalTitle {
   background-color: $color8;
