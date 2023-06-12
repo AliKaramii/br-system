@@ -4,7 +4,7 @@ import TimePicker from "react-multi-date-picker/plugins/time_picker"; // just di
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 
-const CustomTimePicker = ({ setChosenTime }) => {
+const CustomTimePicker = ({ setChosenTime, title = "انتخاب ساعت" }) => {
   const onChangeHandler = (data) => {
     const formatedTime = `${data.hour}:${data.minute}`;
     setChosenTime(formatedTime);
@@ -13,7 +13,7 @@ const CustomTimePicker = ({ setChosenTime }) => {
   return (
     <DatePicker
       onChange={(data) => onChangeHandler(data)}
-      placeholder="انتخاب ساعت"
+      placeholder={title}
       disableDayPicker
       format="HH:mm"
       plugins={[<TimePicker hideSeconds />]}

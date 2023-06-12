@@ -8,6 +8,7 @@ const pathes = {
   CAFERESERVATIONDATA: "/cafe-reserve-data",
   VENUEINTROSELECTION: "/venue",
   VENURESERVATION: "/venue-reserve",
+  VENUERESERVATIONDATA: "/venue-reserve-data",
   FORBIDDEN: "/401",
   NOTFOUND: "/*",
 };

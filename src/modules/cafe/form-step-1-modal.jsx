@@ -43,6 +43,7 @@ const CafeFormFirstStepModal = ({ title }) => {
   const [chosenTime, setChosenTime] = useState();
   const [chosenPlace, setChosenPlace] = useState(10);
 
+  // ! Just to test - remove later
   const myData = useSelector((state) => state.reservation);
   const dispatch = useDispatch();
 

@@ -5,7 +5,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 import { useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 
-const CustomDatePicker = ({ setChosenDate }) => {
+const CustomDatePicker = ({ setChosenDate, title = "انتخاب تاریخ" }) => {
   const [state, setState] = useState({ format: "MM/DD/YYYY" });
 
   //   const convert = (date, format = state.format) => {
@@ -33,6 +33,7 @@ const CustomDatePicker = ({ setChosenDate }) => {
             onChange={(data) => onChangeHandler(data)}
             calendar={persian}
             locale={persian_fa}
+            placeholder={title}
             calendarPosition="bottom-right"
           />
         </div>

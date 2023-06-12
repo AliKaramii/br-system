@@ -24,7 +24,7 @@
   flex-wrap: wrap;
 }
 .item {
-  margin: 52px 4px 46px 4px;
+  margin: 52px 4px 8px 4px;
   display: flex;
   flex-direction: column;
 
@@ -34,8 +34,8 @@
 }
 .itemBox {
   margin: 8px;
-  width: 260px;
-  height: 260px;
+  width: 204px;
+  height: 204px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,8 +48,8 @@
   padding: 32px;
   border: 1px solid $secColor;
   border-radius: 8px;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 
   img {
     width: 100%;

@@ -9,7 +9,7 @@ import GeneralDataShowModal from "../../components/common/modal-general-data-sho
 import { useDispatch, useSelector } from "react-redux";
 import iconClock from "../../assets/svg/reservation-icon-calendar.svg";
 import iconCalendar from "../../assets/svg/reservation-icon-clock.svg";
-import iconCafe from "../../assets/svg/reservation-icon-cafe.svg";
+import venueIcon from "../../assets/svg/note-board-icon.svg";
 import {
   Box,
   Grid,
@@ -36,7 +36,7 @@ import pathes from "../../router/pathes";
 import { setReserveData } from "../../store/features/reservation-slice";
 
 const sampleRulesData = {
-  title: "قوانین استفاده از کافی شاپ",
+  title: "قوانین استفاده از سالن",
   body: "اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند. لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) متنی ساختگی و بدون معنی است که برای امتحان فونت و یا پر کردن فضا در یک طراحی گرافیکی و یا صنعت چاپ استفاده میشود. طراحان وب و گرافیک از این متن برای پرکردن صفحه و ارائه شکل کلی طرح استفاده می‌کنند.طراحان سایت هنگام طراحی قالب سایت معمولا با این موضوع رو برو هستند که محتوای اصلی صفحات آماده نیست. در نتیجه طرح کلی دید درستی به کار فرما نمیدهد. اگر طراح بخواهد دنبال متن های مرتبط بگردد تمرکزش از روی کار اصلی برداشته میشود و اینکار زمان بر خواهد بود. همچنین طراح به دنبال این است که پس از ارایه کار نظر دیگران را در مورد طراحی جویا شود و نمی‌خواهد افراد روی متن های موجود تمرکز کنند",
 };
 
@@ -48,7 +48,7 @@ const validationSchema = yup.object({
   terms: yup.string().required("*"),
 });
 
-const CafeFormSecondStepPage = () => {
+const VenueFormStepPage = () => {
   const [expanded, setExpanded] = useState(false);
   const [goToNextStep, setGoToNextStep] = useState(false);
   const [allowToNext, setAllowToNext] = useState(false);
@@ -105,7 +105,7 @@ const CafeFormSecondStepPage = () => {
         <Box marginY={3}>
           <Grid container spacing={5}>
             <Grid item xs={12} sm={4}>
-              <CheckoutItemCard text={title} icon={iconCafe} />
+              <CheckoutItemCard text={title} icon={venueIcon} />
             </Grid>
             <Grid item xs={12} sm={4}>
               <CheckoutItemCard text={`تاریخ رزرو :${date}`} icon={iconClock} />
@@ -289,4 +289,4 @@ const CafeFormSecondStepPage = () => {
   );
 };
 
-export default CafeFormSecondStepPage;
+export default VenueFormStepPage;

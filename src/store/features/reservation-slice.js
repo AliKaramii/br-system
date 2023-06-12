@@ -6,11 +6,13 @@ const reservationSlice = createSlice({
     module: "",
     title: "",
     name: "",
-    phoneNumber: "",
+    phone: "",
+    unitId: "",
     date: "",
     time: "",
     place: "",
     description: "",
+    payment: "",
   },
   reducers: {
     setReserveData: (state, action) => {

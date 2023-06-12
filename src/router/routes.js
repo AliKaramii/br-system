@@ -9,6 +9,7 @@ import VenueIntroSelectionPage from "../modules/venue/venue-intro-selection-page
 import VenueReservationPage from "../modules/venue/venue-reservation-page.jsx";
 import NotFoundPage from "../pages/not-found";
 import CafeFormSecondStepPage from "../modules/cafe/form-step-2-page";
+import VenueFormStepPage from "../modules/venue/form-step-page";
 
 export const routesList = [
   {
@@ -29,6 +30,13 @@ export const routesList = [
     name: "CAFERESERVATIONDATA",
     path: pathes.CAFERESERVATIONDATA,
     component: CafeFormSecondStepPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "VENUERESERVATIONDATA",
+    path: pathes.VENUERESERVATIONDATA,
+    component: VenueFormStepPage,
     exact: true,
     needAuth: false,
   },

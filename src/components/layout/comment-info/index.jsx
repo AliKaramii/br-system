@@ -8,6 +8,7 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import UserComment from "../../common/user-comment";
 import { Container } from "@mui/system";
+import { theme } from "../../../assets/themes/theme";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,8 +57,11 @@ const CommentInfoLayout = ({ data }) => {
 
   return (
     <Container sx={{ marginBottom: 5 }}>
-      <Box sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
-        <AppBar position="static" sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
+      <Box sx={{ bgcolor: theme.palette.reserveMenu.back, width: "100%" }}>
+        <AppBar
+          position="static"
+          sx={{ bgcolor: theme.palette.reserveMenu.back, width: "100%" }}
+        >
           <Tabs
             sx={{ color: "#444444" }}
             value={value}

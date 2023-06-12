@@ -12,6 +12,7 @@ import MenuItemFood from "./menu-item-food";
 import style from "./style.module.scss";
 import ShoppingCartModal from "../../common/shopping-cart/shopping-cart-modal";
 import Loading from "../../base/loading";
+import { theme } from "../../../assets/themes/theme";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -87,10 +88,14 @@ function FoodMenuLayout({ menuData, children }) {
         })}
       </Box>
 
-      <Box sx={{ bgcolor: "#f0f0f0", width: "100%" }}>
+      <Box sx={{ bgcolor: theme.palette.reserveMenu.back, width: "100%" }}>
         <AppBar
           position="static"
-          sx={{ bgcolor: "#f0f0f0", width: "100%", boxShadow: "none" }}
+          sx={{
+            bgcolor: theme.palette.reserveMenu.back,
+            width: "100%",
+            boxShadow: "none",
+          }}
         >
           <Tabs
             sx={{

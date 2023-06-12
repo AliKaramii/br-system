@@ -11,6 +11,10 @@ const colors = {
   text: {
     light9: "#fafafa;",
   },
+  back: {
+    light8: "#f0f0f0",
+    light9: "#fafafa",
+  },
 };
 
 export const theme = createTheme({
@@ -23,6 +27,10 @@ export const theme = createTheme({
     },
     text: {
       light: colors.text.light9,
+    },
+    reserveMenu: {
+      back: colors.back.light8,
+      tables: colors.back.light9,
     },
   },
   components: {
@@ -67,7 +75,7 @@ export const theme = createTheme({
         },
         {
           props: {
-            variant: "nomalBody",
+            variant: "normalBody",
           },
           style: {
             fontSize: "16px",
