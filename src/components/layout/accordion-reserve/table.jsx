@@ -14,7 +14,6 @@ import { theme } from "../../../assets/themes/theme";
 import pathes from "../../../router/pathes";
 
 const AccordionReserveTable = ({ data }) => {
-  console.log("data from acc table >>>>", data);
   return (
     <Container>
       <TableContainer
@@ -31,11 +30,11 @@ const AccordionReserveTable = ({ data }) => {
           </TableHead>
           <TableBody>
             {data.map((row, indexI) => {
-              console.log("row");
+              // console.log("row");
               return (
                 <TableRow key={indexI}>
                   {row.map((cell, index) => {
-                    console.log("cell", cell);
+                    // console.log("cell", cell);
                     return <TableCell key={index}>{cell}</TableCell>;
                   })}
                   <TableCell>

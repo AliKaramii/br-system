@@ -15,7 +15,6 @@ const CheckoutTable = ({ title, data, to, btnText }) => {
       </Box>
       <Box className={style.tableBody}>
         {data.rows.map((row, index) => {
-          console.log(row);
           return <CheckoutTableFeild key={index} text={row} />;
         })}
         {to && (

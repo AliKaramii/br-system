@@ -10,11 +10,14 @@ import AccordionReservePrivate from "../../components/layout/accordion-reserve-p
 // ! get later from API
 import menuIcon from "../../assets/svg/note-board-icon.svg";
 import VenuePrivateReserveForm from "./form-private-reserve";
+import { useDispatch } from "react-redux";
+import { clearReserveData } from "../../store/features/reservation-slice";
 
 const VenueReservationPage = () => {
   const [commentData, setData] = useState();
   const [venueItemData, setVenueItemData] = useState();
   const [venueMenu, setVenueMenu] = useState();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetchData("/comments").then((fetchedData) => setData(fetchedData));
@@ -24,6 +27,8 @@ const VenueReservationPage = () => {
     fetchData("/sample-reserve-list").then((fetchedData) =>
       setVenueMenu(fetchedData)
     );
+
+    dispatch(clearReserveData()); // Clear Reservation data in state manager
   }, []);
 
   return (

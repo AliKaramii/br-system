@@ -13,7 +13,6 @@ const ReceiptPage = () => {
 
   useEffect(() => {
     fetchData("/sampleCafeReceipt").then((fetchedData) => {
-      console.log("fetchedData", fetchedData);
       return setData(fetchedData);
     });
   }, []);
@@ -25,7 +24,6 @@ const ReceiptPage = () => {
         {data ? (
           <>
             <Container maxWidth="sm" sx={{ marginY: "24px" }}>
-              {console.log("data in body", data)}
               <Alert severity="success">{data.message}</Alert>
             </Container>
             <CheckoutTable

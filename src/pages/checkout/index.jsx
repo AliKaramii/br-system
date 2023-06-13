@@ -8,13 +8,15 @@ import { fetchData } from "../../services/http-client";
 import pathes from "../../router/pathes";
 import Loading from "../../components/base/loading";
 import { Box } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const CheckoutPage = () => {
   const [data, setData] = useState();
+  const reserveData = useSelector((state) => state.reservation); //* just to check entered data
 
   useEffect(() => {
     fetchData("/sampleCafeReceipt").then((fetchedData) => {
-      console.log("fetchedData", fetchedData);
+      console.log("Data from Redux:", reserveData);
       return setData(fetchedData);
     });
   }, []);

@@ -68,7 +68,6 @@ const CafeFormSecondStepPage = () => {
   };
 
   useEffect(() => {
-    console.log("step2_Data from Redux:", reserveData);
     if (goToNextStep) {
       return navigating(pathes.CHECKOUT);
     }

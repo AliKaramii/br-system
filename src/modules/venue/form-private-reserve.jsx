@@ -12,7 +12,7 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 import pathes from "../../router/pathes";
 import CustomDatePicker from "../../components/base/custom-date-Time/date-picker";
 import CustomTimePicker from "../../components/base/custom-date-Time/time-picker";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setReserveData } from "../../store/features/reservation-slice.js";
 import { theme } from "../../assets/themes/theme";
 
@@ -22,7 +22,7 @@ const validationSchema = yup.object({
   date: yup.string().required("*"),
   startTime: yup.string().required("*"),
   finishTime: yup.string().required("*"),
-  desc: yup.string().max(2, "حداکثر طول توضیحات را رعایت کنید"),
+  desc: yup.string().max(50, "حداکثر طول توضیحات را رعایت کنید"),
 });
 
 const VenuePrivateReserveForm = ({ title }) => {
@@ -36,8 +36,6 @@ const VenuePrivateReserveForm = ({ title }) => {
   const [chosenFinishTime, setChosenFinishTime] = useState();
   // const [chosenTime, setChosenTime] = useState();
 
-  // ! Just to test - remove later
-  const myData = useSelector((state) => state.reservation);
   const dispatch = useDispatch();
 
   const handleFillValues = () => {
@@ -54,7 +52,6 @@ const VenuePrivateReserveForm = ({ title }) => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log("values:", values);
       dispatch(
         setReserveData({
           module: "venue",
@@ -66,8 +63,6 @@ const VenuePrivateReserveForm = ({ title }) => {
           // title: "اتاق فکر شیشه ای",
         })
       );
-      console.log("myData:", myData);
-      console.log("form submit");
 
       setGoToNextStep(true);
     },
@@ -75,7 +70,7 @@ const VenuePrivateReserveForm = ({ title }) => {
 
   useEffect(() => {
     if (goToNextStep) {
-      return navigating(pathes.CAFERESERVATIONDATA);
+      return navigating(pathes.VENUERESERVATIONDATA);
     }
   }, [goToNextStep]);
 

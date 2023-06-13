@@ -13,7 +13,6 @@ import {
   AccordionDetails,
   Typography,
 } from "@mui/material";
-import style from "./style.module.scss";
 // import CafeFormAccordion from "./form-accordion-section";
 // import { useNavigate } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -34,7 +33,7 @@ const AccordionReserve = ({ children, title, icon }) => {
   return (
     <Container>
       <Box marginY={2}>
-        <Box className={style.formBody}>
+        <Box>
           <form>
             <Accordion
               sx={{ bgcolor: theme.palette.reserveMenu.back }}

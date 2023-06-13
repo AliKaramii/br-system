@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from "react";
-import * as yup from "yup";
-import { useFormik } from "formik";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
   Box,
   Grid,
-  Button,
   Accordion,
   Container,
   AccordionSummary,
   AccordionDetails,
   Typography,
 } from "@mui/material";
-import style from "./style.module.scss";
 // import CafeFormAccordion from "./form-accordion-section";
 // import { useNavigate } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -32,7 +28,7 @@ const AccordionReservePrivate = ({ children, title, icon }) => {
   return (
     <Container>
       <Box marginY={2}>
-        <Box className={style.formBody}>
+        <Box>
           <Accordion
             sx={{ bgcolor: theme.palette.reserveMenu.back }}
             expanded={expanded === "panel1"}
