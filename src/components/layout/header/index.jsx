@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import * as React from "react";
 import AppLogo from "../../../assets/svg/app-logo.svg";
 import style from "./style.module.scss";
-import pathes from "../../../router/pathes";
+import UserProfileMenu from "../../common/user-profile-menu";
 
 const HeaderLayout = () => {
   return (
@@ -23,17 +23,7 @@ const HeaderLayout = () => {
             </Typography>
           </Grid>
           <Grid item xs={3} className={style.profile}>
-            <Link
-              to={pathes.LOGIN}
-              style={{
-                color: "rgb(209 209 209 / 61%)",
-                marginLeft: "16px",
-                textDecoration: "none",
-              }}
-            >
-              LOGIN
-            </Link>
-            PROFILE
+            <UserProfileMenu />
           </Grid>
         </Grid>
       </Container>

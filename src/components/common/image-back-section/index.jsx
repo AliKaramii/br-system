@@ -7,6 +7,7 @@ const ImageBackSection = ({ backImage, title, text }) => {
   return (
     <>
       <Box
+        marginTop="-75px"
         sx={{ backgroundImage: `url(${backImage})` }}
         className={style.imageBackContainer}
       >
