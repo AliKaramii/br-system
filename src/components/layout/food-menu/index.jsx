@@ -62,7 +62,6 @@ function FoodMenuLayout({ menuData, children }) {
 
   const handleUpdateMenu = (menuCatId) => {
     setCurrentMenuData(menuData[menuCatId]);
-
     return;
   };
 
@@ -139,7 +138,7 @@ function FoodMenuLayout({ menuData, children }) {
               <Grid container spacing={4}>
                 <Grid item md={8}>
                   <Grid container spacing={2}>
-                    <MenuItemFood menuItems={menuItems} indicator={b} />
+                    <MenuItemFood menuItems={menuItems} />
                   </Grid>
                 </Grid>
                 <Grid item md={4}>

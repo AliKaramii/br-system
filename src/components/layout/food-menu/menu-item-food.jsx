@@ -23,7 +23,7 @@ const MenuItemFood = ({ menuItems }) => {
                 </Box>
                 <Box className={style.meuItemPurchase}>
                   <Typography>{menuItem.price} تومان</Typography>
-                  <AddToCartCounterBtn id={index} />
+                  <AddToCartCounterBtn id={menuItem.id} />
                 </Box>
               </Box>
             </Card>

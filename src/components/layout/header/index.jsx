@@ -1,11 +1,12 @@
+import React from "react";
 import { Container } from "@mui/system";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
-import * as React from "react";
 import AppLogo from "../../../assets/svg/app-logo.svg";
-import style from "./style.module.scss";
 import UserProfileMenu from "../../common/user-profile-menu";
+import style from "./style.module.scss";
+import { theme } from "../../../assets/themes/theme";
 
 const HeaderLayout = () => {
   return (
@@ -23,7 +24,7 @@ const HeaderLayout = () => {
             </Typography>
           </Grid>
           <Grid item xs={3} className={style.profile}>
-            <UserProfileMenu />
+            <UserProfileMenu color={theme.palette.text.light} />
           </Grid>
         </Grid>
       </Container>

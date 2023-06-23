@@ -11,8 +11,10 @@ import Logout from "@mui/icons-material/Logout";
 import pathes from "../../../router/pathes";
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
+import { Dashboard } from "@mui/icons-material";
+import { theme } from "../../../assets/themes/theme";
 
-const UserProfileMenu = () => {
+const UserProfileMenu = ({ color }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -25,7 +27,21 @@ const UserProfileMenu = () => {
 
   return (
     <>
-      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            display: { xs: "none", md: "block" },
+            color: color,
+          }}
+        >
+          شرکت فاطر
+        </Typography>
         <Tooltip>
           <IconButton
             onClick={handleClick}
@@ -74,22 +90,50 @@ const UserProfileMenu = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleClose}>
+        {/* <MenuItem onClick={handleClose}>
           <Avatar /> حساب کاربری
-        </MenuItem>
+        </MenuItem> */}
+        <Link
+          className="normal-link"
+          to={pathes.DASHBOARD}
+          style={{
+            margin: "8px 16px",
+            display: "flex",
+            justifyContent: "flex-start",
+          }}
+        >
+          <ListItemIcon>
+            <Dashboard fontSize="small" />
+          </ListItemIcon>
+          داشبورد
+        </Link>
+        <Link
+          className="normal-link"
+          to={pathes.RESERVEHISTORY}
+          style={{
+            margin: "16px",
+            display: "flex",
+            justifyContent: "flex-start",
+          }}
+        >
+          <ListItemIcon>
+            <Dashboard fontSize="small" />
+          </ListItemIcon>
+          رزروهای اخیر
+        </Link>
         <Divider />
         <MenuItem>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
           <Link
             to={pathes.LOGIN}
             style={{
-              color: "rgb(209 209 209 / 61%)",
-              marginLeft: "16px",
               textDecoration: "none",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
+            <ListItemIcon>
+              <Logout fontSize="small" />
+            </ListItemIcon>
             خروج
           </Link>
         </MenuItem>

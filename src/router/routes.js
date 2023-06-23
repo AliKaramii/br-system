@@ -10,8 +10,58 @@ import VenueReservationPage from "../modules/venue/venue-reservation-page.jsx";
 import NotFoundPage from "../pages/not-found";
 import CafeFormSecondStepPage from "../modules/cafe/form-step-2-page";
 import VenueFormStepPage from "../modules/venue/form-step-page";
+import PhoneBookPage from "../pages/user-panel-pages/phone-book";
+import DashboardPage from "../pages/user-panel-pages/dashboard";
+import MyFlorPage from "../pages/user-panel-pages/my-flor";
+import BillingsPage from "../pages/user-panel-pages/billings";
+import ReserveHistoryPage from "../pages/user-panel-pages/reserve-history";
+import NotificationsPage from "../pages/user-panel-pages/notifications";
+
+// import UserPanelLayout from "../components/layout/user-panel";
 
 export const routesList = [
+  {
+    name: "DASHBOARD",
+    path: pathes.DASHBOARD,
+    component: DashboardPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "PHONEBOOK",
+    path: pathes.PHONEBOOK,
+    component: PhoneBookPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "MYFLOR",
+    path: pathes.MYFLOR,
+    component: MyFlorPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "BILLINGS",
+    path: pathes.BILLINGS,
+    component: BillingsPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "NOTIFICATIONS",
+    path: pathes.NOTIFICATIONS,
+    component: NotificationsPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "RESERVEHISTORY",
+    path: pathes.RESERVEHISTORY,
+    component: ReserveHistoryPage,
+    exact: true,
+    needAuth: false,
+  },
   {
     name: "LOGIN",
     path: pathes.LOGIN,

@@ -10,6 +10,12 @@ const pathes = {
   VENURESERVATION: "/venue-reserve",
   VENUERESERVATIONDATA: "/venue-reserve-data",
   FORBIDDEN: "/401",
+  DASHBOARD: "/dashboard",
+  PHONEBOOK: "/phone-book",
+  MYFLOR: "/my-flor",
+  BILLINGS: "/bllings",
+  RESERVEHISTORY: "/reserve-history",
+  NOTIFICATIONS: "/notification",
   NOTFOUND: "/*",
 };
 

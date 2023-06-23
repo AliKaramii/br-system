@@ -31,6 +31,7 @@ const cartSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
     increase: (state, action) => {
+      console.log(action.payload);
       state.items = state.items.map((item) => {
         if (item.id === action.payload) {
           return { ...item, amount: item.amount + 1 };
@@ -53,6 +54,11 @@ const cartSlice = createSlice({
     },
     getCartItems: (state) => {
       state.items = cafeMenuMock;
+    },
+    setCartSource: (state, action) => {
+      //* get selected module menu and set it to "items" here (to have a soutce for comparison and add menu item to cart)
+      state.items = action.payload;
+      console.log("state.items", state.action);
     },
   },
 });

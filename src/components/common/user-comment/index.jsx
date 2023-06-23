@@ -8,7 +8,7 @@ import dislikeIcon from "../../../assets/svg/dislike-icon.svg";
 import style from "./style.module.scss";
 import AddCommentModal from "../../layout/modal-add-comment";
 
-const UserComment = ({ data }) => {
+const UserCommentLayout = ({ data }) => {
   const [page, setPage] = useState(1);
   // const PER_PAGE = process.env.REACT_APP_COMMENT_PER_PAGE;
   // console.log("env:", process.env.REACT_APP_COMMENT_PER_PAGE);
@@ -102,4 +102,4 @@ const UserComment = ({ data }) => {
     </Box>
   );
 };
-export default UserComment;
+export default UserCommentLayout;

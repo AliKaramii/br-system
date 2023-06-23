@@ -10,10 +10,12 @@ const colors = {
   },
   text: {
     light9: "#fafafa;",
+    dark: "#444444",
   },
   back: {
     light8: "#f0f0f0",
     light9: "#fafafa",
+    color10: "#E5E5E5",
   },
 };
 
@@ -27,10 +29,15 @@ export const theme = createTheme({
     },
     text: {
       light: colors.text.light9,
+      dark: colors.text.dark,
     },
     reserveMenu: {
       back: colors.back.light8,
       tables: colors.back.light9,
+    },
+    back: {
+      light8: colors.back.light8,
+      color10: colors.back.color10,
     },
   },
   components: {

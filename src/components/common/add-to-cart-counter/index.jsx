@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import BtnCircle from "../../base/btn-circle";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -32,7 +32,7 @@ const AddToCartCounterBtn = ({ id }) => {
     else return 0;
   });
 
-  return testCount === 0 ? (
+  return 0 === 0 ? (
     <>
       <Button sx={sx} onClick={() => dispatch(increase(id))}>
         +
@@ -44,6 +44,7 @@ const AddToCartCounterBtn = ({ id }) => {
         <Button sx={sx} onClick={() => dispatch(increase(id))}>
           +
         </Button>
+
         {items.map((item, index) => {
           if (item.amount && item.id === id) {
             return <span key={index}>{item.amount}</span>;
