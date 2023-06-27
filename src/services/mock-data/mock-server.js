@@ -47,6 +47,9 @@ import venueSampleImage from "../../assets/images/venue-sample.png";
 import venueSampleImage2 from "../../assets/images/venue-sample2.png";
 import venueSectionBackground from "../../assets/images/venue-banner.jpg";
 
+// User Panel
+import buildingAvatar from "../../assets/images/building-avatar.png";
+
 import { createServer } from "miragejs";
 
 createServer({
@@ -675,6 +678,22 @@ createServer({
           ["شنبه 20 آذر", "90:30 تا 20:30", "110.000"],
           ["شنبه 21 آذر", "20:30 تا 21:30", "120.000"],
         ],
+      };
+    });
+
+    this.get("/flor-data", () => {
+      return {
+        data: {
+          avatar: buildingAvatar,
+          flor: "دوم",
+          florId: "واحد 2",
+          owner: "رضا آخری",
+          mobile: "09121111111",
+          charge: "13,000,000",
+          dimension: "130",
+          ownerType: "مالک",
+          users: "4",
+        },
       };
     });
   },

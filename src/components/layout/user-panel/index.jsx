@@ -4,11 +4,9 @@ import UserPanelLayoutDesktop from "./desktop";
 
 import dashboardIcon from "../../../assets/svg/menu-icon-dashboard.svg";
 import reserveHistoryIcon from "../../../assets/svg/menu-icon-calendar.svg";
-import notificationIcon from "../../../assets/svg/menu-icon-notification.svg";
 import myFlorIcon from "../../../assets/svg/menu-icon-user-square.svg";
 import phoneBookIcon from "../../../assets/svg/menu-icon-call.svg";
 import billingIcon from "../../../assets/svg/menu-icon-billing.svg";
-import supportIcon from "../../../assets/svg/menu-icon-send.svg";
 import pathes from "../../../router/pathes";
 
 const menuItems = [
@@ -21,8 +19,6 @@ const menuItems = [
   },
   { title: "بدهی و شارژ", link: pathes.BILLINGS, icon: billingIcon },
   { title: "دفترچه تلفن", link: pathes.PHONEBOOK, icon: phoneBookIcon },
-  { title: "اطلاع رسانی", link: "#", icon: notificationIcon },
-  { title: "تیکت", link: "#", icon: supportIcon },
 ];
 
 const UserPanelLayout = ({ children, pageTitle }) => {

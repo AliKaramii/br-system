@@ -230,7 +230,6 @@ const UserPanelLayoutDesktop = ({ children, menuItems, pageTitle }) => {
             }}
           >
             {children}
-            <p>Desktop</p>
           </Paper>
         </Box>
       </Container>

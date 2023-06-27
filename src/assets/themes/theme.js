@@ -17,6 +17,9 @@ const colors = {
     light9: "#fafafa",
     color10: "#E5E5E5",
   },
+  border: {
+    dark1: "#B6B6B680",
+  },
 };
 
 export const theme = createTheme({
@@ -37,7 +40,11 @@ export const theme = createTheme({
     },
     back: {
       light8: colors.back.light8,
+      light9: colors.back.light9,
       color10: colors.back.color10,
+    },
+    border: {
+      dark1: colors.border.dark1,
     },
   },
   components: {

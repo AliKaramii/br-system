@@ -150,7 +150,6 @@ function UserPanelLayoutMobile({ children, window, menuItems, pageTitle }) {
           {drawer}
         </Drawer>
       </Box>
-
       <Box
         component="main"
         sx={{
@@ -166,8 +165,6 @@ function UserPanelLayoutMobile({ children, window, menuItems, pageTitle }) {
           </UserPanelPageTitle>
         </Box>
         {children}
-
-        <p>Mobile</p>
       </Box>
     </Box>
   );
