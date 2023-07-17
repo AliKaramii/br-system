@@ -85,6 +85,13 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.flexRowEnd {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -151,4 +158,9 @@ input::-webkit-inner-spin-button {
   border: 1px solid $color5;
   border-radius: 0.25rem;
   padding: 1rem;
+}
+
+.primaryTableHeader th {
+  background-color: $primColor;
+  color: $color9;
 }

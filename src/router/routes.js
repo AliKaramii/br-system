@@ -10,14 +10,14 @@ import VenueReservationPage from "../modules/venue/venue-reservation-page.jsx";
 import NotFoundPage from "../pages/not-found";
 import CafeFormSecondStepPage from "../modules/cafe/form-step-2-page";
 import VenueFormStepPage from "../modules/venue/form-step-page";
-import PhoneBookPage from "../pages/user-panel-pages/phone-book";
-import DashboardPage from "../pages/user-panel-pages/dashboard";
-import MyFlorPage from "../pages/user-panel-pages/my-flor";
-import BillingsPage from "../pages/user-panel-pages/billings";
-import ReserveHistoryPage from "../pages/user-panel-pages/reserve-history";
-import NotificationsPage from "../pages/user-panel-pages/notifications";
-
-// import UserPanelLayout from "../components/layout/user-panel";
+import PhoneBookPage from "../pages/user-panel/phone-book";
+import DashboardPage from "../pages/user-panel/dashboard";
+import MyFlorPage from "../pages/user-panel/my-flor";
+import BillingsPage from "../pages/user-panel/billings";
+import ReserveHistoryPage from "../pages/user-panel/reserve-history/index.jsx";
+import NotificationsPage from "../pages/user-panel/notifications";
+import SupportPage from "../pages/user-panel/support";
+import QaPage from "../pages/user-panel/qa";
 
 export const routesList = [
   {
@@ -52,6 +52,20 @@ export const routesList = [
     name: "NOTIFICATIONS",
     path: pathes.NOTIFICATIONS,
     component: NotificationsPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "SUPPORT",
+    path: pathes.SUPPORT,
+    component: SupportPage,
+    exact: true,
+    needAuth: false,
+  },
+  {
+    name: "QA",
+    path: pathes.QA,
+    component: QaPage,
     exact: true,
     needAuth: false,
   },
@@ -111,14 +125,6 @@ export const routesList = [
     exact: true,
     needAuth: false,
   },
-  // {
-  //   name: "CAFERESERVATION",
-  //   path: pathes.CAFERESERVATION,
-  //   component: CafeReservationPage,
-  //   exact: true,
-  //   needAuth: false,
-  // },
-
   {
     name: "VENUEINTROSELECTION",
     path: pathes.VENUEINTROSELECTION,

@@ -13,7 +13,7 @@ const IconTitleBadge = ({ text, icon }) => {
         justifyItems: "center",
         flexDirection: "row",
         bgcolor: theme.palette.back.light8,
-        borderRadius: "1rem",
+        borderRadius: "0.5rem",
         padding: "0.5rem",
         width: "150px",
       }}

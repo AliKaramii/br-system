@@ -1,7 +1,7 @@
 import { Box, IconButton, Stack } from "@mui/material";
 import React from "react";
 import home from "../../../assets/svg/toolbar-icon-home.svg";
-import chat from "../../../assets/svg/toolbar-icon-chat.svg";
+import qa from "../../../assets/svg/toolbar-icon-chat.svg";
 import support from "../../../assets/svg/toolbar-icon-support.svg";
 import notification from "../../../assets/svg/menu-icon-notification.svg";
 
@@ -21,14 +21,14 @@ const ToolboxMenu = () => {
           <img src={notification} />
         </IconButton>
       </Link>
-      <Link title="پشتیبانی">
+      <Link to={pathes.SUPPORT} title="پشتیبانی">
         <IconButton>
           <img src={support} />
         </IconButton>
       </Link>
-      <Link title="سوالات متداول">
+      <Link to={pathes.QA} title="سوالات متداول">
         <IconButton>
-          <img src={chat} />
+          <img src={qa} />
         </IconButton>
       </Link>
       <Link to={pathes.HOMEPAGE} title="خانه">

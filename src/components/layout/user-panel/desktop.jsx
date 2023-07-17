@@ -225,7 +225,8 @@ const UserPanelLayoutDesktop = ({ children, menuItems, pageTitle }) => {
           </Box>
           <Paper
             sx={{
-              height: "85vh",
+              bgcolor: theme.palette.back.light9,
+              minHeight: "70vh",
               padding: 4,
             }}
           >

@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import UserPanelLayout from "../../components/layout/user-panel";
+import UserPanelLayout from "../../../components/layout/user-panel";
 import { Box, Container, Typography } from "@mui/material";
 import Tabs, { tabsClasses } from "@mui/material/Tabs";
-import reserveHistoryIcon from "../../assets/svg/user-panel-reserve-history.svg";
+import reserveHistoryIcon from "../../../assets/svg/user-panel-reserve-history.svg";
 import Tab from "@mui/material/Tab";
-import { theme } from "../../assets/themes/theme";
+import { theme } from "../../../assets/themes/theme";
 import PropTypes from "prop-types";
-import ReserveListCard from "../../components/common/reserve-list-card";
-import venueIcon from "../../assets/svg/user-panel-module-venue-24x24.svg";
-
-import dateIcon from "../../assets/svg/reserve-lists-date.svg";
-import timeIcon from "../../assets/svg/reserve-lists-time.svg";
-import paymentIcon from "../../assets/svg/reserve-lists-payment.svg";
-import statusIcon from "../../assets/svg/reserve-lists-status.svg";
+import ReserveListCard from "./reserve-list-card";
+import venueIcon from "../../../assets/svg/user-panel-module-venue-24x24.svg";
+import dateIcon from "../../../assets/svg/reserve-lists-date.svg";
+import timeIcon from "../../../assets/svg/reserve-lists-time.svg";
+import paymentIcon from "../../../assets/svg/reserve-lists-payment.svg";
+import statusIcon from "../../../assets/svg/reserve-lists-status.svg";
 
 const pageTitle = { icon: reserveHistoryIcon, title: "لیست رزروها" };
 

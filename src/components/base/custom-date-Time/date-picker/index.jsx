@@ -4,8 +4,13 @@ import persian_fa from "react-date-object/locales/persian_fa";
 
 import { useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
+import { Box } from "@mui/material";
 
-const CustomDatePicker = ({ setChosenDate, title = "انتخاب تاریخ" }) => {
+const CustomDatePicker = ({
+  setChosenDate,
+  title = "انتخاب تاریخ",
+  width = null,
+}) => {
   const [state, setState] = useState({ format: "MM/DD/YYYY" });
 
   //   const convert = (date, format = state.format) => {
@@ -27,7 +32,7 @@ const CustomDatePicker = ({ setChosenDate, title = "انتخاب تاریخ" }) 
   return (
     <div>
       <div>
-        <div>
+        <Box sx={{ width: width }}>
           <DatePicker
             // value={state.date}
             onChange={(data) => onChangeHandler(data)}
@@ -36,7 +41,7 @@ const CustomDatePicker = ({ setChosenDate, title = "انتخاب تاریخ" }) 
             placeholder={title}
             calendarPosition="bottom-right"
           />
-        </div>
+        </Box>
 
         {/* <div>
           <Span>هجری شمسی: </Span>

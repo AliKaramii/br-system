@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import UserPanelLayoutMobile from "../../components/layout/user-panel";
+import UserPanelLayout from "../../components/layout/user-panel";
 import { Box, Pagination } from "@mui/material";
 import notificationsIcon from "../../assets/svg/user-panel-notification.svg";
 import NotifMessageItem from "../../components/base/notif-message-item";
+import SearchBox from "../../components/base/search-box";
 
 const pageTitle = { icon: notificationsIcon, title: "اطلاع رسانی" };
 const sampleData = {
@@ -24,7 +25,8 @@ const NotificationsPage = () => {
   return (
     <>
       <Box>
-        <UserPanelLayoutMobile pageTitle={pageTitle}>
+        <UserPanelLayout pageTitle={pageTitle}>
+          <SearchBox />
           <NotifMessageItem data={sampleData} />
           <Box display="flex" justifyContent="center">
             <Pagination
@@ -36,7 +38,7 @@ const NotificationsPage = () => {
               dir="ltr"
             />
           </Box>
-        </UserPanelLayoutMobile>
+        </UserPanelLayout>
       </Box>
     </>
   );

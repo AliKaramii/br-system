@@ -1,0 +1,52 @@
+@import "../../../assets/defines.scss";
+
+.modal {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 80%;
+  height: 500px;
+  background-color: $color9;
+  overflow: auto;
+}
+
+.modalBody {
+  padding: 16px 40px;
+  min-height: 450px;
+  overflow: auto;
+}
+.modalTitle {
+  background-color: $color8;
+  height: 72px;
+  padding: 16px;
+  box-shadow: 2px 2px 8px 0px $color5;
+}
+// .formSection {
+//   & > div {
+//     border: 2px solid $color5;
+//     border-radius: 16px;
+//     min-height: 390px;
+//     padding: 16px;
+//   }
+// }
+.commentAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.commentBody {
+  background-color: $color8;
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 8px;
+  min-height: 59px;
+}
+.comentBlock {
+  border: 1px solid $color5;
+  padding: 16px 24px;
+  border-radius: 8px;
+}
+.buttonBox {
+  position: absolute;
+  display: flex;
+}

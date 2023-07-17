@@ -1,11 +1,22 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { theme } from "../../../assets/themes/theme";
 import style from "./style.module.scss";
-import IconTitleBadge from "../../base/badge-icon-title";
+import IconTitleBadge from "../../../components/base/badge-icon-title";
+import ReserveHistoryModal from "./reserve-history-modal";
+import { fetchData } from "../../../services/http-client";
 
 const ReserveListCard = ({ data }) => {
   const { placeIcon, title, tel } = data[0];
+
+  const [modalData, setmodalData] = useState();
+
+  useEffect(() => {
+    fetchData("/sampleCafeReceipt").then((fetchedData) => {
+      return setmodalData(fetchedData);
+    });
+  }, []);
+
   return (
     <>
       {console.log(data)}
@@ -14,7 +25,7 @@ const ReserveListCard = ({ data }) => {
         sx={{ border: `1px solid ${theme.palette.border.dark1}` }}
       >
         <Box className="flexRowstart" marginBottom={2}>
-          <img src={placeIcon} alt="icon" marginX={1} />
+          <img src={placeIcon} alt="icon" />
           <Typography marginX={1}>{title}</Typography>
           <Typography marginX={1}>
             شماره تماس:
@@ -35,9 +46,7 @@ const ReserveListCard = ({ data }) => {
             </Box>
           </Grid>
           <Grid item xs={12} md={2} className="flexRowCenter">
-            <Button color="primary" variant="contained">
-              اطلاعات بیشتر
-            </Button>
+            {modalData && <ReserveHistoryModal data={modalData} />}
           </Grid>
         </Grid>
       </Box>

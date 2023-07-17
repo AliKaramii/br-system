@@ -41,6 +41,7 @@ const MyFlorPage = () => {
                   <img
                     style={{ height: "100%", width: "100%" }}
                     src={data.avatar}
+                    alt=""
                   />
                 </Grid>
                 <Grid item xs={12} sm={7} md={9} sx={{ padding: "1rem" }}>

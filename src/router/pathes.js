@@ -16,6 +16,8 @@ const pathes = {
   BILLINGS: "/bllings",
   RESERVEHISTORY: "/reserve-history",
   NOTIFICATIONS: "/notification",
+  SUPPORT: "/support",
+  QA: "/qa",
   NOTFOUND: "/*",
 };
 
